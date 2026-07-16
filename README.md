@@ -6,7 +6,9 @@ como protagonista del inicio.
 
 ## Stack
 
-- **Next.js 14** (App Router, Server Components) + **TypeScript** estricto
+- **Next.js 16** (App Router, Server Components) + **TypeScript** estricto
+  — el brief pedía Next 14; se subió a 16 (con next-intl 4) para dejar
+  `npm audit` en cero, cumpliendo Fort Knox y el criterio de aceptación.
 - **Tailwind CSS** con design tokens (dorado · negro · azul)
 - **next-intl** — i18n real ES/EN (ES por defecto, toggle persistente)
 - **framer-motion** — animaciones al scroll, parallax sutil, flotación
