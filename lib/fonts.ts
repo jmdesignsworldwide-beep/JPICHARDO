@@ -1,41 +1,24 @@
-import {
-  Playfair_Display,
-  Cormorant_Garamond,
-  Inter,
-  Sora,
-} from 'next/font/google';
+import { Space_Grotesk, Instrument_Serif } from 'next/font/google';
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
 
-// Títulos / display — serif editorial (como el título del libro)
-export const fontDisplay = Playfair_Display({
+// Display / títulos — grotesque moderna de alto contraste (look Vercel/Linear).
+export const fontDisplay = Space_Grotesk({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-display',
-  weight: ['500', '600', '700', '800'],
-  style: ['normal', 'italic'],
-});
-
-// Citas — Cormorant Garamond
-export const fontQuote = Cormorant_Garamond({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-quote',
-  weight: ['400', '500', '600'],
-  style: ['normal', 'italic'],
-});
-
-// Cuerpo — limpio y legible
-export const fontBody = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-body',
-});
-
-// Acentos / etiquetas — geométrica moderna
-export const fontLabel = Sora({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-label',
   weight: ['400', '500', '600', '700'],
 });
 
-export const fontVariables = `${fontDisplay.variable} ${fontQuote.variable} ${fontBody.variable} ${fontLabel.variable}`;
+// Acento — serif italic refinada SOLO para el gancho y el versículo (calidez).
+export const fontAccent = Instrument_Serif({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-accent',
+  weight: ['400'],
+  style: ['normal', 'italic'],
+});
+
+// Body → Geist Sans · Labels/eyebrows → Geist Mono (self-hosted, Vercel).
+// Exponen --font-geist-sans / --font-geist-mono.
+export const fontVariables = `${fontDisplay.variable} ${fontAccent.variable} ${GeistSans.variable} ${GeistMono.variable}`;

@@ -39,7 +39,8 @@
       "eyebrow": "JPichardo Ministries · Blessing House",
       "titleTop": "Comenzando",
       "titleBottom": "Mi Viaje",
-      "subtitle": "Fundamentos para la Vida Cristiana — por el Pastor José Pichardo.",
+      "subtitle": "Un manual para aquellos que comienzan en la fe",
+      "support": "Fundamentos para la Vida Cristiana — por el Pastor José Pichardo.",
       "hook": "Todo gran viaje comienza con un primer paso.",
       "verse": "Tu palabra es una lámpara a mis pies; es una luz en mi sendero.",
       "verseRef": "Salmo 119:105"
@@ -181,11 +182,12 @@
     "hero": {
       "eyebrow": "El libro",
       "title": "Comenzando Mi Viaje",
-      "subtitle": "Fundamentos para la Vida Cristiana",
+      "subtitle": "Un manual para aquellos que comienzan en la fe",
       "author": "por el Pastor José Pichardo",
       "hook": "Todo gran viaje comienza con un primer paso.",
       "verse": "Tu palabra es una lámpara a mis pies; es una luz en mi sendero.",
-      "verseRef": "Salmo 119:105"
+      "verseRef": "Salmo 119:105",
+      "support": "Bases y estímulo para tus primeros pasos"
     },
     "synopsis": {
       "label": "Sinopsis",
@@ -332,7 +334,7 @@
     "contact": "Contacto",
     "followUs": "Síguenos",
     "rights": "Todos los derechos reservados.",
-    "credit": "Sitio por"
+    "credit": "Diseñado por"
   },
   "notFound": {
     "title": "Página no encontrada",

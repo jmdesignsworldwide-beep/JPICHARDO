@@ -16,7 +16,7 @@ export function Card({
   return (
     <div
       className={`glass rounded-2xl p-6 shadow-glass transition-all duration-300 ${
-        hover ? 'hover:-translate-y-1 hover:border-gold-400/40 hover:shadow-gold' : ''
+        hover ? 'hover:-translate-y-1.5 hover:border-gold-400/50 hover:shadow-light' : ''
       } ${className}`}
     >
       {children}
