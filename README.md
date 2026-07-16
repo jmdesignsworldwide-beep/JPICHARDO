@@ -44,26 +44,58 @@ npm audit           # dependencias sin vulnerabilidades
 
 ## Contenido editable clave
 
-- **Disponibilidad del libro:** `lib/config.ts` → `BOOK_AVAILABLE` + `BOOK_URL`.
+- **Disponibilidad del libro:** `lib/book.ts` → `BOOK_AVAILABLE` + `BOOK_AMAZON_URL`.
   Con `false`, el botón muestra "Próximamente en Amazon" (premium, no roto).
-  Con `true` + URL, el botón de compra se activa automáticamente.
+  Con `true` + URL, el botón pasa a "Comprar en Amazon" automáticamente.
 - **Datos verídicos** (dirección, teléfono, email, redes, horarios): `lib/config.ts`.
 - **Textos y traducciones:** `messages/es.json` y `messages/en.json`.
-- **Contenido en revisión pastoral** (`[BORRADOR]`): misión, visión, valores y
-  las "tres funciones" en `/nosotros`. Marcados en pantalla con un distintivo y
-  en el código con el comentario `{/* BORRADOR - pendiente aprobación pastor */}`.
+- **Contenido en revisión pastoral** (`[BORRADOR]`): ver lista abajo.
+
+## Variables de entorno (producción)
+
+Copia `.env.example` a `.env.local` (nunca lo subas). Todas son **server-only**:
+
+| Variable | Para qué |
+|---|---|
+| `CONTACT_EMAIL_ENABLED` | `true` activa el envío del formulario por correo. |
+| `EMAIL_API_KEY` | Clave del proveedor (Resend). |
+| `CONTACT_FROM_EMAIL` | Remitente verificado. |
+| `CONTACT_TO_EMAIL` | Destino (por defecto `blessinghousecchurch@gmail.com`). |
+| `UPSTASH_REDIS_REST_URL` / `_TOKEN` | (Opcional) rate limit distribuido. |
+
+Sin estas variables el formulario valida y responde correctamente, pero no
+envía correo (registro seguro sin PII). El rate limit cae al limitador en
+memoria por instancia.
+
+## Textos `[BORRADOR]` pendientes de aprobación del pastor
+
+Marcados en pantalla (distintivo) y en código (`{/* BORRADOR - pendiente
+aprobación pastor */}`):
+
+1. **Misión, Visión, Valores** — `/nosotros`.
+2. **Las tres funciones** (Adoración · Edificación · Evangelización) — `/nosotros`.
+3. **Historia / bienvenida** ampliada — `/nosotros` y bloque de bienvenida del Inicio.
 
 ## Assets
 
-Los componentes de marca se renderizan como **SVG in-line** (nítidos, sin
-peticiones externas, sin riesgo de CSP), sirviendo de placeholder premium.
-Cuando lleguen los binarios reales:
+Imágenes reales integradas (en `/public`):
 
-- `public/logo-jpichardo.png` — logo JPichardo Ministries
-- `public/libro-comenzando-mi-viaje.webp` — portada del libro
-- `public/pastor-jose-pichardo.jpg` — foto del pastor en alta
+- `logo-jpichardo.png` — **logo real** de JPichardo Ministries. En uso en la
+  página del Pastor, en los iconos/OpenGraph y en el manifest. El emblema
+  pequeño de Header/Footer usa el SVG in-line (nítido a tamaño reducido).
+- `libro-en-estante.png` — foto editorial del libro (showcase en Inicio).
+- `devocional-biblia-diario.png` — Biblia + diario (showcase en El Libro).
+- `libro-amazon-banner.png` y `libro-amazon-portada.png` — piezas de marketing
+  que dicen **"Disponible en Amazon"**. Se dejan **en reserva**: cuando el libro
+  esté publicado (`BOOK_AVAILABLE=true` + URL en `lib/book.ts`) son ideales como
+  banner/hero de Amazon. No se muestran ahora para no contradecir el estado
+  "Próximamente".
 
-…colócalos en `/public` y ajusta `lib/config.ts` (`assets`) para usarlos.
+Placeholders en SVG in-line que aún pueden reemplazarse por binarios reales:
+
+- **Portada del libro** (mockup 3D del hero) — `components/brand/BookCover.tsx`.
+- **Foto del pastor** — `components/brand/PastorPortrait.tsx`
+  (se puede sustituir por `public/pastor-jose-pichardo.jpg` en alta).
 
 ## Seguridad
 
