@@ -1,0 +1,145 @@
+import type { Metadata } from 'next';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
+import { ArrowRight, Quote } from 'lucide-react';
+import { Section, SectionLabel, SectionTitle } from '@/components/ui/Section';
+import { GoldDivider } from '@/components/ui/GoldDivider';
+import { Reveal } from '@/components/ui/Reveal';
+import { ButtonLink } from '@/components/ui/Button';
+import { OrnamentFrame } from '@/components/ui/OrnamentFrame';
+import { PastorPortrait } from '@/components/brand/PastorPortrait';
+import { Logo } from '@/components/brand/Logo';
+import { BookCover } from '@/components/brand/BookCover';
+import { buildMetadata } from '@/lib/seo';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const { locale } = params;
+  const t = await getTranslations({ locale, namespace: 'pastor.meta' });
+  return buildMetadata({
+    locale,
+    path: '/pastor',
+    title: t('title'),
+    description: t('description'),
+  });
+}
+
+export default function PastorPage({ params }: { params: { locale: string } }) {
+  setRequestLocale(params.locale);
+  return (
+    <>
+      <PastorHero />
+      <Bio />
+      <Ministry />
+      <BookTeaser />
+    </>
+  );
+}
+
+function PastorHero() {
+  const t = useTranslations('pastor.hero');
+  return (
+    <section className="relative overflow-hidden pt-32 pb-16 md:pt-40">
+      <div aria-hidden className="absolute inset-0 -z-10 bg-navy-900" />
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 opacity-70"
+        style={{
+          background:
+            'radial-gradient(60% 60% at 50% 0%, rgba(30,58,95,0.5), transparent 70%)',
+        }}
+      />
+      <div className="container-x grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+        <Reveal className="mx-auto w-full max-w-sm">
+          <OrnamentFrame className="p-3">
+            <div className="overflow-hidden rounded-2xl shadow-book ring-1 ring-gold-500/25">
+              <PastorPortrait className="block w-full" />
+            </div>
+          </OrnamentFrame>
+        </Reveal>
+
+        <Reveal delay={0.1} className="text-center lg:text-left">
+          <p className="eyebrow">{t('eyebrow')}</p>
+          <h1 className="mt-4 font-display text-5xl leading-none text-foil md:text-6xl">
+            {t('title')}
+          </h1>
+          <GoldDivider className="my-6 justify-center lg:justify-start" />
+          <p className="font-serif text-xl italic text-cream-50/80 md:text-2xl">
+            {t('subtitle')}
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function Bio() {
+  const t = useTranslations('pastor.bio');
+  const paragraphs = t.raw('paragraphs') as string[];
+  return (
+    <Section tone="navy-deep">
+      <div className="mx-auto max-w-3xl">
+        <Reveal className="text-center">
+          <SectionLabel>{t('label')}</SectionLabel>
+          <GoldDivider className="my-6" />
+        </Reveal>
+        <div className="mt-4 space-y-6">
+          {paragraphs.map((p, i) => (
+            <Reveal as="p" key={i} delay={i * 0.06} className="text-lg leading-relaxed text-cream-50/80">
+              {p}
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+function Ministry() {
+  const t = useTranslations('pastor.ministry');
+  return (
+    <Section tone="navy">
+      <Reveal>
+        <OrnamentFrame className="mx-auto max-w-3xl px-6 py-12 text-center sm:px-12">
+          <Logo size={72} className="mx-auto" />
+          <SectionLabel className="mt-6 block">{t('label')}</SectionLabel>
+          <SectionTitle className="mt-3" foil>
+            {t('title')}
+          </SectionTitle>
+          <GoldDivider className="my-6" />
+          <p className="mx-auto max-w-2xl text-lg text-cream-50/75">{t('body')}</p>
+        </OrnamentFrame>
+      </Reveal>
+    </Section>
+  );
+}
+
+function BookTeaser() {
+  const t = useTranslations('pastor.bookTeaser');
+  return (
+    <Section tone="navy-deep">
+      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <Reveal className="mx-auto w-56 sm:w-64">
+          <div className="overflow-hidden rounded-sm shadow-book ring-1 ring-gold-500/25">
+            <BookCover className="block w-full" />
+          </div>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <Quote className="h-8 w-8 text-gold-500/60" />
+          <SectionLabel className="mt-4 block">{t('label')}</SectionLabel>
+          <SectionTitle className="mt-3">{t('title')}</SectionTitle>
+          <p className="mt-5 max-w-lg text-lg text-cream-50/75">{t('body')}</p>
+          <div className="mt-8">
+            <ButtonLink href="/libro">
+              {t('cta')}
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </ButtonLink>
+          </div>
+        </Reveal>
+      </div>
+    </Section>
+  );
+}

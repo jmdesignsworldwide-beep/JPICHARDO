@@ -1,0 +1,314 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "pastor": "Pastor",
+    "book": "The Book",
+    "devotional": "Devotional",
+    "visit": "Visit Us",
+    "menu": "Menu",
+    "close": "Close",
+    "brandAria": "Blessing House — Home"
+  },
+  "common": {
+    "knowTheBook": "Discover the book",
+    "visitUs": "Visit us",
+    "meetUs": "Meet us",
+    "readMore": "Read more",
+    "seePastor": "Meet the pastor",
+    "seeDevotional": "See the devotional",
+    "comingSoonAmazon": "Coming soon on Amazon",
+    "comingSoonHint": "Notify me when it's available",
+    "buyOnAmazon": "Buy on Amazon",
+    "backToBook": "See the book",
+    "draftNotice": "Content under pastoral review",
+    "getDirections": "Get directions",
+    "sendMessage": "Send message",
+    "follow": "Follow"
+  },
+  "pillars": {
+    "sectionLabel": "The pillars of the journey",
+    "fe": "Faith",
+    "esperanza": "Hope",
+    "proposito": "Purpose",
+    "crecimiento": "Growth",
+    "comunion": "Fellowship"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "JPichardo Ministries · Blessing House",
+      "titleTop": "Beginning",
+      "titleBottom": "My Journey",
+      "subtitle": "Foundations for the Christian Life — by Pastor José Pichardo.",
+      "hook": "Every great journey begins with a single step.",
+      "verse": "Your word is a lamp for my feet, a light on my path.",
+      "verseRef": "Psalm 119:105"
+    },
+    "welcome": {
+      "eyebrow": "Welcome home",
+      "title": "Blessing House",
+      "tagline": "We are a church with a fresh message to bless you.",
+      "body": "Here, everyone finds a place to grow in faith, to belong to a family, and to discover God's purpose for their life. Come as you are — a blessing is waiting for you.",
+      "cta": "Meet us"
+    },
+    "pastor": {
+      "eyebrow": "Our pastor",
+      "title": "José Pichardo",
+      "body": "Pastor of Blessing House since 2002, international speaker, teacher of the Word, and Christian author. Founder of JPichardo Ministries.",
+      "cta": "Meet the pastor"
+    },
+    "devotional": {
+      "eyebrow": "Devocional Biblia Abierta",
+      "title": "We help you grow, together.",
+      "body": "Every day, God's Word on your screen: verses and reflections to walk alongside you. Follow us and grow with us.",
+      "cta": "See the devotional"
+    },
+    "visit": {
+      "eyebrow": "We're expecting you",
+      "title": "Visit us this weekend",
+      "body": "Come and worship with us. The doors of Blessing House are open for you and your family.",
+      "cta": "Get directions"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "About",
+      "description": "The story, mission, vision, and values of Blessing House — a church with a fresh message to bless you in Freeport, NY."
+    },
+    "hero": {
+      "eyebrow": "About us",
+      "title": "A church with a fresh message",
+      "tagline": "We are a church with a fresh message to bless you."
+    },
+    "intro": "At Blessing House we believe the Gospel of Jesus Christ is still the best news for every generation. We are a community that worships God, is built up in His Word, and shares His love with Freeport and beyond.",
+    "mission": {
+      "label": "Mission",
+      "body": "To share the fresh message of the Gospel of Jesus Christ, walking with each person on their journey of faith — from the first step to a firm and mature Christian life — through biblical teaching, discipleship, and fellowship."
+    },
+    "vision": {
+      "label": "Vision",
+      "body": "To be a church that transforms lives and families with a fresh, relevant message, forming disciples who in turn disciple others, and bringing hope to Freeport and to the nations."
+    },
+    "values": {
+      "label": "Values",
+      "items": [
+        "The Word of God as our foundation",
+        "One-to-one discipleship",
+        "Family and fellowship",
+        "Evangelism",
+        "Continual spiritual growth"
+      ]
+    },
+    "functions": {
+      "label": "Our calling",
+      "title": "Three functions, one heart",
+      "items": {
+        "worship": {
+          "title": "Worship",
+          "body": "To exalt God with our lives, in truth and with a grateful heart."
+        },
+        "edification": {
+          "title": "Edification",
+          "body": "To grow together in the Word, forming firm and mature disciples."
+        },
+        "evangelism": {
+          "title": "Evangelism",
+          "body": "To bring the fresh message of the Gospel to our city and to the nations."
+        }
+      }
+    },
+    "cta": {
+      "title": "Come and be part of the family",
+      "body": "We're expecting you this Sunday. Find our service times and directions.",
+      "button": "Visit us"
+    }
+  },
+  "pastor": {
+    "meta": {
+      "title": "Pastor José Pichardo",
+      "description": "Pastor of Blessing House since 2002, international speaker, teacher of the Word, and Christian author. Founder of JPichardo Ministries."
+    },
+    "hero": {
+      "eyebrow": "Pastor · Author · Speaker",
+      "title": "José Pichardo",
+      "subtitle": "Pastor of Blessing House since 2002 · Founder of JPichardo Ministries"
+    },
+    "bio": {
+      "label": "His story",
+      "paragraphs": [
+        "José Pichardo has been pastor of Blessing House since 2002. He is an international speaker, a teacher of the Word of God, and a Christian author. His passion is to walk with every believer on their journey of faith, from the first step to maturity.",
+        "Holding a degree in Theological Studies, he has served as a professor at several Bible seminaries, forming new generations of leaders and disciples.",
+        "Since 2002 he has devoted himself to preaching the Gospel, forming disciples, and strengthening the local church, serving as pastor in various congregations.",
+        "He lives in the Baldwin Harbor / Freeport, NY area, from where he continues his ministry of teaching and discipleship."
+      ]
+    },
+    "ministry": {
+      "label": "The ministry",
+      "title": "JPichardo Ministries",
+      "body": "Founded by Pastor José Pichardo, JPichardo Ministries is the platform through which his work of teaching, discipleship, and publishing extends — bringing clear, practical biblical foundations to the local church and to the nations."
+    },
+    "bookTeaser": {
+      "label": "His book",
+      "title": "Beginning My Journey",
+      "body": "Foundations for the Christian Life. A resource written by the pastor to walk with the new believer through their first steps.",
+      "cta": "Discover the book"
+    }
+  },
+  "book": {
+    "meta": {
+      "title": "Beginning My Journey",
+      "description": "Foundations for the Christian Life, by José Pichardo. Twelve chapters to walk with the new believer through their first steps of faith."
+    },
+    "hero": {
+      "eyebrow": "The book",
+      "title": "Comenzando Mi Viaje",
+      "subtitle": "Foundations for the Christian Life",
+      "author": "by José Pichardo",
+      "hook": "Every great journey begins with a single step.",
+      "verse": "Your word is a lamp for my feet, a light on my path.",
+      "verseRef": "Psalm 119:105"
+    },
+    "synopsis": {
+      "label": "Synopsis",
+      "paragraphs": [
+        "The Christian life does not end when a person receives Jesus Christ; in truth, that is where a new adventure of growth, transformation, and discipleship begins. Comenzando Mi Viaje was written to walk with the new believer through their first steps, offering clear, practical, and accessible biblical foundations for developing a firm relationship with God.",
+        "Across twelve chapters, the reader discovers the essential truths of the Christian faith: salvation, the lordship of Christ, baptism, the Lord's Supper, the value of the Bible, prayer, faith, the power of the Holy Spirit, evangelism, the commitments of the believer, the character of Christ, and perseverance to the end.",
+        "Each chapter includes practical applications, questions for reflection, and tools that foster spiritual growth, making this book an excellent resource for personal study, one-to-one discipleship, new-believer classes, and small groups."
+      ]
+    },
+    "chapters": {
+      "label": "Twelve chapters",
+      "title": "The map of your journey",
+      "items": {
+        "salvacion": "Salvation",
+        "senorio": "The Lordship of Christ",
+        "bautismo": "Baptism",
+        "cena": "The Lord's Supper",
+        "valorBiblia": "The Value of the Bible",
+        "oracion": "Prayer",
+        "fe": "Faith",
+        "espirituSanto": "The Power of the Holy Spirit",
+        "evangelizacion": "Evangelism",
+        "compromisos": "The Commitments of the Believer",
+        "caracter": "The Character of Christ",
+        "perseverancia": "Perseverance to the End"
+      }
+    },
+    "idealFor": {
+      "label": "Ideal for",
+      "title": "A resource for every stage",
+      "items": [
+        "Personal study",
+        "One-to-one discipleship",
+        "New-believer classes",
+        "Small groups"
+      ]
+    },
+    "cta": {
+      "title": "Begin your journey",
+      "body": "The book will be available very soon. Leave us your contact and we'll let you know the moment it launches.",
+      "available": "This book is now available. Get it on Amazon.",
+      "notify": "Notify me"
+    }
+  },
+  "devotional": {
+    "meta": {
+      "title": "Devocional Biblia Abierta",
+      "description": "Devocional Biblia Abierta: daily verses and reflections to grow in faith. Follow us on Instagram and TikTok."
+    },
+    "hero": {
+      "eyebrow": "Devocional Biblia Abierta",
+      "title": "We help you grow, together.",
+      "subtitle": "The daily content arm of Blessing House."
+    },
+    "intro": {
+      "label": "Every day, the Word",
+      "body": "Devocional Biblia Abierta brings the Word of God to your screen every day: verses from Proverbs, Psalms, and more, with visual design that inspires and builds up. A daily pause to feed your faith, wherever you are."
+    },
+    "follow": {
+      "label": "Follow us",
+      "title": "Grow with us every day",
+      "instagram": "Instagram",
+      "tiktok": "TikTok",
+      "linktree": "All links",
+      "followers": "followers"
+    }
+  },
+  "visit": {
+    "meta": {
+      "title": "Visit Us",
+      "description": "Service times, address, and contact for Blessing House in Freeport, NY. Sunday 7:00 PM and Blessing Groups on Thursdays."
+    },
+    "hero": {
+      "eyebrow": "Visit us",
+      "title": "We're expecting you at Blessing House",
+      "subtitle": "Come and worship with us — a blessing is waiting for you."
+    },
+    "schedule": {
+      "label": "Service times",
+      "title": "Our services",
+      "sunday": {
+        "day": "Sunday",
+        "time": "7:00 PM",
+        "name": "Main Service"
+      },
+      "thursday": {
+        "day": "Thursday",
+        "time": "In homes",
+        "name": "Blessing Groups (home cell groups)"
+      }
+    },
+    "location": {
+      "label": "Where we are",
+      "title": "How to find us",
+      "mapTitle": "Map of Blessing House, Freeport NY",
+      "directions": "Get directions"
+    },
+    "contactInfo": {
+      "label": "Contact",
+      "phone": "Phone",
+      "email": "Email",
+      "facebook": "Facebook"
+    },
+    "form": {
+      "label": "Write to us",
+      "title": "Send us a message",
+      "body": "Have a question or want to visit us? Write to us and we'll gladly reply.",
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@email.com",
+      "message": "Message",
+      "messagePlaceholder": "How can we help you?",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "successTitle": "Message sent!",
+      "success": "Thank you for writing to us. We'll reply very soon.",
+      "errorTitle": "Couldn't send",
+      "error": "Something went wrong sending your message. Please try again in a moment.",
+      "rateLimited": "You've sent several messages. Please wait a moment before trying again.",
+      "validation": {
+        "name": "Enter your name (2–80 characters).",
+        "email": "Enter a valid email.",
+        "message": "Enter your message (10–2000 characters)."
+      },
+      "privacy": "Your data is used only to reply to you. We never share your information."
+    }
+  },
+  "footer": {
+    "tagline": "We are a church with a fresh message to bless you.",
+    "explore": "Explore",
+    "schedule": "Service times",
+    "sundayShort": "Sunday 7:00 PM — Service",
+    "thursdayShort": "Thursday — Blessing Groups",
+    "contact": "Contact",
+    "followUs": "Follow us",
+    "rights": "All rights reserved.",
+    "credit": "Site by"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "The page you're looking for doesn't exist or was moved.",
+    "home": "Back to home"
+  }
+}
