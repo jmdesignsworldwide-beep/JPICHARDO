@@ -8,7 +8,6 @@ import { Card } from '@/components/ui/Card';
 import { GoldDivider } from '@/components/ui/GoldDivider';
 import { Reveal } from '@/components/ui/Reveal';
 import { ButtonLink } from '@/components/ui/Button';
-import { DraftBadge } from '@/components/ui/DraftBadge';
 import { buildMetadata } from '@/lib/seo';
 
 export async function generateMetadata({
@@ -55,7 +54,6 @@ function Intro() {
   const t = useTranslations('about');
   return (
     <Section tone="navy">
-      {/* BORRADOR - pendiente aprobación pastor (historia/bienvenida) */}
       <Reveal className="mx-auto max-w-3xl text-center">
         <p className="font-serif text-2xl italic leading-relaxed text-cream-50/85 md:text-3xl">
           {t('intro')}
@@ -70,10 +68,6 @@ function MissionVisionValues() {
   const values = t.raw('values.items') as string[];
   return (
     <Section tone="navy-deep">
-      {/* BORRADOR - pendiente aprobación pastor */}
-      <Reveal className="mb-10 flex justify-center">
-        <DraftBadge />
-      </Reveal>
       <div className="grid gap-6 lg:grid-cols-3">
         {/* Misión */}
         <Reveal>
@@ -131,10 +125,6 @@ function Functions() {
         <SectionLabel>{t('label')}</SectionLabel>
         <SectionTitle className="mt-4">{t('title')}</SectionTitle>
         <GoldDivider className="my-6" />
-        {/* BORRADOR - pendiente aprobación pastor */}
-        <div className="flex justify-center">
-          <DraftBadge />
-        </div>
       </Reveal>
       <div className="mt-10 grid gap-6 md:grid-cols-3">
         {items.map(({ key, Icon }, i) => (
