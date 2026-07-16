@@ -67,7 +67,7 @@ Definidos en `next.config.js` (`headers()`), aplicados a todas las rutas:
 ## 7. Dependencias
 
 - `npm audit`: **0 vulnerabilidades**. Para lograrlo se subió el stack a
-  Next 16 + next-intl 4 (la línea Next 14 arrastraba 6 vulns sin parche) y se
+  Next 15.5 LTS + next-intl 4 (la línea Next 14 arrastraba 6 vulns sin parche) y se
   forzó `postcss ^8.5.19` vía `overrides`. Mantener en cero antes de cada release.
 
 ## 8. Errores genéricos

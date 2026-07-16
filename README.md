@@ -6,9 +6,10 @@ como protagonista del inicio.
 
 ## Stack
 
-- **Next.js 16** (App Router, Server Components) + **TypeScript** estricto
-  — el brief pedía Next 14; se subió a 16 (con next-intl 4) para dejar
-  `npm audit` en cero, cumpliendo Fort Knox y el criterio de aceptación.
+- **Next.js 15.5** (App Router, Server Components) + **TypeScript** estricto
+  — el brief pedía Next 14; se usa 15.5 LTS (con next-intl 4): deja
+  `npm audit` en **cero** y su middleware corre de forma fiable en Vercel
+  (Next 16 tenía el middleware/proxy roto en el edge de este runtime).
 - **Tailwind CSS** con design tokens (dorado · negro · azul)
 - **next-intl** — i18n real ES/EN (ES por defecto, toggle persistente)
 - **framer-motion** — animaciones al scroll, parallax sutil, flotación
