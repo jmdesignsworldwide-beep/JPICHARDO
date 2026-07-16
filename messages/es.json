@@ -88,19 +88,19 @@
     "intro": "En Blessing House creemos que el Evangelio de Jesucristo sigue siendo la mejor noticia para cada generación. Somos una comunidad que adora a Dios, se edifica en Su Palabra y comparte Su amor con Freeport y más allá. Pastoreada por José Pichardo desde 2002, Blessing House es una casa abierta donde cada persona puede dar su primer paso de fe y crecer hasta la madurez.",
     "mission": {
       "label": "Misión",
-      "body": "Compartir el mensaje fresco del Evangelio de Jesucristo, acompañando a cada persona en su viaje de fe — desde el primer paso hasta una vida cristiana firme y madura — a través de la enseñanza bíblica, el discipulado y la comunión."
+      "body": "Guiar a cada persona a un encuentro con Jesucristo y acompañarla en su crecimiento espiritual —del primer paso a una fe firme y madura— mediante la enseñanza fiel de la Palabra, el discipulado y la vida en comunidad."
     },
     "vision": {
       "label": "Visión",
-      "body": "Ser una iglesia que transforma vidas y familias con un mensaje fresco y relevante, formando discípulos que a su vez discipulan, y llevando esperanza a Freeport y a las naciones."
+      "body": "Ser una iglesia saludable y en crecimiento que transforma vidas y familias con un mensaje fresco y relevante, forma discípulos que hacen discípulos, y lleva esperanza a Freeport y a las naciones."
     },
     "values": {
       "label": "Valores",
       "items": [
         "La Palabra de Dios como fundamento",
-        "El discipulado uno a uno",
-        "La familia y la comunión",
-        "La evangelización",
+        "El discipulado que forma discípulos",
+        "La familia y la vida en comunidad",
+        "La evangelización y el servicio",
         "El crecimiento espiritual continuo"
       ]
     },
