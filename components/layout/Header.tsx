@@ -17,15 +17,18 @@ export function Header() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
-    onScroll();
+    // Diferimos la lectura inicial fuera del cuerpo del efecto (evita
+    // setState síncrono en el efecto) y capturamos el estado ya scrolleado.
+    const raf = requestAnimationFrame(onScroll);
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener('scroll', onScroll);
+    };
   }, []);
 
-  // Cierra el menú móvil al cambiar de ruta.
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
+  // El menú móvil se cierra al pulsar un enlace (ver onClick), no vía efecto.
+  const closeMenu = () => setOpen(false);
 
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname.startsWith(href);
@@ -94,6 +97,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
+              onClick={closeMenu}
               data-active={isActive(item.href)}
               className={`flex items-center justify-between border-b border-white/5 py-3.5 font-label text-sm uppercase tracking-wide2 transition-colors ${
                 isActive(item.href) ? 'text-gold-400' : 'text-cream-50/85'

@@ -8,7 +8,6 @@ import { z } from 'zod';
 // Quita caracteres de control y normaliza espacios (anti-inyección de payloads).
 // Conserva \t (\x09), \n (\x0A) y \r (\x0D); elimina el resto del rango de control.
 function clean(value: string): string {
-  // eslint-disable-next-line no-control-regex
   return value.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '').trim();
 }
 

@@ -14,9 +14,9 @@ import { buildMetadata } from '@/lib/seo';
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const { locale } = params;
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'book.meta' });
   return buildMetadata({
     locale,
@@ -26,22 +26,18 @@ export async function generateMetadata({
   });
 }
 
-export default function BookPage({ params }: { params: { locale: string } }) {
-  setRequestLocale(params.locale);
+export default async function BookPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <>
       <BookHero />
       <Synopsis />
-      <Section tone="navy-deep">
-        <Reveal className="text-center">
-          <SectionLabel>{useLabel('chapters.label')}</SectionLabel>
-          <SectionTitle className="mt-4">{useLabel('chapters.title')}</SectionTitle>
-          <GoldDivider className="my-6" />
-        </Reveal>
-        <div className="mt-10">
-          <ChaptersGrid />
-        </div>
-      </Section>
+      <ChaptersSection />
       <PillarsBand tone="navy-deep" />
       <IdealFor />
       <FinalCta />
@@ -49,10 +45,20 @@ export default function BookPage({ params }: { params: { locale: string } }) {
   );
 }
 
-/* Helper para leer etiquetas del namespace book en server component */
-function useLabel(key: string) {
-  const t = useTranslations('book');
-  return t(key);
+function ChaptersSection() {
+  const t = useTranslations('book.chapters');
+  return (
+    <Section tone="navy-deep">
+      <Reveal className="text-center">
+        <SectionLabel>{t('label')}</SectionLabel>
+        <SectionTitle className="mt-4">{t('title')}</SectionTitle>
+        <GoldDivider className="my-6" />
+      </Reveal>
+      <div className="mt-10">
+        <ChaptersGrid />
+      </div>
+    </Section>
+  );
 }
 
 function BookHero() {

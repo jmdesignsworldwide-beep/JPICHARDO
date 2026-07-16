@@ -113,7 +113,6 @@ async function deliver(data: ContactInput): Promise<void> {
   // Fallback sin proveedor configurado: registro mínimo server-side.
   // (No imprime credenciales; útil para preview de Vercel.)
   if (process.env.NODE_ENV !== 'production') {
-    // eslint-disable-next-line no-console
     console.info('[contact] mensaje recibido y validado (sin proveedor de correo configurado).');
   }
 }

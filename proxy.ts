@@ -1,3 +1,5 @@
+// Next 16 renombró la convención "middleware" a "proxy". next-intl sigue
+// exponiendo su factory bajo 'next-intl/middleware'; solo cambia el archivo.
 import createMiddleware from 'next-intl/middleware';
 import { routing } from './i18n/routing';
 

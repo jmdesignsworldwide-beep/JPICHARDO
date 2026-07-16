@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, type FormEvent } from 'react';
+import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { useTranslations } from 'next-intl';
 import { Send, CheckCircle2, AlertTriangle, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
@@ -12,7 +12,12 @@ export function ContactForm() {
   const t = useTranslations('visit.form');
   const [status, setStatus] = useState<Status>('idle');
   const [errors, setErrors] = useState<FieldErrors>({});
-  const mountedAt = useRef<number>(Date.now());
+  // Marca de tiempo de montaje (se fija tras render para no llamar a una
+  // función impura durante el render — regla react-hooks/purity).
+  const mountedAt = useRef<number | null>(null);
+  useEffect(() => {
+    mountedAt.current = Date.now();
+  }, []);
 
   // Validación de UI (solo UX; el servidor es la autoridad — Fort Knox).
   function validate(fd: FormData): FieldErrors {
@@ -47,7 +52,7 @@ export function ContactForm() {
           email: fd.get('email'),
           message: fd.get('message'),
           website: fd.get('website'), // honeypot
-          ts: mountedAt.current,
+          ts: mountedAt.current ?? Date.now(),
         }),
       });
 

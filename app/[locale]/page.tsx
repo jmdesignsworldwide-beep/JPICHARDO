@@ -13,9 +13,9 @@ import { buildMetadata } from '@/lib/seo';
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const { locale } = params;
+  const { locale } = await params;
   return buildMetadata({
     locale,
     path: '',
@@ -27,8 +27,13 @@ export async function generateMetadata({
   });
 }
 
-export default function HomePage({ params }: { params: { locale: string } }) {
-  setRequestLocale(params.locale);
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
 
   return (
     <>

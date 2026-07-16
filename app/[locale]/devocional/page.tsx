@@ -13,9 +13,9 @@ import { buildMetadata } from '@/lib/seo';
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const { locale } = params;
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'devotional.meta' });
   return buildMetadata({
     locale,
@@ -25,8 +25,13 @@ export async function generateMetadata({
   });
 }
 
-export default function DevotionalPage({ params }: { params: { locale: string } }) {
-  setRequestLocale(params.locale);
+export default async function DevotionalPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <>
       <DevHero />
