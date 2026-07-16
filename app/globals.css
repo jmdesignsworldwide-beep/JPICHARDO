@@ -50,21 +50,29 @@
 }
 
 @layer components {
-  /* Título con efecto foil dorado (degradado metálico del logo JP) */
+  /* Título con efecto foil dorado (degradado metálico del logo JP).
+     Fallback: color dorado sólido si background-clip:text no está soportado. */
   .text-foil {
-    background-image: linear-gradient(
-      120deg,
-      #a67c2e 0%,
-      #e0c173 28%,
-      #f6e7b6 50%,
-      #e0c173 72%,
-      #a67c2e 100%
-    );
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+    color: #e0c173;
+  }
+  @supports (
+    (-webkit-background-clip: text) or (background-clip: text)
+  ) {
+    .text-foil {
+      background-image: linear-gradient(
+        120deg,
+        #a67c2e 0%,
+        #e0c173 28%,
+        #f6e7b6 50%,
+        #e0c173 72%,
+        #a67c2e 100%
+      );
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
   }
 
   /* Etiqueta en mayúsculas con tracking generoso (FE · ESPERANZA …) */

@@ -8,8 +8,10 @@ import { Reveal } from '@/components/ui/Reveal';
 import { ButtonLink, ButtonAnchor } from '@/components/ui/Button';
 import { OrnamentFrame } from '@/components/ui/OrnamentFrame';
 import { PastorPortrait } from '@/components/brand/PastorPortrait';
-import { Logo } from '@/components/brand/Logo';
+import { BrandLogo } from '@/components/brand/BrandLogo';
 import { BookCover } from '@/components/brand/BookCover';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { pastorJsonLd } from '@/lib/jsonld';
 import { site } from '@/lib/config';
 import { buildMetadata } from '@/lib/seo';
 
@@ -37,6 +39,7 @@ export default async function PastorPage({
   setRequestLocale(locale);
   return (
     <>
+      <JsonLd data={pastorJsonLd} />
       <PastorHero />
       <Bio />
       <Ministry />
@@ -111,7 +114,9 @@ function Ministry() {
     <Section tone="navy">
       <Reveal>
         <OrnamentFrame className="mx-auto max-w-3xl px-6 py-12 text-center sm:px-12">
-          <Logo size={72} className="mx-auto" />
+          <div className="mx-auto w-56 overflow-hidden rounded-2xl bg-cream-50 p-4 shadow-book ring-1 ring-gold-500/25 sm:w-64">
+            <BrandLogo className="h-auto w-full" width={340} />
+          </div>
           <SectionLabel className="mt-6 block">{t('label')}</SectionLabel>
           <SectionTitle className="mt-3" foil>
             {t('title')}

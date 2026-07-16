@@ -6,6 +6,8 @@ import { routing, type Locale } from '@/i18n/routing';
 import { fontVariables } from '@/lib/fonts';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { churchJsonLd } from '@/lib/jsonld';
 import { site } from '@/lib/config';
 import '../globals.css';
 
@@ -36,6 +38,21 @@ export async function generateMetadata({
         : 'Una iglesia con un mensaje fresco para bendecirte. Hogar del libro “Comenzando Mi Viaje” del Pastor José Pichardo.',
     icons: {
       icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+      apple: [{ url: '/logo-jpichardo.png' }],
+    },
+    manifest: '/manifest.webmanifest',
+    openGraph: {
+      type: 'website',
+      siteName: site.name,
+      locale: locale === 'en' ? 'en_US' : 'es_ES',
+      images: [
+        {
+          url: '/logo-jpichardo.png',
+          width: 1254,
+          height: 1254,
+          alt: `${site.name} · ${site.ministry}`,
+        },
+      ],
     },
     robots: { index: true, follow: true },
   };
@@ -62,6 +79,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={fontVariables} suppressHydrationWarning>
       <body className="min-h-screen bg-navy-900 font-sans text-cream-50 antialiased">
+        <JsonLd data={churchJsonLd} />
         <NextIntlClientProvider messages={messages}>
           <a
             href="#main"

@@ -9,6 +9,9 @@ import { Reveal } from '@/components/ui/Reveal';
 import { PillarsBand } from '@/components/sections/PillarsBand';
 import { ChaptersGrid } from '@/components/sections/ChaptersGrid';
 import { BookCta } from '@/components/sections/BookCta';
+import { PhotoShowcase } from '@/components/sections/PhotoShowcase';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { bookJsonLd } from '@/lib/jsonld';
 import { buildMetadata } from '@/lib/seo';
 
 export async function generateMetadata({
@@ -35,13 +38,28 @@ export default async function BookPage({
   setRequestLocale(locale);
   return (
     <>
+      <JsonLd data={bookJsonLd} />
       <BookHero />
       <Synopsis />
+      <BookShowcase />
       <ChaptersSection />
       <PillarsBand tone="navy-deep" />
       <IdealFor />
       <FinalCta />
     </>
+  );
+}
+
+function BookShowcase() {
+  return (
+    <Section tone="navy-deep">
+      <PhotoShowcase
+        src="/devocional-biblia-diario.png"
+        alt="Biblia abierta y un diario con una reflexión sobre el discipulado, junto a una taza de café — el crecimiento espiritual que acompaña Comenzando Mi Viaje."
+        width={941}
+        height={1672}
+      />
+    </Section>
   );
 }
 

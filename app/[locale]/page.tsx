@@ -4,6 +4,7 @@ import { HomeHero } from '@/components/sections/HomeHero';
 import { PillarsBand } from '@/components/sections/PillarsBand';
 import {
   WelcomeTeaser,
+  BookShowcaseHome,
   PastorTeaser,
   DevotionalTeaser,
   VisitTeaser,
@@ -40,6 +41,7 @@ export default async function HomePage({
       <HomeHero />
       <PillarsBand />
       <WelcomeTeaser />
+      <BookShowcaseHome />
       <PastorTeaser />
       <DevotionalTeaser />
       <VisitTeaser />

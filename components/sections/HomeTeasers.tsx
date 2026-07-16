@@ -14,6 +14,7 @@ import { Reveal } from '@/components/ui/Reveal';
 import { OrnamentFrame } from '@/components/ui/OrnamentFrame';
 import { Card } from '@/components/ui/Card';
 import { PastorPortrait } from '@/components/brand/PastorPortrait';
+import { PhotoShowcase } from '@/components/sections/PhotoShowcase';
 import { site } from '@/lib/config';
 
 /* ── Bienvenida ─────────────────────────────────────────── */
@@ -120,6 +121,38 @@ export function DevotionalTeaser() {
           </div>
         </Card>
       </Reveal>
+    </Section>
+  );
+}
+
+/* ── El libro (showcase con foto real) ──────────────────── */
+export function BookShowcaseHome() {
+  const t = useTranslations('home.bookShowcase');
+  const tc = useTranslations('common');
+  return (
+    <Section tone="navy">
+      <Reveal className="mx-auto mb-10 max-w-2xl text-center">
+        <SectionLabel>{t('eyebrow')}</SectionLabel>
+        <SectionTitle className="mt-4" foil>
+          {t('title')}
+        </SectionTitle>
+        <GoldDivider className="my-6" />
+        <p className="text-cream-50/75">{t('body')}</p>
+      </Reveal>
+
+      <PhotoShowcase
+        src="/libro-en-estante.png"
+        alt="Una mano toma el libro Comenzando Mi Viaje de una estantería — tu primer paso hacia una fe firme."
+        width={1122}
+        height={1402}
+      />
+
+      <div className="mt-8 flex justify-center">
+        <ButtonLink href="/libro">
+          {tc('knowTheBook')}
+          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+        </ButtonLink>
+      </div>
     </Section>
   );
 }
