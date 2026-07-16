@@ -56,15 +56,18 @@ const nextConfig = {
       },
     ];
   },
-  // Red de seguridad a nivel de plataforma: la raíz redirige al locale por
-  // defecto (ES). Garantiza que "/" funcione aunque el middleware no corra.
+  // Enrutado de idioma a nivel de plataforma (sin middleware): la raíz y las
+  // rutas sin prefijo de idioma redirigen al locale por defecto (ES). Esto es
+  // routing estático de Vercel — no puede fallar en runtime como el middleware.
   async redirects() {
+    const paths = ['nosotros', 'pastor', 'libro', 'devocional', 'visitanos'];
     return [
-      {
-        source: '/',
-        destination: '/es',
+      { source: '/', destination: '/es', permanent: false },
+      ...paths.map((p) => ({
+        source: `/${p}`,
+        destination: `/es/${p}`,
         permanent: false,
-      },
+      })),
     ];
   },
 };
