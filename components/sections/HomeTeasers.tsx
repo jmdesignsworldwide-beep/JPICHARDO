@@ -31,6 +31,7 @@ export function WelcomeTeaser() {
           <p className="font-serif text-2xl italic leading-relaxed text-cream-50/90 md:text-3xl">
             “{t('tagline')}”
           </p>
+          {/* BORRADOR - pendiente aprobación pastor (texto de bienvenida) */}
           <p className="mx-auto mt-6 max-w-2xl text-cream-50/70">{t('body')}</p>
           <div className="mt-8">
             <ButtonLink href="/nosotros" variant="secondary">
