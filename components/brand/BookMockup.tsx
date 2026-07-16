@@ -1,11 +1,19 @@
 'use client';
 
-import { motion, useReducedMotion } from 'framer-motion';
+import { useRef } from 'react';
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  useTransform,
+  useReducedMotion,
+} from 'framer-motion';
 import { BookCover } from './BookCover';
 
 /**
  * Mockup 3D flotante de la portada del libro. Perspectiva CSS + sombra
- * realista + leve flotación (respetando prefers-reduced-motion).
+ * realista + flotación en loop + tilt 3D suave que sigue el cursor.
+ * Respeta prefers-reduced-motion.
  */
 export function BookMockup({
   className = '',
@@ -15,13 +23,39 @@ export function BookMockup({
   floating?: boolean;
 }) {
   const reduce = useReducedMotion();
-  const animate =
-    floating && !reduce
-      ? { y: [0, -14, 0], rotateX: [0, 1.5, 0] }
-      : undefined;
+  const ref = useRef<HTMLDivElement>(null);
+
+  // Tilt siguiendo el cursor (suavizado con spring).
+  const mx = useMotionValue(0);
+  const my = useMotionValue(0);
+  const sx = useSpring(mx, { stiffness: 120, damping: 18 });
+  const sy = useSpring(my, { stiffness: 120, damping: 18 });
+  const rotateY = useTransform(sx, [-0.5, 0.5], [-4, -24]);
+  const rotateX = useTransform(sy, [-0.5, 0.5], [9, -9]);
+
+  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (reduce) return;
+    const rect = ref.current?.getBoundingClientRect();
+    if (!rect) return;
+    mx.set((e.clientX - rect.left) / rect.width - 0.5);
+    my.set((e.clientY - rect.top) / rect.height - 0.5);
+  };
+  const onLeave = () => {
+    mx.set(0);
+    my.set(0);
+  };
+
+  const float =
+    floating && !reduce ? { y: [0, -14, 0] } : undefined;
 
   return (
-    <div className={`relative ${className}`} style={{ perspective: '1400px' }}>
+    <div
+      ref={ref}
+      onMouseMove={onMove}
+      onMouseLeave={onLeave}
+      className={`relative ${className}`}
+      style={{ perspective: '1400px' }}
+    >
       {/* Halo dorado detrás */}
       <div
         aria-hidden
@@ -38,36 +72,46 @@ export function BookMockup({
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         className="relative"
       >
+        {/* Capa de tilt 3D (cursor) */}
         <motion.div
-          animate={animate}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-          style={{ transformStyle: 'preserve-3d', rotateY: -14 }}
+          style={{
+            transformStyle: 'preserve-3d',
+            rotateX: reduce ? 0 : rotateX,
+            rotateY: reduce ? -14 : rotateY,
+          }}
           className="relative mx-auto w-[240px] sm:w-[280px] md:w-[320px]"
         >
-          {/* Lomo del libro */}
-          <div
-            aria-hidden
-            className="absolute left-0 top-0 h-full w-[18px] -translate-x-[17px] rounded-l-sm"
-            style={{
-              transform: 'rotateY(90deg) translateX(-9px)',
-              transformOrigin: 'left center',
-              background:
-                'linear-gradient(90deg, #0A1A2F, #12233D 40%, #A67C2E)',
-            }}
-          />
-          {/* Cara frontal */}
-          <div className="relative overflow-hidden rounded-sm shadow-book ring-1 ring-gold-500/30">
-            <BookCover className="block w-full" />
-            {/* Brillo diagonal */}
+          {/* Capa de flotación en loop */}
+          <motion.div
+            animate={float}
+            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+            style={{ transformStyle: 'preserve-3d' }}
+            className="relative"
+          >
+            {/* Lomo del libro */}
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-0"
+              className="absolute left-0 top-0 h-full w-[18px] -translate-x-[17px] rounded-l-sm"
               style={{
-                background:
-                  'linear-gradient(115deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 32%, rgba(255,255,255,0) 100%)',
+                transform: 'rotateY(90deg) translateX(-9px)',
+                transformOrigin: 'left center',
+                background: 'linear-gradient(90deg, #0A1A2F, #12233D 40%, #A67C2E)',
               }}
             />
-          </div>
+            {/* Cara frontal */}
+            <div className="relative overflow-hidden rounded-sm shadow-book ring-1 ring-gold-500/30">
+              <BookCover className="block w-full" />
+              {/* Brillo diagonal */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0"
+                style={{
+                  background:
+                    'linear-gradient(115deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 32%, rgba(255,255,255,0) 100%)',
+                }}
+              />
+            </div>
+          </motion.div>
         </motion.div>
 
         {/* Sombra proyectada en el suelo */}

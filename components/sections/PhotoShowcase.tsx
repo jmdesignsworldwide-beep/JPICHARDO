@@ -26,7 +26,7 @@ export function PhotoShowcase({
   return (
     <Reveal className="mx-auto w-full max-w-3xl">
       <OrnamentFrame className="p-3 sm:p-4">
-        <div className="overflow-hidden rounded-xl shadow-book ring-1 ring-gold-500/25">
+        <div className="border-beam overflow-hidden rounded-xl shadow-book ring-1 ring-gold-500/25">
           <Image
             src={src}
             alt={alt}

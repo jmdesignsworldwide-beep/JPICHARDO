@@ -34,7 +34,7 @@ export function BookCta({ align = 'center' }: { align?: 'center' | 'start' }) {
   return (
     <div className={wrap}>
       <div
-        className="group relative inline-flex cursor-default items-center gap-2 overflow-hidden rounded-full border border-gold-500/60 bg-gradient-to-r from-gold-600/20 via-gold-500/10 to-gold-600/20 px-8 py-4 font-label text-xs font-semibold uppercase tracking-wide2 text-gold-300 shadow-gold"
+        className="border-beam group relative inline-flex cursor-default items-center gap-2 overflow-hidden rounded-full border border-gold-500/60 bg-gradient-to-r from-gold-600/20 via-gold-500/10 to-gold-600/20 px-8 py-4 font-label text-xs font-semibold uppercase tracking-wide2 text-gold-300 shadow-gold"
         aria-disabled="true"
         role="button"
         title={t('comingSoonAmazon')}

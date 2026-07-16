@@ -1,10 +1,13 @@
 import type { ReactNode } from 'react';
 import { GoldDivider } from '@/components/ui/GoldDivider';
 import { Reveal } from '@/components/ui/Reveal';
+import { TextReveal } from '@/components/motion/TextReveal';
+import { AuroraBackground } from '@/components/motion/AuroraBackground';
+import { LightRays } from '@/components/motion/LightRays';
 
 /**
- * Hero secundario para páginas interiores, con marco editorial dorado
- * y fondo navy con veladura sutil.
+ * Hero secundario para páginas interiores, con marco editorial dorado,
+ * aurora/rayos de luz sutiles y título revelado palabra por palabra.
  */
 export function PageHero({
   eyebrow,
@@ -19,10 +22,16 @@ export function PageHero({
   foil?: boolean;
   children?: ReactNode;
 }) {
+  const titleClass = `mx-auto max-w-4xl font-display text-4xl leading-[1.05] sm:text-5xl md:text-6xl ${
+    foil ? 'text-gold-300' : 'text-cream-50'
+  }`;
+
   return (
     <section className="relative overflow-hidden pt-32 pb-16 md:pt-40 md:pb-20">
-      {/* Fondo */}
-      <div aria-hidden className="absolute inset-0 -z-10 bg-navy-900" />
+      {/* Fondo navy + aurora/rayos que respiran (tenues) */}
+      <div aria-hidden className="absolute inset-0 -z-20 bg-navy-900" />
+      <AuroraBackground className="-z-10 opacity-50" />
+      <LightRays className="-z-10 opacity-70" />
       <div
         aria-hidden
         className="absolute inset-0 -z-10 opacity-70"
@@ -40,12 +49,8 @@ export function PageHero({
         <Reveal>
           <p className="eyebrow">{eyebrow}</p>
           <GoldDivider className="my-5" />
-          <h1
-            className={`mx-auto max-w-4xl font-display text-4xl leading-[1.05] sm:text-5xl md:text-6xl ${
-              foil ? 'text-foil' : 'text-cream-50'
-            }`}
-          >
-            {title}
+          <h1 className={titleClass}>
+            {typeof title === 'string' ? <TextReveal text={title} /> : title}
           </h1>
           {subtitle && (
             <p className="mx-auto mt-6 max-w-2xl font-serif text-xl italic text-cream-50/75 md:text-2xl">

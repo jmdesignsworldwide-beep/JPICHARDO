@@ -6,6 +6,9 @@ import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion
 import { BookOpen, MapPin } from 'lucide-react';
 import { BookMockup } from '@/components/brand/BookMockup';
 import { ButtonLink } from '@/components/ui/Button';
+import { AuroraBackground } from '@/components/motion/AuroraBackground';
+import { LightRays } from '@/components/motion/LightRays';
+import { Spotlight } from '@/components/motion/Spotlight';
 
 export function HomeHero() {
   const t = useTranslations('home.hero');
@@ -32,6 +35,11 @@ export function HomeHero() {
         style={{ y: reduce ? 0 : bgY }}
         className="absolute inset-0 -z-20 bg-hero-sky"
       />
+      {/* Aurora que respira + rayos de luz de amanecer (tenues) */}
+      <AuroraBackground className="-z-20 opacity-80" />
+      <LightRays className="-z-10" />
+      {/* Foco de luz que sigue el cursor (sutil) */}
+      <Spotlight />
       {/* Sol / halo */}
       <div
         aria-hidden
@@ -76,7 +84,7 @@ export function HomeHero() {
             className="mt-4 font-display text-5xl leading-[0.98] sm:text-6xl md:text-7xl"
           >
             <span className="block italic text-cream-50/95">{t('titleTop')}</span>
-            <span className="block text-foil">{t('titleBottom')}</span>
+            <span className="block text-foil-shimmer">{t('titleBottom')}</span>
           </motion.h1>
 
           <motion.p

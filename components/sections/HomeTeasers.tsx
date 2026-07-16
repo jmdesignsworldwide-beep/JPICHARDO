@@ -65,7 +65,7 @@ export function PastorTeaser() {
         </Reveal>
 
         <Reveal delay={0.1} className="mx-auto w-full max-w-sm">
-          <div className="overflow-hidden rounded-2xl shadow-book ring-1 ring-gold-500/25">
+          <div className="border-beam overflow-hidden rounded-2xl shadow-book ring-1 ring-gold-500/25">
             <PastorPortrait className="block w-full" />
           </div>
         </Reveal>
