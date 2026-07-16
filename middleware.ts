@@ -1,5 +1,6 @@
-// Next 16 renombró la convención "middleware" a "proxy". next-intl sigue
-// exponiendo su factory bajo 'next-intl/middleware'; solo cambia el archivo.
+// Se usa la convención "middleware.ts" (probada en Vercel) en lugar de la
+// nueva "proxy.ts" de Next 16, para garantizar que el enrutado i18n corra en
+// producción y que "/" redirija a "/es". next-intl expone su factory aquí.
 import createMiddleware from 'next-intl/middleware';
 import { routing } from './i18n/routing';
 
