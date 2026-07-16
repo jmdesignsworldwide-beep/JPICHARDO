@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useRef } from 'react';
 import {
   motion,
@@ -8,117 +9,94 @@ import {
   useTransform,
   useReducedMotion,
 } from 'framer-motion';
-import { BookCover } from './BookCover';
 
 /**
- * Mockup 3D flotante de la portada del libro. Perspectiva CSS + sombra
- * realista + flotación en loop + tilt 3D suave que sigue el cursor.
- * Respeta prefers-reduced-motion.
+ * Mockup 3D REAL de "Comenzando Mi Viaje" (render con lomo, grosor y sombra
+ * ya incluidos, fondo transparente). Se anima con profundidad:
+ * flotación en loop, tilt 3D siguiendo el cursor, resplandor dorado detrás
+ * (el "motivo de luz") y sombra ambiental que reacciona al tilt.
  */
 export function BookMockup({
   className = '',
   floating = true,
+  priority = false,
 }: {
   className?: string;
   floating?: boolean;
+  priority?: boolean;
 }) {
   const reduce = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
 
-  // Tilt siguiendo el cursor (suavizado con spring).
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
-  const sx = useSpring(mx, { stiffness: 120, damping: 18 });
-  const sy = useSpring(my, { stiffness: 120, damping: 18 });
-  const rotateY = useTransform(sx, [-0.5, 0.5], [-4, -24]);
-  const rotateX = useTransform(sy, [-0.5, 0.5], [9, -9]);
+  const sx = useSpring(mx, { stiffness: 90, damping: 18 });
+  const sy = useSpring(my, { stiffness: 90, damping: 18 });
+  const rotateY = useTransform(sx, [-0.5, 0.5], [12, -12]);
+  const rotateX = useTransform(sy, [-0.5, 0.5], [-10, 10]);
+  const shadowX = useTransform(sx, [-0.5, 0.5], [26, -26]);
 
   const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (reduce) return;
-    const rect = ref.current?.getBoundingClientRect();
-    if (!rect) return;
-    mx.set((e.clientX - rect.left) / rect.width - 0.5);
-    my.set((e.clientY - rect.top) / rect.height - 0.5);
+    const r = ref.current?.getBoundingClientRect();
+    if (!r) return;
+    mx.set((e.clientX - r.left) / r.width - 0.5);
+    my.set((e.clientY - r.top) / r.height - 0.5);
   };
   const onLeave = () => {
     mx.set(0);
     my.set(0);
   };
 
-  const float =
-    floating && !reduce ? { y: [0, -14, 0] } : undefined;
-
   return (
     <div
       ref={ref}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
-      className={`relative ${className}`}
-      style={{ perspective: '1400px' }}
+      className={`relative mx-auto w-[260px] sm:w-[320px] md:w-[380px] ${className}`}
+      style={{ perspective: '1500px' }}
     >
-      {/* Halo dorado detrás */}
+      {/* Resplandor dorado detrás (motivo de luz) */}
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 blur-3xl opacity-40"
+        className="absolute inset-0 -z-10 scale-110 blur-3xl"
         style={{
           background:
-            'radial-gradient(closest-side, rgba(224,193,115,0.55), transparent 72%)',
+            'radial-gradient(closest-side, rgba(232,206,138,0.4), rgba(201,162,75,0.12), transparent 72%)',
         }}
       />
+
       <motion.div
-        initial={reduce ? false : { opacity: 0, y: 30 }}
-        whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+        initial={reduce ? false : { opacity: 0, y: 34, scale: 0.96 }}
+        whileInView={reduce ? undefined : { opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, margin: '-80px' }}
-        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-        className="relative"
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
       >
-        {/* Capa de tilt 3D (cursor) */}
         <motion.div
+          animate={floating && !reduce ? { y: [0, -16, 0] } : undefined}
+          transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
           style={{
             transformStyle: 'preserve-3d',
             rotateX: reduce ? 0 : rotateX,
-            rotateY: reduce ? -14 : rotateY,
+            rotateY: reduce ? 0 : rotateY,
           }}
-          className="relative mx-auto w-[240px] sm:w-[280px] md:w-[320px]"
         >
-          {/* Capa de flotación en loop */}
-          <motion.div
-            animate={float}
-            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-            style={{ transformStyle: 'preserve-3d' }}
-            className="relative"
-          >
-            {/* Lomo del libro */}
-            <div
-              aria-hidden
-              className="absolute left-0 top-0 h-full w-[18px] -translate-x-[17px] rounded-l-sm"
-              style={{
-                transform: 'rotateY(90deg) translateX(-9px)',
-                transformOrigin: 'left center',
-                background: 'linear-gradient(90deg, #0A1A2F, #12233D 40%, #A67C2E)',
-              }}
-            />
-            {/* Cara frontal */}
-            <div className="relative overflow-hidden rounded-sm shadow-book ring-1 ring-gold-500/30">
-              <BookCover className="block w-full" />
-              {/* Brillo diagonal */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0"
-                style={{
-                  background:
-                    'linear-gradient(115deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 32%, rgba(255,255,255,0) 100%)',
-                }}
-              />
-            </div>
-          </motion.div>
+          <Image
+            src="/libro-mockup-3d.png"
+            alt="Portada del libro Comenzando Mi Viaje, por el Pastor José Pichardo — mockup 3D"
+            width={1024}
+            height={1536}
+            priority={priority}
+            sizes="(max-width: 768px) 60vw, 380px"
+            className="h-auto w-full select-none drop-shadow-[0_36px_48px_rgba(0,0,0,0.55)]"
+          />
         </motion.div>
 
-        {/* Sombra proyectada en el suelo */}
-        <div
+        {/* Sombra ambiental proyectada en el suelo (reacciona al tilt) */}
+        <motion.div
           aria-hidden
-          className="mx-auto mt-6 h-6 w-[60%] rounded-[50%] blur-xl"
-          style={{ background: 'rgba(0,0,0,0.55)' }}
+          className="mx-auto mt-4 h-7 w-[62%] rounded-[50%] blur-2xl"
+          style={{ background: 'rgba(0,0,0,0.6)', x: reduce ? 0 : shadowX }}
         />
       </motion.div>
     </div>

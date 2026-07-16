@@ -35,7 +35,13 @@ export const site = {
     tiktokHandle: '@devocionalbibliaabierta',
     tiktokFollowers: '16.3K',
   },
-  credit: 'JM Designs Worldwide',
+  credit: 'JM Nexus Designs',
+  designer: {
+    name: 'JM Nexus Designs',
+    email: 'jm.nexus.designs@gmail.com',
+    whatsapp: 'https://wa.me/18494421919',
+    instagram: 'https://instagram.com/jm.nexus.designs',
+  },
 } as const;
 
 // Google Maps embed — dirección exacta de Freeport.

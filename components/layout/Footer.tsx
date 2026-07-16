@@ -113,13 +113,28 @@ export function Footer() {
 
         <GoldDivider className="my-10" />
 
-        <div className="flex flex-col items-center justify-between gap-3 text-center text-xs text-cream-50/50 sm:flex-row sm:text-left">
+        <div className="flex flex-col items-center justify-between gap-4 text-center text-xs text-cream-50/50 sm:flex-row sm:text-left">
           <p>
             © {site.name}. {t('rights')}
           </p>
-          {/* Crédito discreto (opcional — consultar con Marien) */}
-          <p>
-            {t('credit')} {site.credit}
+          {/* Crédito de diseño */}
+          <p className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+            <span>
+              {t('credit')}{' '}
+              <span className="font-label uppercase tracking-wide2 text-gold-400">
+                {site.designer.name}
+              </span>
+            </span>
+            <span className="hidden text-gold-500/40 sm:inline">·</span>
+            <a href={`mailto:${site.designer.email}`} className="transition-colors hover:text-gold-400">
+              Email
+            </a>
+            <a href={site.designer.whatsapp} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-gold-400">
+              WhatsApp
+            </a>
+            <a href={site.designer.instagram} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-gold-400">
+              Instagram
+            </a>
           </p>
         </div>
       </div>

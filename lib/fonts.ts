@@ -1,41 +1,29 @@
-import {
-  Playfair_Display,
-  Cormorant_Garamond,
-  Inter,
-  Sora,
-} from 'next/font/google';
+import { Fraunces, Manrope, IBM_Plex_Mono } from 'next/font/google';
 
-// Títulos / display — serif editorial (como el título del libro)
-export const fontDisplay = Playfair_Display({
+// Display / títulos — serif con carácter editorial (ejes ópticos, remates).
+// El rostro de la marca. Se usa también para citas en itálica.
+export const fontDisplay = Fraunces({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-display',
-  weight: ['500', '600', '700', '800'],
+  weight: ['300', '400', '500', '600', '700', '900'],
   style: ['normal', 'italic'],
 });
 
-// Citas — Cormorant Garamond
-export const fontQuote = Cormorant_Garamond({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-quote',
-  weight: ['400', '500', '600'],
-  style: ['normal', 'italic'],
-});
-
-// Cuerpo — limpio y legible
-export const fontBody = Inter({
+// Cuerpo — sans moderna, limpia y premium.
+export const fontBody = Manrope({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-body',
-});
-
-// Acentos / etiquetas — geométrica moderna
-export const fontLabel = Sora({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-label',
   weight: ['400', '500', '600', '700'],
 });
 
-export const fontVariables = `${fontDisplay.variable} ${fontQuote.variable} ${fontBody.variable} ${fontLabel.variable}`;
+// Utility / labels / eyebrows — mono en mayúsculas con tracking amplio.
+export const fontLabel = IBM_Plex_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-label',
+  weight: ['400', '500', '600'],
+});
+
+export const fontVariables = `${fontDisplay.variable} ${fontBody.variable} ${fontLabel.variable}`;

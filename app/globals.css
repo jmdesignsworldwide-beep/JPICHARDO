@@ -3,17 +3,24 @@
 @tailwind utilities;
 
 :root {
-  /* Design tokens (sección 4) expuestos como variables para gradientes/sombras */
-  --gold-400: #e0c173;
+  /* SISTEMA LOCKED — base oscura, dorado como luz */
+  --midnight: #0b1220;
+  --navy: #14233d;
+  --gold: #c9a24b;
+  --gold-lite: #e8ce8a;
+  --bone: #f3eee3;
+  --slate: #8a97ad;
+  /* Aliases heredados remapeados al nuevo sistema */
+  --gold-400: #e8ce8a;
   --gold-500: #c9a24b;
   --gold-600: #a67c2e;
-  --navy-900: #0a1a2f;
-  --navy-800: #12233d;
+  --navy-900: #0b1220;
+  --navy-800: #14233d;
   --navy-600: #1e3a5f;
-  --ink-950: #0b0b0c;
-  --ink-900: #141416;
-  --cream-50: #f7f3ea;
-  --silver: #c7cbd1;
+  --ink-950: #070a12;
+  --ink-900: #0b0b0c;
+  --cream-50: #f3eee3;
+  --silver: #8a97ad;
 }
 
 @layer base {
@@ -53,7 +60,7 @@
   /* Título con efecto foil dorado (degradado metálico del logo JP).
      Fallback: color dorado sólido si background-clip:text no está soportado. */
   .text-foil {
-    color: #e0c173;
+    color: #e8ce8a;
   }
   @supports (
     (-webkit-background-clip: text) or (background-clip: text)
@@ -62,9 +69,9 @@
       background-image: linear-gradient(
         120deg,
         #a67c2e 0%,
-        #e0c173 28%,
+        #e8ce8a 28%,
         #f6e7b6 50%,
-        #e0c173 72%,
+        #e8ce8a 72%,
         #a67c2e 100%
       );
       background-size: 200% auto;
@@ -77,24 +84,37 @@
 
   /* Etiqueta en mayúsculas con tracking generoso (FE · ESPERANZA …) */
   .eyebrow {
-    font-family: var(--font-label), system-ui, sans-serif;
+    font-family: var(--font-label), ui-monospace, monospace;
     text-transform: uppercase;
-    letter-spacing: 0.32em;
-    font-size: 0.72rem;
-    font-weight: 600;
+    letter-spacing: 0.24em;
+    font-size: 0.7rem;
+    font-weight: 500;
     color: var(--gold-400);
   }
 
-  /* Tarjeta con glassmorphism ligero sobre el navy */
+  /* Tarjeta con glassmorphism sutil + borde hairline dorado (profundidad) */
   .glass {
     background: linear-gradient(
       180deg,
-      rgba(30, 58, 95, 0.35) 0%,
-      rgba(18, 35, 61, 0.55) 100%
+      rgba(20, 35, 61, 0.5) 0%,
+      rgba(11, 18, 32, 0.66) 100%
     );
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(201, 162, 75, 0.18);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(201, 162, 75, 0.16);
+  }
+
+  /* Divisor dorado hairline con el "motivo de luz" al centro */
+  .hairline-gold {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(201, 162, 75, 0.5) 45%,
+      var(--gold-lite) 50%,
+      rgba(201, 162, 75, 0.5) 55%,
+      transparent
+    );
   }
 
   /* Contenedor central del sitio */
@@ -196,7 +216,7 @@
     position: absolute;
     inset: -25%;
     background:
-      radial-gradient(40% 50% at 30% 20%, rgba(224, 193, 115, 0.22), transparent 60%),
+      radial-gradient(40% 50% at 30% 20%, rgba(232, 206, 138, 0.22), transparent 60%),
       radial-gradient(45% 55% at 75% 30%, rgba(201, 124, 62, 0.18), transparent 62%),
       radial-gradient(50% 60% at 55% 75%, rgba(30, 58, 95, 0.35), transparent 65%);
     filter: blur(30px);
@@ -211,9 +231,9 @@
     background: conic-gradient(
       from 200deg at 50% -10%,
       transparent 0deg,
-      rgba(224, 193, 115, 0.12) 20deg,
+      rgba(232, 206, 138, 0.12) 20deg,
       transparent 40deg,
-      rgba(224, 193, 115, 0.08) 70deg,
+      rgba(232, 206, 138, 0.08) 70deg,
       transparent 95deg,
       rgba(246, 231, 182, 0.1) 130deg,
       transparent 160deg
@@ -234,10 +254,10 @@
       background-image: linear-gradient(
         110deg,
         #a67c2e 0%,
-        #e0c173 25%,
+        #e8ce8a 25%,
         #ffffff 48%,
         #f6e7b6 52%,
-        #e0c173 75%,
+        #e8ce8a 75%,
         #a67c2e 100%
       );
       background-size: 250% auto;
@@ -263,7 +283,7 @@
     background: conic-gradient(
       from 0deg,
       transparent 62%,
-      rgba(224, 193, 115, 0.9) 80%,
+      rgba(232, 206, 138, 0.9) 80%,
       rgba(246, 231, 182, 1) 88%,
       transparent 100%
     );

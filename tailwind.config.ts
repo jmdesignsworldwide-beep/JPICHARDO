@@ -1,9 +1,11 @@
 import type { Config } from 'tailwindcss';
 
 /**
- * Design tokens — dorado · negro · azul (sección 4 del brief).
- * Los colores se exponen también como CSS variables en globals.css
- * para poder usarlos en gradientes y sombras.
+ * SISTEMA DE DISEÑO LOCKED — base oscura y sobria; el dorado entra como LUZ.
+ * Paleta (6 valores nombrados):
+ *   midnight #0B1220 · navy #14233D · gold #C9A24B · gold-lite #E8CE8A
+ *   bone #F3EEE3 · slate #8A97AD
+ * Se conservan los nombres de clase existentes remapeando sus valores.
  */
 const config: Config = {
   content: [
@@ -14,62 +16,65 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        midnight: '#0B1220',
+        bone: '#F3EEE3',
+        slate: '#8A97AD',
         gold: {
-          400: '#E0C173',
-          500: '#C9A24B',
-          600: '#A67C2E',
+          DEFAULT: '#C9A24B',
+          400: '#E8CE8A', // gold-lite (highlights/foil)
+          500: '#C9A24B', // dorado principal
+          600: '#A67C2E', // dorado profundo
         },
         navy: {
+          DEFAULT: '#14233D',
           600: '#1E3A5F',
-          800: '#12233D',
-          900: '#0A1A2F',
+          800: '#14233D',
+          900: '#0B1220', // midnight (fondo base)
         },
         ink: {
-          900: '#141416',
-          950: '#0B0B0C',
+          900: '#0B0B0C',
+          950: '#070A12',
         },
-        cream: {
-          50: '#F7F3EA',
-        },
-        silver: '#C7CBD1',
+        // Clases heredadas remapeadas al nuevo sistema:
+        cream: { 50: '#F3EEE3' }, // → bone
+        silver: '#8A97AD', // → slate
       },
       fontFamily: {
-        display: ['var(--font-display)', 'Georgia', 'serif'],
-        serif: ['var(--font-quote)', 'Georgia', 'serif'],
-        sans: ['var(--font-body)', 'system-ui', 'sans-serif'],
-        label: ['var(--font-label)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'Fraunces', 'Georgia', 'serif'],
+        serif: ['var(--font-display)', 'Fraunces', 'Georgia', 'serif'],
+        sans: ['var(--font-body)', 'Manrope', 'system-ui', 'sans-serif'],
+        label: ['var(--font-label)', 'ui-monospace', 'monospace'],
       },
       letterSpacing: {
-        label: '0.32em',
-        wide2: '0.18em',
+        label: '0.22em',
+        wide2: '0.14em',
+        tightish: '-0.02em',
       },
       backgroundImage: {
         'gold-foil':
-          'linear-gradient(120deg, #A67C2E 0%, #E0C173 30%, #F3E2AE 50%, #E0C173 70%, #A67C2E 100%)',
-        'hero-gold': 'linear-gradient(135deg, #E0C173 0%, #A67C2E 100%)',
+          'linear-gradient(120deg, #A67C2E 0%, #C9A24B 30%, #E8CE8A 50%, #C9A24B 70%, #A67C2E 100%)',
+        'hero-gold': 'linear-gradient(135deg, #E8CE8A 0%, #C9A24B 55%, #A67C2E 100%)',
+        // Amanecer sobrio: luz dorada arriba → midnight abajo (no dorado plano)
         'hero-sky':
-          'linear-gradient(180deg, #F3B76B 0%, #C9773E 22%, #6E3F63 48%, #1E3A5F 72%, #0A1A2F 100%)',
+          'radial-gradient(120% 90% at 50% -10%, #E8CE8A 0%, #C9A24B 12%, #7A5A34 30%, #2A2A3D 52%, #14233D 70%, #0B1220 100%)',
         'navy-veil':
-          'linear-gradient(180deg, rgba(10,26,47,0) 0%, rgba(10,26,47,0.55) 60%, #0A1A2F 100%)',
+          'linear-gradient(180deg, rgba(11,18,32,0) 0%, rgba(11,18,32,0.55) 62%, #0B1220 100%)',
       },
       boxShadow: {
-        gold: '0 10px 40px -12px rgba(201,162,75,0.45)',
-        book: '0 30px 60px -20px rgba(0,0,0,0.65), 0 12px 24px -12px rgba(0,0,0,0.5)',
-        glass: '0 8px 32px -8px rgba(0,0,0,0.45)',
+        gold: '0 10px 40px -12px rgba(201,162,75,0.4)',
+        // Borde luminoso fino (no nube difusa)
+        light: '0 0 0 1px rgba(201,162,75,0.35), 0 0 14px rgba(201,162,75,0.14)',
+        book: '0 40px 80px -24px rgba(0,0,0,0.7), 0 16px 32px -16px rgba(0,0,0,0.55)',
+        glass: '0 10px 40px -12px rgba(0,0,0,0.5)',
       },
       keyframes: {
         float: {
-          '0%, 100%': { transform: 'translateY(0) rotateX(0deg)' },
-          '50%': { transform: 'translateY(-14px) rotateX(1.5deg)' },
-        },
-        shimmer: {
-          '0%': { backgroundPosition: '0% 50%' },
-          '100%': { backgroundPosition: '200% 50%' },
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-16px)' },
         },
       },
       animation: {
-        float: 'float 6s ease-in-out infinite',
-        shimmer: 'shimmer 6s linear infinite',
+        float: 'float 7s ease-in-out infinite',
       },
     },
   },

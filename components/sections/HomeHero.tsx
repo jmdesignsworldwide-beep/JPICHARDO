@@ -81,26 +81,37 @@ export function HomeHero() {
             initial={reduce ? false : { opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.08 }}
-            className="mt-4 font-display text-5xl leading-[0.98] sm:text-6xl md:text-7xl"
+            className="mt-4 font-display text-[3rem] font-semibold leading-[0.92] tracking-tightish sm:text-6xl md:text-7xl xl:text-8xl"
           >
-            <span className="block italic text-cream-50/95">{t('titleTop')}</span>
+            <span className="block font-light italic text-bone/95">{t('titleTop')}</span>
             <span className="block text-foil-shimmer">{t('titleBottom')}</span>
           </motion.h1>
 
+          {/* Subtítulo real de la portada (Fraunces itálica, apoyo principal) */}
           <motion.p
             initial={reduce ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mx-auto mt-6 max-w-lg text-lg text-cream-50/85 lg:mx-0"
+            className="mx-auto mt-6 max-w-xl font-display text-2xl font-light italic text-bone/90 md:text-3xl lg:mx-0"
           >
             {t('subtitle')}
+          </motion.p>
+
+          {/* Línea de apoyo (utility) */}
+          <motion.p
+            initial={reduce ? false : { opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.26 }}
+            className="mx-auto mt-4 max-w-lg text-sm text-slate lg:mx-0"
+          >
+            {t('support')}
           </motion.p>
 
           <motion.p
             initial={reduce ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.28 }}
-            className="mt-3 font-serif text-2xl italic text-gold-400"
+            transition={{ duration: 0.7, delay: 0.32 }}
+            className="mt-4 font-display text-xl italic text-gold-400 md:text-2xl"
           >
             “{t('hook')}”
           </motion.p>
@@ -137,9 +148,9 @@ export function HomeHero() {
           </motion.figure>
         </div>
 
-        {/* Libro protagonista */}
+        {/* Libro protagonista (mockup 3D real) */}
         <div className="order-first lg:order-last">
-          <BookMockup />
+          <BookMockup priority />
         </div>
       </motion.div>
 

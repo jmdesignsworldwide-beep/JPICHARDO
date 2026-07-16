@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { ArrowRight, Quote, Facebook, Instagram, Music2, LinkIcon, MapPin } from 'lucide-react';
@@ -9,7 +10,6 @@ import { ButtonLink, ButtonAnchor } from '@/components/ui/Button';
 import { OrnamentFrame } from '@/components/ui/OrnamentFrame';
 import { PastorPortrait } from '@/components/brand/PastorPortrait';
 import { BrandLogo } from '@/components/brand/BrandLogo';
-import { BookCover } from '@/components/brand/BookCover';
 import { NumberTicker } from '@/components/motion/NumberTicker';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { pastorJsonLd } from '@/lib/jsonld';
@@ -155,9 +155,14 @@ function BookTeaser() {
     <Section tone="navy-deep">
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <Reveal className="mx-auto w-56 sm:w-64">
-          <div className="overflow-hidden rounded-sm shadow-book ring-1 ring-gold-500/25">
-            <BookCover className="block w-full" />
-          </div>
+          <Image
+            src="/libro-mockup-3d.png"
+            alt="Libro Comenzando Mi Viaje — mockup 3D"
+            width={1024}
+            height={1536}
+            sizes="256px"
+            className="h-auto w-full drop-shadow-[0_24px_36px_rgba(0,0,0,0.5)]"
+          />
         </Reveal>
         <Reveal delay={0.1}>
           <Quote className="h-8 w-8 text-gold-500/60" />
