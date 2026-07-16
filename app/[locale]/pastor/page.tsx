@@ -93,7 +93,7 @@ function PastorHero() {
 
         <Reveal delay={0.1} className="text-center lg:text-left">
           <p className="eyebrow">{t('eyebrow')}</p>
-          <h1 className="mt-4 font-display text-5xl leading-none text-foil md:text-6xl">
+          <h1 className="mt-4 font-display text-5xl font-semibold leading-[1.05] tracking-tightish text-foil md:text-6xl">
             {t('title')}
           </h1>
           <GoldDivider className="my-6 justify-center lg:justify-start" />

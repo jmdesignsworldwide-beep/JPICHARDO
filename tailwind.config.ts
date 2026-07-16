@@ -40,15 +40,19 @@ const config: Config = {
         silver: '#8A97AD', // → slate
       },
       fontFamily: {
-        display: ['var(--font-display)', 'Fraunces', 'Georgia', 'serif'],
-        serif: ['var(--font-display)', 'Fraunces', 'Georgia', 'serif'],
-        sans: ['var(--font-body)', 'Manrope', 'system-ui', 'sans-serif'],
-        label: ['var(--font-label)', 'ui-monospace', 'monospace'],
+        // Display / títulos — Space Grotesk (grotesque moderna, look Vercel/Linear)
+        display: ['var(--font-display)', 'Space Grotesk', 'system-ui', 'sans-serif'],
+        // Body — Geist Sans (self-hosted)
+        sans: ['var(--font-geist-sans)', 'Geist', 'system-ui', 'sans-serif'],
+        // Labels / eyebrows — Geist Mono
+        label: ['var(--font-geist-mono)', 'ui-monospace', 'monospace'],
+        // Acento — Instrument Serif italic (solo gancho + versículo)
+        serif: ['var(--font-accent)', 'Instrument Serif', 'Georgia', 'serif'],
       },
       letterSpacing: {
-        label: '0.22em',
+        label: '0.25em',
         wide2: '0.14em',
-        tightish: '-0.02em',
+        tightish: '-0.03em',
       },
       backgroundImage: {
         'gold-foil':

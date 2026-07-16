@@ -81,18 +81,18 @@ export function HomeHero() {
             initial={reduce ? false : { opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.08 }}
-            className="mt-4 font-display text-[3rem] font-semibold leading-[0.92] tracking-tightish sm:text-6xl md:text-7xl xl:text-8xl"
+            className="mt-4 font-display text-[3rem] font-semibold leading-[1.04] tracking-tightish sm:text-6xl md:text-7xl xl:text-8xl"
           >
-            <span className="block font-light italic text-bone/95">{t('titleTop')}</span>
+            <span className="block font-normal text-bone/95">{t('titleTop')}</span>
             <span className="block text-foil-shimmer">{t('titleBottom')}</span>
           </motion.h1>
 
-          {/* Subtítulo real de la portada (Fraunces itálica, apoyo principal) */}
+          {/* Subtítulo real de la portada (grotesque ligera, apoyo principal) */}
           <motion.p
             initial={reduce ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mx-auto mt-6 max-w-xl font-display text-2xl font-light italic text-bone/90 md:text-3xl lg:mx-0"
+            className="mx-auto mt-6 max-w-xl font-display text-2xl font-normal tracking-tightish text-bone/90 md:text-3xl lg:mx-0"
           >
             {t('subtitle')}
           </motion.p>
@@ -111,7 +111,7 @@ export function HomeHero() {
             initial={reduce ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.32 }}
-            className="mt-4 font-display text-xl italic text-gold-400 md:text-2xl"
+            className="mt-4 font-serif text-2xl italic text-gold-400 md:text-3xl"
           >
             “{t('hook')}”
           </motion.p>
