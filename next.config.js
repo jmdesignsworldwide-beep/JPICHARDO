@@ -56,6 +56,19 @@ const nextConfig = {
       },
     ];
   },
+  // Enrutado de idioma en la CAPA DE ROUTING de Vercel (sin middleware edge,
+  // que falla en este proyecto). "/" y las rutas sin prefijo → "/es[/...]".
+  async redirects() {
+    const paths = ['nosotros', 'pastor', 'libro', 'devocional', 'visitanos'];
+    return [
+      { source: '/', destination: '/es', permanent: false },
+      ...paths.map((p) => ({
+        source: `/${p}`,
+        destination: `/es/${p}`,
+        permanent: false,
+      })),
+    ];
+  },
 };
 
 module.exports = withNextIntl(nextConfig);
