@@ -1,13 +1,13 @@
 import { useTranslations } from 'next-intl';
 import { ShoppingCart, BellRing, Sparkles } from 'lucide-react';
-import { BOOK_AVAILABLE, BOOK_URL } from '@/lib/config';
+import { BOOK_AVAILABLE, BOOK_AMAZON_URL } from '@/lib/book';
 import { ButtonAnchor, ButtonLink } from '@/components/ui/Button';
 
 /**
  * CTA de compra del libro. Controlado por UNA sola variable (BOOK_AVAILABLE).
  * - false → botón "Próximamente en Amazon" en estado espera PREMIUM (no roto,
  *   no gris feo) + microenlace "Notifícame" hacia el contacto.
- * - true + BOOK_URL → botón activo "Comprar en Amazon".
+ * - true + BOOK_AMAZON_URL → botón activo "Comprar en Amazon".
  */
 export function BookCta({ align = 'center' }: { align?: 'center' | 'start' }) {
   const t = useTranslations('common');
@@ -18,10 +18,10 @@ export function BookCta({ align = 'center' }: { align?: 'center' | 'start' }) {
       ? 'flex flex-col items-center text-center'
       : 'flex flex-col items-start text-left';
 
-  if (BOOK_AVAILABLE && BOOK_URL) {
+  if (BOOK_AVAILABLE && BOOK_AMAZON_URL) {
     return (
       <div className={wrap}>
-        <ButtonAnchor href={BOOK_URL} size="lg">
+        <ButtonAnchor href={BOOK_AMAZON_URL} size="lg">
           <ShoppingCart className="h-4 w-4" />
           {t('buyOnAmazon')}
         </ButtonAnchor>
