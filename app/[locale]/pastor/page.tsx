@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
-import { ArrowRight, Quote } from 'lucide-react';
+import { ArrowRight, Quote, Facebook, Instagram, Music2, LinkIcon, MapPin } from 'lucide-react';
 import { Section, SectionLabel, SectionTitle } from '@/components/ui/Section';
 import { GoldDivider } from '@/components/ui/GoldDivider';
 import { Reveal } from '@/components/ui/Reveal';
-import { ButtonLink } from '@/components/ui/Button';
+import { ButtonLink, ButtonAnchor } from '@/components/ui/Button';
 import { OrnamentFrame } from '@/components/ui/OrnamentFrame';
 import { PastorPortrait } from '@/components/brand/PastorPortrait';
 import { Logo } from '@/components/brand/Logo';
 import { BookCover } from '@/components/brand/BookCover';
+import { site } from '@/lib/config';
 import { buildMetadata } from '@/lib/seo';
 
 export async function generateMetadata({
@@ -40,6 +41,7 @@ export default async function PastorPage({
       <Bio />
       <Ministry />
       <BookTeaser />
+      <MinistryConnect />
     </>
   );
 }
@@ -145,6 +147,42 @@ function BookTeaser() {
           </div>
         </Reveal>
       </div>
+    </Section>
+  );
+}
+
+function MinistryConnect() {
+  const t = useTranslations('pastor.connect');
+  const socials = [
+    { href: site.social.facebook, label: t('facebook'), Icon: Facebook },
+    { href: site.social.instagram, label: t('instagram'), Icon: Instagram },
+    { href: site.social.tiktok, label: t('tiktok'), Icon: Music2 },
+    { href: site.social.linktree, label: t('linktree'), Icon: LinkIcon },
+  ];
+  return (
+    <Section tone="navy">
+      <Reveal className="mx-auto max-w-3xl text-center">
+        <SectionLabel>{t('label')}</SectionLabel>
+        <SectionTitle className="mt-4">{t('title')}</SectionTitle>
+        <GoldDivider className="my-6" />
+        <p className="mx-auto max-w-xl text-cream-50/75">{t('body')}</p>
+      </Reveal>
+
+      <Reveal delay={0.1} className="mx-auto mt-8 flex max-w-2xl flex-wrap justify-center gap-3">
+        {socials.map(({ href, label, Icon }) => (
+          <ButtonAnchor key={label} href={href} variant="secondary" aria-label={label}>
+            <Icon className="h-4 w-4" />
+            {label}
+          </ButtonAnchor>
+        ))}
+      </Reveal>
+
+      <Reveal delay={0.16} className="mt-8 flex justify-center">
+        <ButtonLink href="/visitanos">
+          <MapPin className="h-4 w-4" />
+          {t('visitCta')}
+        </ButtonLink>
+      </Reveal>
     </Section>
   );
 }

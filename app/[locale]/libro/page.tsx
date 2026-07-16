@@ -104,12 +104,17 @@ function BookHero() {
 
 function Synopsis() {
   const t = useTranslations('book.synopsis');
+  const th = useTranslations('book.hero');
   const paragraphs = t.raw('paragraphs') as string[];
   return (
     <Section tone="navy">
       <Reveal className="mx-auto max-w-3xl text-center">
+        {/* Gancho grande antes de la sinopsis */}
+        <p className="font-serif text-3xl italic leading-tight text-gold-300 md:text-4xl">
+          “{th('hook')}”
+        </p>
+        <GoldDivider className="my-7" />
         <SectionLabel>{t('label')}</SectionLabel>
-        <GoldDivider className="my-6" />
       </Reveal>
       <div className="mx-auto mt-4 max-w-3xl space-y-6">
         {paragraphs.map((p, i) => (

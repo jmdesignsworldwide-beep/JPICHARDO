@@ -131,7 +131,7 @@
     "hero": {
       "eyebrow": "Pastor · Autor · Conferencista",
       "title": "José Pichardo",
-      "subtitle": "Pastor de Blessing House desde 2002 · Fundador de JPichardo Ministries"
+      "subtitle": "Pastor · Conferencista internacional · Maestro de la Palabra"
     },
     "bio": {
       "label": "Su historia",
@@ -148,10 +148,20 @@
       "body": "Fundado por el pastor José Pichardo, JPichardo Ministries es la plataforma desde la que se extiende su labor de enseñanza, discipulado y publicación — llevando fundamentos bíblicos claros y prácticos a la iglesia local y a las naciones."
     },
     "bookTeaser": {
-      "label": "Su libro",
+      "label": "Su primer libro",
       "title": "Comenzando Mi Viaje",
       "body": "Fundamentos para la Vida Cristiana. Un recurso escrito por el pastor para acompañar al nuevo creyente en sus primeros pasos.",
       "cta": "Conoce el libro"
+    },
+    "connect": {
+      "label": "Conecta con el ministerio",
+      "title": "Sigue la enseñanza cada día",
+      "body": "Acompaña el ministerio del pastor a través de las redes de Blessing House y del Devocional Biblia Abierta — o ven a conocernos en persona.",
+      "facebook": "Facebook de la iglesia",
+      "instagram": "Instagram",
+      "tiktok": "TikTok",
+      "linktree": "Todos los enlaces",
+      "visitCta": "Visítanos"
     }
   },
   "book": {
@@ -163,7 +173,7 @@
       "eyebrow": "El libro",
       "title": "Comenzando Mi Viaje",
       "subtitle": "Fundamentos para la Vida Cristiana",
-      "author": "por José Pichardo",
+      "author": "por el Pastor José Pichardo",
       "hook": "Todo gran viaje comienza con un primer paso.",
       "verse": "Tu palabra es una lámpara a mis pies; es una luz en mi sendero.",
       "verseRef": "Salmo 119:105"

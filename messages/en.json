@@ -131,7 +131,7 @@
     "hero": {
       "eyebrow": "Pastor · Author · Speaker",
       "title": "José Pichardo",
-      "subtitle": "Pastor of Blessing House since 2002 · Founder of JPichardo Ministries"
+      "subtitle": "Pastor · International speaker · Teacher of the Word"
     },
     "bio": {
       "label": "His story",
@@ -148,10 +148,20 @@
       "body": "Founded by Pastor José Pichardo, JPichardo Ministries is the platform through which his work of teaching, discipleship, and publishing extends — bringing clear, practical biblical foundations to the local church and to the nations."
     },
     "bookTeaser": {
-      "label": "His book",
+      "label": "His first book",
       "title": "Beginning My Journey",
       "body": "Foundations for the Christian Life. A resource written by the pastor to walk with the new believer through their first steps.",
-      "cta": "Discover the book"
+      "cta": "Explore the book"
+    },
+    "connect": {
+      "label": "Connect with the ministry",
+      "title": "Follow the teaching every day",
+      "body": "Follow the pastor's ministry through Blessing House's channels and Devocional Biblia Abierta — or come and meet us in person.",
+      "facebook": "Church Facebook",
+      "instagram": "Instagram",
+      "tiktok": "TikTok",
+      "linktree": "All links",
+      "visitCta": "Visit us"
     }
   },
   "book": {
@@ -163,7 +173,7 @@
       "eyebrow": "The book",
       "title": "Comenzando Mi Viaje",
       "subtitle": "Foundations for the Christian Life",
-      "author": "by José Pichardo",
+      "author": "by Pastor José Pichardo",
       "hook": "Every great journey begins with a single step.",
       "verse": "Your word is a lamp for my feet, a light on my path.",
       "verseRef": "Psalm 119:105"

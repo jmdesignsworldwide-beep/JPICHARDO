@@ -3,13 +3,9 @@
  * NO inventar datos. Cualquier cambio de contacto/redes se hace SOLO aquí.
  */
 
-// ─────────────────────────────────────────────────────────────
-// EL LIBRO — disponibilidad controlada por UNA sola variable.
-// Cuando el libro esté en Amazon: BOOK_AVAILABLE = true + bookUrl.
-// El botón "Próximamente en Amazon" se activa automáticamente.
-// ─────────────────────────────────────────────────────────────
-export const BOOK_AVAILABLE = false;
-export const BOOK_URL = ''; // ej. 'https://www.amazon.com/dp/XXXXXXXXXX'
+// EL LIBRO — disponibilidad controlada desde lib/book.ts (fuente única).
+// Se re-exporta aquí por conveniencia.
+export { BOOK_AVAILABLE, BOOK_AMAZON_URL } from './book';
 
 export const site = {
   name: 'Blessing House',
