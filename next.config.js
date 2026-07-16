@@ -56,6 +56,17 @@ const nextConfig = {
       },
     ];
   },
+  // Red de seguridad a nivel de plataforma: la raíz redirige al locale por
+  // defecto (ES). Garantiza que "/" funcione aunque el middleware no corra.
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/es',
+        permanent: false,
+      },
+    ];
+  },
 };
 
 module.exports = withNextIntl(nextConfig);
