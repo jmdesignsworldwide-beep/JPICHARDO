@@ -132,7 +132,194 @@
   }
 }
 
-/* Respeta usuarios con movimiento reducido */
+/* ─────────────────────────────────────────────────────────────
+   MÓDULO DE ANIMACIONES — movimiento premium con alma reverente.
+   Solo transform/opacity/filter. Lento y contemplativo (santuario).
+   ───────────────────────────────────────────────────────────── */
+
+/* Aurora / amanecer que respira muy lento */
+@keyframes aurora-drift {
+  0% {
+    transform: translate3d(-4%, -2%, 0) scale(1.05);
+  }
+  50% {
+    transform: translate3d(4%, 3%, 0) scale(1.12);
+  }
+  100% {
+    transform: translate3d(-4%, -2%, 0) scale(1.05);
+  }
+}
+
+/* Rayos de luz tenues que laten */
+@keyframes rays-breathe {
+  0%,
+  100% {
+    opacity: 0.28;
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: rotate(2deg) scale(1.04);
+  }
+}
+
+/* Barrido de brillo dorado (shine) sobre títulos foil y botones */
+@keyframes shine-sweep {
+  0% {
+    background-position: -150% 0;
+  }
+  100% {
+    background-position: 250% 0;
+  }
+}
+
+/* Haz de luz recorriendo el borde (border beam) */
+@keyframes beam-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Cinta / marquee lento */
+@keyframes marquee-x {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@layer components {
+  /* Aurora: capas de gradientes radiales dorado→navy en deriva lenta */
+  .aurora-layer {
+    position: absolute;
+    inset: -25%;
+    background:
+      radial-gradient(40% 50% at 30% 20%, rgba(224, 193, 115, 0.22), transparent 60%),
+      radial-gradient(45% 55% at 75% 30%, rgba(201, 124, 62, 0.18), transparent 62%),
+      radial-gradient(50% 60% at 55% 75%, rgba(30, 58, 95, 0.35), transparent 65%);
+    filter: blur(30px);
+    animation: aurora-drift 26s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  /* Rayos de luz de amanecer (densidad baja) */
+  .light-rays {
+    position: absolute;
+    inset: 0;
+    background: conic-gradient(
+      from 200deg at 50% -10%,
+      transparent 0deg,
+      rgba(224, 193, 115, 0.12) 20deg,
+      transparent 40deg,
+      rgba(224, 193, 115, 0.08) 70deg,
+      transparent 95deg,
+      rgba(246, 231, 182, 0.1) 130deg,
+      transparent 160deg
+    );
+    animation: rays-breathe 14s ease-in-out infinite;
+    will-change: opacity, transform;
+    transform-origin: 50% 0%;
+  }
+
+  /* Shimmer dorado sobre texto foil */
+  .text-foil-shimmer {
+    position: relative;
+  }
+  @supports (
+    (-webkit-background-clip: text) or (background-clip: text)
+  ) {
+    .text-foil-shimmer {
+      background-image: linear-gradient(
+        110deg,
+        #a67c2e 0%,
+        #e0c173 25%,
+        #ffffff 48%,
+        #f6e7b6 52%,
+        #e0c173 75%,
+        #a67c2e 100%
+      );
+      background-size: 250% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      animation: shine-sweep 7s linear infinite;
+    }
+  }
+
+  /* Haz de luz recorriendo el borde de una tarjeta destacada */
+  .border-beam {
+    position: relative;
+    isolation: isolate;
+  }
+  .border-beam::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: conic-gradient(
+      from 0deg,
+      transparent 62%,
+      rgba(224, 193, 115, 0.9) 80%,
+      rgba(246, 231, 182, 1) 88%,
+      transparent 100%
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: beam-spin 6s linear infinite;
+    z-index: -1;
+    will-change: transform;
+  }
+
+  /* Botón con brillo que cruza al hover (shine) */
+  .btn-shine {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-shine::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-120%);
+    background: linear-gradient(
+      110deg,
+      transparent 25%,
+      rgba(255, 255, 255, 0.28) 50%,
+      transparent 75%
+    );
+    transition: transform 0.9s ease;
+  }
+  .btn-shine:hover::after {
+    transform: translateX(120%);
+  }
+
+  /* Cinta / marquee */
+  .marquee {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #000 8%,
+      #000 92%,
+      transparent
+    );
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+  .marquee-track {
+    display: inline-flex;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee-x linear infinite;
+  }
+}
+
+/* Respeta usuarios con movimiento reducido: anula TODO el movimiento */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -143,5 +330,12 @@
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+  }
+  .aurora-layer,
+  .light-rays,
+  .marquee-track,
+  .border-beam::before,
+  .text-foil-shimmer {
+    animation: none !important;
   }
 }

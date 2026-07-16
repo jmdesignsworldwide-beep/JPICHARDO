@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { HomeHero } from '@/components/sections/HomeHero';
-import { PillarsBand } from '@/components/sections/PillarsBand';
+import { PillarsMarquee } from '@/components/sections/PillarsMarquee';
 import {
   WelcomeTeaser,
   BookShowcaseHome,
@@ -39,7 +39,7 @@ export default async function HomePage({
   return (
     <>
       <HomeHero />
-      <PillarsBand />
+      <PillarsMarquee />
       <WelcomeTeaser />
       <BookShowcaseHome />
       <PastorTeaser />

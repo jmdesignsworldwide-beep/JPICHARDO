@@ -81,6 +81,8 @@ Imágenes reales integradas (en `/public`):
 - `logo-jpichardo.png` — **logo real** de JPichardo Ministries. En uso en la
   página del Pastor, en los iconos/OpenGraph y en el manifest. El emblema
   pequeño de Header/Footer usa el SVG in-line (nítido a tamaño reducido).
+- `pastor-jose-pichardo.jpg` — **foto real del pastor** (hero de `/pastor` y
+  teaser del Inicio).
 - `libro-en-estante.png` — foto editorial del libro (showcase en Inicio).
 - `devocional-biblia-diario.png` — Biblia + diario (showcase en El Libro).
 - `libro-amazon-banner.png` y `libro-amazon-portada.png` — piezas de marketing
@@ -89,11 +91,19 @@ Imágenes reales integradas (en `/public`):
   banner/hero de Amazon. No se muestran ahora para no contradecir el estado
   "Próximamente".
 
-Placeholders en SVG in-line que aún pueden reemplazarse por binarios reales:
+Placeholder en SVG in-line que aún puede reemplazarse por un binario real:
 
-- **Portada del libro** (mockup 3D del hero) — `components/brand/BookCover.tsx`.
-- **Foto del pastor** — `components/brand/PastorPortrait.tsx`
-  (se puede sustituir por `public/pastor-jose-pichardo.jpg` en alta).
+- **Portada del libro** (mockup 3D del hero) — `components/brand/BookCover.tsx`
+  (reconstrucción fiel; sustituible por la portada final en alta).
+
+## Sistema de animación
+
+Movimiento premium con alma reverente (framer-motion + Lenis, todo local, sin
+CDNs — CSP intacta). Componentes reutilizables en `components/motion/`:
+`AuroraBackground`, `LightRays`, `Spotlight`, `TextReveal`, `Marquee`,
+`NumberTicker`, `SmoothScroll` + `app/[locale]/template.tsx` (transiciones de
+página). Efectos CSS (foil shimmer, border-beam, btn-shine) en `globals.css`.
+Todo respeta `prefers-reduced-motion` y anima solo `transform`/`opacity`.
 
 ## Seguridad
 

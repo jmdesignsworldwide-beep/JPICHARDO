@@ -6,6 +6,7 @@ import { routing, type Locale } from '@/i18n/routing';
 import { fontVariables } from '@/lib/fonts';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { SmoothScroll } from '@/components/motion/SmoothScroll';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { churchJsonLd } from '@/lib/jsonld';
 import { site } from '@/lib/config';
@@ -80,6 +81,7 @@ export default async function LocaleLayout({
     <html lang={locale} className={fontVariables} suppressHydrationWarning>
       <body className="min-h-screen bg-navy-900 font-sans text-cream-50 antialiased">
         <JsonLd data={churchJsonLd} />
+        <SmoothScroll />
         <NextIntlClientProvider messages={messages}>
           <a
             href="#main"

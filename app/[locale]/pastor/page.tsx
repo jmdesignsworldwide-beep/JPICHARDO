@@ -10,6 +10,7 @@ import { OrnamentFrame } from '@/components/ui/OrnamentFrame';
 import { PastorPortrait } from '@/components/brand/PastorPortrait';
 import { BrandLogo } from '@/components/brand/BrandLogo';
 import { BookCover } from '@/components/brand/BookCover';
+import { NumberTicker } from '@/components/motion/NumberTicker';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { pastorJsonLd } from '@/lib/jsonld';
 import { site } from '@/lib/config';
@@ -42,10 +43,29 @@ export default async function PastorPage({
       <JsonLd data={pastorJsonLd} />
       <PastorHero />
       <Bio />
+      <StatBand />
       <Ministry />
       <BookTeaser />
       <MinistryConnect />
     </>
+  );
+}
+
+function StatBand() {
+  const t = useTranslations('pastor.stat');
+  return (
+    <Section tone="navy">
+      <Reveal className="mx-auto max-w-2xl text-center">
+        <p className="font-label text-[0.72rem] uppercase tracking-label text-gold-400">
+          {t('since')}
+        </p>
+        <NumberTicker
+          value={2002}
+          className="mt-2 block font-display text-6xl leading-none text-foil-shimmer md:text-7xl"
+        />
+        <p className="mx-auto mt-4 max-w-md text-cream-50/65">{t('caption')}</p>
+      </Reveal>
+    </Section>
   );
 }
 
