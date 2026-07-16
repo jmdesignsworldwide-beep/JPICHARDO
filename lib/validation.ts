@@ -20,10 +20,22 @@ export const contactSchema = z.object({
     .string({ required_error: 'email' })
     .transform((v) => clean(v).toLowerCase())
     .pipe(z.string().email('email').max(160, 'email')),
+  // Teléfono opcional, formato flexible (dígitos, espacios, + - ( ) ).
+  phone: z
+    .string()
+    .transform(clean)
+    .pipe(
+      z
+        .string()
+        .max(40, 'phone')
+        .regex(/^[+\d][\d\s().-]{5,}$/, 'phone')
+        .or(z.literal('')),
+    )
+    .optional(),
   message: z
     .string({ required_error: 'message' })
     .transform(clean)
-    .pipe(z.string().min(10, 'message').max(2000, 'message')),
+    .pipe(z.string().min(10, 'message').max(1000, 'message')),
   // Honeypot (Fort Knox #6): campo trampa oculto. Debe llegar vacío.
   website: z.string().max(0, 'bot').optional().or(z.literal('')),
   // Marca de tiempo de render: permite rechazar envíos sub-humanos si viene.

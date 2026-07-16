@@ -285,30 +285,34 @@
       "email": "Email",
       "facebook": "Facebook"
     },
-    "form": {
-      "label": "Write to us",
-      "title": "Send us a message",
-      "body": "Have a question or want to visit us? Write to us and we'll gladly reply.",
-      "name": "Name",
-      "namePlaceholder": "Your name",
-      "email": "Email",
-      "emailPlaceholder": "you@email.com",
-      "message": "Message",
-      "messagePlaceholder": "How can we help you?",
-      "submit": "Send message",
-      "sending": "Sending…",
-      "successTitle": "Message sent!",
-      "success": "Thank you for writing to us. We'll reply very soon.",
-      "errorTitle": "Couldn't send",
-      "error": "Something went wrong sending your message. Please try again in a moment.",
-      "rateLimited": "You've sent several messages. Please wait a moment before trying again.",
-      "validation": {
-        "name": "Enter your name (2–80 characters).",
-        "email": "Enter a valid email.",
-        "message": "Enter your message (10–2000 characters)."
-      },
-      "privacy": "Your data is used only to reply to you. We never share your information."
-    }
+    "formLink": "Contact form"
+  },
+  "contact": {
+    "label": "Write to us",
+    "title": "Send us a message",
+    "body": "Have a question or want to visit us? Write to us and we'll gladly reply.",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "you@email.com",
+    "phone": "Phone (optional)",
+    "phonePlaceholder": "+1 555 123 4567",
+    "message": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "submit": "Send message",
+    "sending": "Sending…",
+    "successTitle": "Message sent!",
+    "success": "Thank you! We'll get back to you soon.",
+    "errorTitle": "Couldn't send",
+    "error": "Couldn't send, please try again later.",
+    "rateLimited": "You've sent several messages. Please wait a few minutes before trying again.",
+    "validation": {
+      "name": "Enter your name (2–80 characters).",
+      "email": "Enter a valid email.",
+      "phone": "Enter a valid phone.",
+      "message": "Enter your message (10–1000 characters)."
+    },
+    "privacy": "Your data is used only to reply to you. We never share your information."
   },
   "footer": {
     "tagline": "We are a church with a fresh message to bless you.",

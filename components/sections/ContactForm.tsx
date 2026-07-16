@@ -6,10 +6,10 @@ import { Send, CheckCircle2, AlertTriangle, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
 type Status = 'idle' | 'sending' | 'success' | 'error' | 'rate_limited';
-type FieldErrors = Partial<Record<'name' | 'email' | 'message', string>>;
+type FieldErrors = Partial<Record<'name' | 'email' | 'phone' | 'message', string>>;
 
 export function ContactForm() {
-  const t = useTranslations('visit.form');
+  const t = useTranslations('contact');
   const [status, setStatus] = useState<Status>('idle');
   const [errors, setErrors] = useState<FieldErrors>({});
   // Marca de tiempo de montaje (se fija tras render para no llamar a una
@@ -24,11 +24,15 @@ export function ContactForm() {
     const next: FieldErrors = {};
     const name = String(fd.get('name') || '').trim();
     const email = String(fd.get('email') || '').trim();
+    const phone = String(fd.get('phone') || '').trim();
     const message = String(fd.get('message') || '').trim();
     if (name.length < 2 || name.length > 80) next.name = t('validation.name');
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 160)
       next.email = t('validation.email');
-    if (message.length < 10 || message.length > 2000)
+    // Teléfono opcional: solo se valida si el usuario escribió algo.
+    if (phone && (!/^[+\d][\d\s().-]{5,}$/.test(phone) || phone.length > 40))
+      next.phone = t('validation.phone');
+    if (message.length < 10 || message.length > 1000)
       next.message = t('validation.message');
     return next;
   }
@@ -50,6 +54,7 @@ export function ContactForm() {
         body: JSON.stringify({
           name: fd.get('name'),
           email: fd.get('email'),
+          phone: fd.get('phone'),
           message: fd.get('message'),
           website: fd.get('website'), // honeypot
           ts: mountedAt.current ?? Date.now(),
@@ -145,6 +150,28 @@ export function ContactForm() {
       </div>
 
       <div>
+        <label htmlFor="phone" className="mb-1.5 block font-label text-[0.7rem] uppercase tracking-wide2 text-gold-400">
+          {t('phone')}
+        </label>
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          maxLength={40}
+          autoComplete="tel"
+          placeholder={t('phonePlaceholder')}
+          aria-invalid={!!errors.phone}
+          aria-describedby={errors.phone ? 'phone-error' : undefined}
+          className={`${inputBase} ${errors.phone ? 'border-red-400/60' : 'border-gold-500/20'}`}
+        />
+        {errors.phone && (
+          <p id="phone-error" className="mt-1.5 text-sm text-red-300">
+            {errors.phone}
+          </p>
+        )}
+      </div>
+
+      <div>
         <label htmlFor="message" className="mb-1.5 block font-label text-[0.7rem] uppercase tracking-wide2 text-gold-400">
           {t('message')}
         </label>
@@ -153,7 +180,7 @@ export function ContactForm() {
           name="message"
           required
           rows={5}
-          maxLength={2000}
+          maxLength={1000}
           placeholder={t('messagePlaceholder')}
           aria-invalid={!!errors.message}
           aria-describedby={errors.message ? 'message-error' : undefined}
