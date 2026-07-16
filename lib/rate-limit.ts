@@ -13,8 +13,8 @@ type Hit = { count: number; resetAt: number };
 // Es una barrera anti-abuso, no un almacén de verdad.
 const store = new Map<string, Hit>();
 
-const WINDOW_MS = 60_000; // 1 minuto
-const MAX_REQUESTS = 5; // 5 mensajes por IP por minuto
+const WINDOW_MS = 600_000; // 10 minutos
+const MAX_REQUESTS = 5; // 5 mensajes por IP cada 10 minutos
 
 // Limpieza oportunista para evitar crecimiento no acotado del Map.
 function sweep(now: number) {

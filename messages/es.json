@@ -285,30 +285,34 @@
       "email": "Correo",
       "facebook": "Facebook"
     },
-    "form": {
-      "label": "Escríbenos",
-      "title": "Envíanos un mensaje",
-      "body": "¿Tienes una pregunta o quieres visitarnos? Escríbenos y te responderemos con gusto.",
-      "name": "Nombre",
-      "namePlaceholder": "Tu nombre",
-      "email": "Correo electrónico",
-      "emailPlaceholder": "tu@correo.com",
-      "message": "Mensaje",
-      "messagePlaceholder": "¿En qué podemos ayudarte?",
-      "submit": "Enviar mensaje",
-      "sending": "Enviando…",
-      "successTitle": "¡Mensaje enviado!",
-      "success": "Gracias por escribirnos. Te responderemos muy pronto.",
-      "errorTitle": "No se pudo enviar",
-      "error": "Ocurrió un problema al enviar tu mensaje. Intenta de nuevo en un momento.",
-      "rateLimited": "Has enviado varios mensajes. Espera un momento antes de volver a intentarlo.",
-      "validation": {
-        "name": "Escribe tu nombre (2–80 caracteres).",
-        "email": "Escribe un correo válido.",
-        "message": "Escribe tu mensaje (10–2000 caracteres)."
-      },
-      "privacy": "Tus datos se usan solo para responderte. No compartimos tu información."
-    }
+    "formLink": "Formulario de contacto"
+  },
+  "contact": {
+    "label": "Escríbenos",
+    "title": "Envíanos un mensaje",
+    "body": "¿Tienes una pregunta o quieres visitarnos? Escríbenos y te responderemos con gusto.",
+    "name": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "tu@correo.com",
+    "phone": "Teléfono (opcional)",
+    "phonePlaceholder": "+1 555 123 4567",
+    "message": "Mensaje",
+    "messagePlaceholder": "¿En qué podemos ayudarte?",
+    "submit": "Enviar mensaje",
+    "sending": "Enviando…",
+    "successTitle": "¡Mensaje enviado!",
+    "success": "¡Gracias! Te responderemos pronto.",
+    "errorTitle": "No se pudo enviar",
+    "error": "No se pudo enviar, intenta más tarde.",
+    "rateLimited": "Has enviado varios mensajes. Espera unos minutos antes de volver a intentarlo.",
+    "validation": {
+      "name": "Escribe tu nombre (2–80 caracteres).",
+      "email": "Escribe un correo válido.",
+      "phone": "Escribe un teléfono válido.",
+      "message": "Escribe tu mensaje (10–1000 caracteres)."
+    },
+    "privacy": "Tus datos se usan solo para responderte. No compartimos tu información."
   },
   "footer": {
     "tagline": "Somos una iglesia con un mensaje fresco para bendecirte.",

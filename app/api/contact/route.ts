@@ -72,7 +72,9 @@ export async function GET() {
  * forma segura en el servidor. En ningún caso se exponen credenciales.
  */
 async function deliver(data: ContactInput): Promise<void> {
-  const to = process.env.CONTACT_TO_EMAIL || site.email;
+  // El envío se activa con una sola variable server-only: CONTACT_EMAIL_ENABLED.
+  const enabled = process.env.CONTACT_EMAIL_ENABLED === 'true';
+  const to = process.env.CONTACT_TO_EMAIL || site.email; // blessinghousecchurch@gmail.com
   const from = process.env.CONTACT_FROM_EMAIL;
   const apiKey = process.env.EMAIL_API_KEY;
 
@@ -80,11 +82,13 @@ async function deliver(data: ContactInput): Promise<void> {
   const safe = {
     name: escapeHtml(data.name),
     email: escapeHtml(data.email),
+    phone: data.phone ? escapeHtml(data.phone) : '',
     message: escapeHtml(data.message).replace(/\n/g, '<br/>'),
   };
 
-  // Proveedor tipo Resend (opcional). Solo si están las variables de entorno.
-  if (apiKey && from) {
+  // Camino de envío cableado. Requiere: CONTACT_EMAIL_ENABLED=true +
+  // credencial server-only (EMAIL_API_KEY) + remitente verificado (CONTACT_FROM_EMAIL).
+  if (enabled && apiKey && from) {
     try {
       await fetch('https://api.resend.com/emails', {
         method: 'POST',
@@ -100,6 +104,7 @@ async function deliver(data: ContactInput): Promise<void> {
           html: `<h2>Nuevo mensaje desde el sitio de ${site.name}</h2>
 <p><strong>Nombre:</strong> ${safe.name}</p>
 <p><strong>Correo:</strong> ${safe.email}</p>
+${safe.phone ? `<p><strong>Teléfono:</strong> ${safe.phone}</p>` : ''}
 <p><strong>Mensaje:</strong></p>
 <p>${safe.message}</p>`,
         }),
@@ -110,9 +115,9 @@ async function deliver(data: ContactInput): Promise<void> {
     return;
   }
 
-  // Fallback sin proveedor configurado: registro mínimo server-side.
-  // (No imprime credenciales; útil para preview de Vercel.)
+  // Sin proveedor activo: registro mínimo y seguro (sin PII ni credenciales).
+  // Útil para el preview de Vercel hasta que se configuren las variables.
   if (process.env.NODE_ENV !== 'production') {
-    console.info('[contact] mensaje recibido y validado (sin proveedor de correo configurado).');
+    console.info('[contact] mensaje válido recibido (envío de correo deshabilitado).');
   }
 }

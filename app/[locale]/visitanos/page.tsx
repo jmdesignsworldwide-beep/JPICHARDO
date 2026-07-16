@@ -126,7 +126,7 @@ function Location() {
 
 function ContactSection() {
   const t = useTranslations('visit.contactInfo');
-  const tf = useTranslations('visit.form');
+  const tf = useTranslations('contact');
 
   const items = [
     { Icon: Phone, label: t('phone'), value: site.phone, href: `tel:${site.phoneHref}`, external: false },
