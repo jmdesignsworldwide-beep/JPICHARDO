@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
-import { Instagram, Music2, LinkIcon, BookOpenText } from 'lucide-react';
+import { Instagram, Music2, LinkIcon, BookOpenText, Sparkles } from 'lucide-react';
 import { PageHero } from '@/components/sections/PageHero';
 import { Section, SectionLabel, SectionTitle } from '@/components/ui/Section';
 import { GoldDivider } from '@/components/ui/GoldDivider';
@@ -38,7 +38,29 @@ export default async function DevotionalPage({
       <Intro />
       <Follow />
       <Gallery />
+      <FollowCta />
     </>
+  );
+}
+
+function FollowCta() {
+  const t = useTranslations('devotional.cta');
+  return (
+    <Section tone="navy-deep">
+      <Reveal className="mx-auto max-w-2xl text-center">
+        <Sparkles className="mx-auto h-8 w-8 text-gold-400" />
+        <SectionTitle className="mt-5" foil>
+          {t('title')}
+        </SectionTitle>
+        <p className="mx-auto mt-5 max-w-xl text-cream-50/75">{t('body')}</p>
+        <div className="mt-8 flex justify-center">
+          <ButtonAnchor href={site.social.linktree}>
+            <LinkIcon className="h-4 w-4" />
+            {t('button')}
+          </ButtonAnchor>
+        </div>
+      </Reveal>
+    </Section>
   );
 }
 

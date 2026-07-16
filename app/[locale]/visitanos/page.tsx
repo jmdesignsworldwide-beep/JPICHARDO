@@ -164,7 +164,7 @@ function ContactSection() {
           </ul>
         </Reveal>
 
-        {/* Formulario */}
+        {/* Formulario Fort Knox - Tanda 5 (ya construido: Zod + rate limit + honeypot) */}
         <Reveal delay={0.1}>
           <div className="glass rounded-2xl p-6 sm:p-8">
             <SectionLabel>{tf('label')}</SectionLabel>

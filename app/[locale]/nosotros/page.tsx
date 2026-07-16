@@ -55,6 +55,7 @@ function Intro() {
   const t = useTranslations('about');
   return (
     <Section tone="navy">
+      {/* BORRADOR - pendiente aprobación pastor (historia/bienvenida) */}
       <Reveal className="mx-auto max-w-3xl text-center">
         <p className="font-serif text-2xl italic leading-relaxed text-cream-50/85 md:text-3xl">
           {t('intro')}

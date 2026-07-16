@@ -80,7 +80,7 @@
       "title": "A church with a fresh message",
       "tagline": "We are a church with a fresh message to bless you."
     },
-    "intro": "At Blessing House we believe the Gospel of Jesus Christ is still the best news for every generation. We are a community that worships God, is built up in His Word, and shares His love with Freeport and beyond.",
+    "intro": "At Blessing House we believe the Gospel of Jesus Christ is still the best news for every generation. We are a community that worships God, is built up in His Word, and shares His love with Freeport and beyond. Pastored by José Pichardo since 2002, Blessing House is an open home where everyone can take their first step of faith and grow to maturity.",
     "mission": {
       "label": "Mission",
       "body": "To share the fresh message of the Gospel of Jesus Christ, walking with each person on their journey of faith — from the first step to a firm and mature Christian life — through biblical teaching, discipleship, and fellowship."
@@ -242,6 +242,11 @@
       "tiktok": "TikTok",
       "linktree": "All links",
       "followers": "followers"
+    },
+    "cta": {
+      "title": "Follow us and grow with us",
+      "body": "A verse every day, a community walking with you. Find all our links in one place.",
+      "button": "See all links"
     }
   },
   "visit": {
