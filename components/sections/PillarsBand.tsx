@@ -1,14 +1,17 @@
 import { useTranslations } from 'next-intl';
-import { Flame, Sunrise, Compass, Sprout, HeartHandshake } from 'lucide-react';
+import { Cross, Anchor, Compass, Sprout, Heart } from 'lucide-react';
 import { PILLARS, type Pillar } from '@/lib/config';
 import { Reveal } from '@/components/ui/Reveal';
 
-const ICONS: Record<Pillar, typeof Flame> = {
-  fe: Flame,
-  esperanza: Sunrise,
+// Iconografía de los pilares de la portada (según Tanda 2):
+// Fe · cruz — Esperanza · ancla — Propósito · brújula/timón —
+// Crecimiento · brote — Comunión · corazón.
+const ICONS: Record<Pillar, typeof Cross> = {
+  fe: Cross,
+  esperanza: Anchor,
   proposito: Compass,
   crecimiento: Sprout,
-  comunion: HeartHandshake,
+  comunion: Heart,
 };
 
 /**
