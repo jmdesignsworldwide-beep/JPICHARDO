@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
@@ -43,12 +44,31 @@ export default async function BookDetailPage({
   const book = BOOKS.find((b) => b.slug === slug);
   if (!book) notFound();
   const others = BOOKS.filter((b) => b.slug !== slug);
+  const th = await getTranslations({ locale, namespace: `${book.ns}.hero` });
   return (
     <>
       {book.ns === 'book' && <JsonLd data={bookJsonLd} />}
+      {book.banner && <BookBanner src={book.banner} alt={`${th('title')} — banner`} />}
       <BookFicha book={book} />
       {others.length > 0 && <OtherBooks others={others} />}
     </>
+  );
+}
+
+/* Banda de encabezado a todo el ancho — se muestra completa (sin recortar). */
+function BookBanner({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="w-full bg-navy-900 pt-16 md:pt-20">
+      <Image
+        src={src}
+        alt={alt}
+        width={1942}
+        height={809}
+        sizes="100vw"
+        priority
+        className="h-auto w-full"
+      />
+    </div>
   );
 }
 
