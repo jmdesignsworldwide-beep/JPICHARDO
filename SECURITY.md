@@ -22,6 +22,9 @@ final. Este documento resume las medidas activas.
 - Se eliminan caracteres de control y se recorta/normaliza cada input.
 - Solo se acepta `Content-Type: application/json`; el cuerpo se valida y se
   rechaza lo mal formado con estados genéricos (400/415/422).
+- **Límite de tamaño del cuerpo**: se rechaza (`413`) cualquier payload con
+  `Content-Length` > 10 KB antes de leerlo (anti-DoS). El envío real cabe en < 2 KB.
+- Solo `POST` entrega; `GET` y demás métodos devuelven `405` sin cuerpo útil.
 - La salida se escapa (`escapeHtml`) antes de construir el correo — anti-XSS.
 
 ## 3. Rate limiting por IP
@@ -51,12 +54,24 @@ final. Este documento resume las medidas activas.
 
 Definidos en `next.config.js` (`headers()`), aplicados a todas las rutas:
 
-- `Content-Security-Policy` endurecida (frame-src limitado a Google Maps).
-- `Strict-Transport-Security` (HSTS, 2 años, preload).
-- `X-Frame-Options: DENY`
+- `Content-Security-Policy` endurecida: `default-src 'self'`; `frame-src`
+  limitado a Google Maps; `img-src 'self' data: blob:` (**sin comodín `https:`** —
+  no cargamos imágenes de terceros); `connect-src 'self'`; `object-src 'none'`;
+  `base-uri 'self'`; `form-action 'self'`; `frame-ancestors 'none'`;
+  `upgrade-insecure-requests`.
+- `Strict-Transport-Security` (HSTS, 2 años, includeSubDomains, preload) → fuerza HTTPS.
+- `X-Frame-Options: DENY` (+ `frame-ancestors 'none'`) → anti-clickjacking.
 - `X-Content-Type-Options: nosniff`
 - `Referrer-Policy: strict-origin-when-cross-origin`
-- `Permissions-Policy` (cámara/micrófono/geolocalización deshabilitados).
+- `Permissions-Policy` (cámara/micrófono/geolocalización/browsing-topics deshabilitados).
+- **Enlaces externos** (`target="_blank"`: WhatsApp, Instagram, TikTok, Facebook,
+  Amazon, correo del diseñador) llevan `rel="noopener noreferrer"`.
+- **iframe** de Google Maps con `loading="lazy"` y `referrerPolicy` acotada.
+
+> Nota: `script-src`/`style-src` incluyen `'unsafe-inline'` porque Next.js inyecta
+> scripts/estilos inline en la hidratación. Es el estándar de Next sin nonces; no
+> hay scripts de terceros ni CDNs. Migrar a CSP con nonce queda para el futuro si
+> se requiere endurecer más.
 
 ## 6. Anti-bot
 
