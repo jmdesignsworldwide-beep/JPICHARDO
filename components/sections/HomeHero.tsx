@@ -84,7 +84,7 @@ export function HomeHero() {
             initial={reduce ? false : { opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.08 }}
-            className="mt-4 font-display text-[3rem] font-bold leading-[1.04] tracking-tightish sm:text-6xl md:text-7xl xl:text-8xl"
+            className="mt-4 font-display text-[clamp(2.6rem,9vw,7rem)] font-bold uppercase leading-[1.04] tracking-tightish"
           >
             <span className="block font-normal text-bone/95">{t('titleTop')}</span>
             <span className="block text-foil-shimmer">{t('titleBottom')}</span>

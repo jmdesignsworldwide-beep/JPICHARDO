@@ -42,10 +42,10 @@ export default async function HomePage({
       <Preloader />
       <HomeHero />
       <PillarsMarquee />
-      <WelcomeTeaser />
       <BookShowcaseHome />
       <PastorTeaser />
       <DevotionalTeaser />
+      <WelcomeTeaser />
       <VisitTeaser />
     </>
   );

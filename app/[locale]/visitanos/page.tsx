@@ -77,6 +77,15 @@ function ChurchBrand() {
         </div>
         <GoldDivider className="my-7" />
         <p className="mx-auto max-w-xl text-lg text-cream-50/80">{t('body')}</p>
+        {/* BORRADOR - pendiente aprobación pastor */}
+        <div className="mt-7">
+          <p className="font-label text-[0.7rem] uppercase tracking-label text-gold-400">
+            {t('pastorsLabel')}
+          </p>
+          <p className="mt-2 font-display text-xl font-semibold tracking-tightish text-bone md:text-2xl">
+            {t('pastorsNames')}
+          </p>
+        </div>
       </Reveal>
     </Section>
   );

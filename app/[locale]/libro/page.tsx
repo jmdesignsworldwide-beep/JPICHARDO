@@ -10,7 +10,6 @@ import { Reveal } from '@/components/ui/Reveal';
 import { PillarsBand } from '@/components/sections/PillarsBand';
 import { ChaptersGrid } from '@/components/sections/ChaptersGrid';
 import { BookCta } from '@/components/sections/BookCta';
-import { BookGallery } from '@/components/sections/BookGallery';
 import { GoldParticles } from '@/components/motion/GoldParticles';
 import { PhotoShowcase } from '@/components/sections/PhotoShowcase';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -82,8 +81,46 @@ function BookPhotos() {
       <Reveal className="mb-8 text-center">
         <SectionLabel>{t('galleryLabel')}</SectionLabel>
       </Reveal>
-      <div className="mx-auto max-w-3xl">
-        <BookGallery />
+      <div className="mx-auto grid max-w-5xl grid-cols-12 items-end gap-4 sm:gap-6">
+        {/* Grande (izq): marco JPichardo con brújula — "Adquiere tu libro hoy" */}
+        <Reveal from="scale" className="col-span-12 sm:col-span-5">
+          <div className="overflow-hidden rounded-2xl border border-gold-500/20 shadow-book ring-1 ring-gold-500/15">
+            <Image
+              src="/libro-foto-2.png"
+              alt="Comenzando Mi Viaje — Disponible en Amazon, adquiere tu libro hoy"
+              width={1024}
+              height={1536}
+              sizes="(max-width: 640px) 92vw, 40vw"
+              className="h-auto w-full"
+            />
+          </div>
+        </Reveal>
+        {/* Medio: Amazon con fondo negro y cremita */}
+        <Reveal from="scale" delay={0.08} className="col-span-7 sm:col-span-4">
+          <div className="overflow-hidden rounded-2xl border border-gold-500/20 shadow-book ring-1 ring-gold-500/15">
+            <Image
+              src="/libro-foto-3.png"
+              alt="Comenzando Mi Viaje — Disponible en Amazon"
+              width={1086}
+              height={1448}
+              sizes="(max-width: 640px) 55vw, 32vw"
+              className="h-auto w-full"
+            />
+          </div>
+        </Reveal>
+        {/* Pequeño (der): el libro sobre fondo cremita */}
+        <Reveal from="scale" delay={0.16} className="col-span-5 sm:col-span-3">
+          <div className="overflow-hidden rounded-2xl border border-gold-500/20 bg-[#F3EEE3] p-3 shadow-book ring-1 ring-gold-500/15">
+            <Image
+              src="/libro-portada-transparent.png"
+              alt="Portada de Comenzando Mi Viaje"
+              width={818}
+              height={1024}
+              sizes="(max-width: 640px) 40vw, 24vw"
+              className="h-auto w-full"
+            />
+          </div>
+        </Reveal>
       </div>
     </Section>
   );
@@ -166,7 +203,7 @@ function BookHero() {
         </Reveal>
         <Reveal delay={0.1} className="text-center lg:text-left">
           <p className="eyebrow">{t('eyebrow')}</p>
-          <h1 className="mt-4 font-display text-[2.75rem] font-bold leading-[1.04] tracking-tightish text-foil-shimmer sm:text-6xl md:text-7xl">
+          <h1 className="mt-4 font-display text-[clamp(2.3rem,8vw,5.5rem)] font-bold uppercase leading-[1.04] tracking-tightish text-foil-shimmer">
             {t('title')}
           </h1>
           <p className="mt-4 font-display text-2xl font-normal tracking-tightish text-bone/90 md:text-3xl">
