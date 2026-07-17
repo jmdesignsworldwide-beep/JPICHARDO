@@ -9,6 +9,7 @@
  */
 
 export type ChaptersLayout = 'grid12' | 'parts';
+export type GalleryLayout = 'featured' | 'grid';
 
 export interface BookConfig {
   id: string;
@@ -24,6 +25,8 @@ export interface BookConfig {
   amazonUrl: string;
   /** cómo se listan los capítulos en la ficha */
   chaptersLayout: ChaptersLayout;
+  /** disposición de la galería: 'featured' = grande+medio+pequeño; 'grid' = 3 iguales */
+  galleryLayout: GalleryLayout;
 }
 
 export const BOOKS: BookConfig[] = [
@@ -36,6 +39,7 @@ export const BOOKS: BookConfig[] = [
     available: false,
     amazonUrl: '',
     chaptersLayout: 'grid12',
+    galleryLayout: 'featured',
   },
   {
     id: 'relaciones',
@@ -46,5 +50,6 @@ export const BOOKS: BookConfig[] = [
     available: false,
     amazonUrl: '',
     chaptersLayout: 'parts',
+    galleryLayout: 'grid',
   },
 ];

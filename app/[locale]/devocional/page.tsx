@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { Instagram, Music2, LinkIcon, BookOpenText, Sparkles } from 'lucide-react';
@@ -69,7 +70,19 @@ function FollowCta() {
 function DevHero() {
   const t = useTranslations('devotional.hero');
   return (
-    <PageHero eyebrow={t('eyebrow')} title={t('title')} subtitle={t('subtitle')} />
+    <PageHero eyebrow={t('eyebrow')} title={t('title')} subtitle={t('subtitle')}>
+      {/* Logo Devocional Biblia Abierta (DBA) */}
+      <div className="mx-auto w-40 overflow-hidden rounded-2xl shadow-book ring-1 ring-gold-500/25 sm:w-48">
+        <Image
+          src="/logo-devocional.png"
+          alt="Devocional Biblia Abierta"
+          width={400}
+          height={400}
+          sizes="192px"
+          className="h-auto w-full"
+        />
+      </div>
+    </PageHero>
   );
 }
 

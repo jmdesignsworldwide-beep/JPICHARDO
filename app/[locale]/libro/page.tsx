@@ -144,7 +144,7 @@ function BookFicha({ book, flip }: { book: BookConfig; flip: boolean }) {
       </div>
 
       {/* Galería del libro */}
-      <FichaGallery images={book.gallery} title={t('hero.title')} />
+      <FichaGallery images={book.gallery} title={t('hero.title')} layout={book.galleryLayout} />
     </Section>
   );
 }
@@ -211,8 +211,56 @@ function FormatsBlock({ ns }: { ns: 'book' | 'book2' }) {
   );
 }
 
-/* Galería de fotos del libro (3 imágenes) */
-function FichaGallery({ images, title }: { images: string[]; title: string }) {
+/* Dimensiones reales para la galería destacada (evita distorsión/recorte) */
+const GALLERY_DIMS: Record<string, [number, number]> = {
+  '/libro-foto-2.png': [1024, 1536],
+  '/libro-foto-3.png': [1086, 1448],
+  '/libro-portada-transparent.png': [818, 1024],
+};
+
+/* Galería de fotos del libro — 'featured' (grande/medio/pequeño) o 'grid' (3 iguales) */
+function FichaGallery({
+  images,
+  title,
+  layout,
+}: {
+  images: string[];
+  title: string;
+  layout: 'featured' | 'grid';
+}) {
+  if (layout === 'featured') {
+    // [0]=grande izq · [1]=medio · [2]=pequeño der (libro solo, sobre fondo cremita)
+    const spans = ['col-span-12 sm:col-span-5', 'col-span-7 sm:col-span-4', 'col-span-5 sm:col-span-3'];
+    return (
+      <div className="mx-auto mt-16 grid max-w-5xl grid-cols-12 items-end gap-4 sm:gap-6">
+        {images.map((src, i) => {
+          const [w, h] = GALLERY_DIMS[src] ?? [1024, 1400];
+          const cream = i === 2; // el libro solo → panel cremita premium
+          return (
+            <Reveal key={src} from="scale" delay={i * 0.1} className={spans[i] ?? 'col-span-4'}>
+              <div
+                className={`group overflow-hidden rounded-2xl border border-gold-500/20 shadow-book ring-1 ring-gold-500/15 transition-all duration-300 hover:-translate-y-1 hover:border-gold-400/50 hover:shadow-gold ${
+                  cream ? 'bg-[#F3EEE3] p-3' : ''
+                }`}
+              >
+                <Image
+                  src={src}
+                  alt={`${title} — imagen ${i + 1}`}
+                  width={w}
+                  height={h}
+                  sizes="(max-width: 640px) 92vw, 40vw"
+                  className={`h-auto w-full transition-transform duration-500 group-hover:scale-[1.04] ${
+                    cream ? 'drop-shadow-[0_16px_28px_rgba(0,0,0,0.35)]' : ''
+                  }`}
+                />
+              </div>
+            </Reveal>
+          );
+        })}
+      </div>
+    );
+  }
+
   return (
     <div className="mx-auto mt-16 grid max-w-4xl grid-cols-3 gap-3 sm:gap-4">
       {images.map((src, i) => (
