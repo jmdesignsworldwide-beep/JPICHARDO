@@ -55,7 +55,7 @@ export function Header() {
         />
       )}
 
-      <div className="container-x flex h-16 items-center justify-between md:h-20">
+      <div className="container-x relative z-20 flex h-16 items-center justify-between md:h-20">
         {/* Marca */}
         <Link href="/" aria-label={t('brandAria')} className="group flex items-center gap-3">
           {/* Emblema circular del logo real (JP transparente) */}
@@ -67,8 +67,8 @@ export function Header() {
             priority
             className="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-105 md:h-11 md:w-11"
           />
-          <span className="hidden items-center leading-none sm:flex">
-            <span className="font-display text-lg font-semibold tracking-tightish text-gold-300">
+          <span className="hidden items-center leading-none min-[360px]:flex">
+            <span className="whitespace-nowrap font-display text-sm font-semibold tracking-tightish text-gold-300 sm:text-lg">
               {site.ministry}
             </span>
           </span>
@@ -112,24 +112,25 @@ export function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 top-0 -z-[1] h-[100dvh] bg-midnight/97 backdrop-blur-xl lg:hidden"
+            className="fixed inset-0 z-10 h-[100dvh] overflow-y-auto bg-midnight lg:hidden"
           >
-            <nav className="container-x flex h-full flex-col justify-center gap-2 pt-20">
+            <nav className="container-x flex min-h-full flex-col justify-center gap-1 py-24">
               {NAV_ITEMS.map((item, i) => (
                 <motion.div
                   key={item.href}
                   initial={reduce ? false : { opacity: 0, y: 18 }}
                   animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
                   transition={{ delay: 0.06 + i * 0.05, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <Link
                     href={item.href}
                     onClick={closeMenu}
-                    className={`flex items-baseline gap-3 border-b border-white/5 py-4 font-display text-3xl transition-colors ${
+                    className={`flex items-center gap-4 border-b border-white/5 py-5 font-display text-3xl font-semibold tracking-tightish transition-colors ${
                       isActive(item.href) ? 'text-gold-400' : 'text-bone hover:text-gold-400'
                     }`}
                   >
-                    <span className="font-label text-xs text-gold-500/60">
+                    <span className="font-label text-sm font-medium text-gold-500/70">
                       0{i + 1}
                     </span>
                     {t(item.key)}
