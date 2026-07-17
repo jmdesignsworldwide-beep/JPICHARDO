@@ -134,7 +134,7 @@ function Ministry() {
     <Section tone="navy">
       <Reveal>
         <OrnamentFrame className="mx-auto max-w-3xl px-6 py-12 text-center sm:px-12">
-          <div className="mx-auto w-56 overflow-hidden rounded-2xl bg-cream-50 p-4 shadow-book ring-1 ring-gold-500/25 sm:w-64">
+          <div className="mx-auto w-56 sm:w-64">
             <BrandLogo className="h-auto w-full" width={340} />
           </div>
           <SectionLabel className="mt-6 block">{t('label')}</SectionLabel>

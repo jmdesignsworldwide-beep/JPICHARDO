@@ -3,9 +3,9 @@ import { site } from '@/lib/config';
 
 /**
  * Logo real de JPichardo Ministries (emblema + wordmark) en alta resolución.
- * El PNG trae fondo crema (~cream-50), por lo que se presenta sobre un panel
- * crema redondeado para que lea como un sello impreso, coherente en cualquier
- * sección. Para el emblema pequeño en Header/Footer se usa el SVG in-line.
+ * El PNG es TRANSPARENTE (recortado), así que se muestra directamente sobre el
+ * fondo oscuro — nunca sobre un recuadro claro. Para el emblema pequeño en
+ * Header/Footer se usa la versión recortada logo-jpichardo-emblem.png.
  */
 export function BrandLogo({
   className = '',
