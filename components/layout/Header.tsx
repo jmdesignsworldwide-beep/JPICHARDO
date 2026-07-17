@@ -58,14 +58,14 @@ export function Header() {
       <div className="container-x relative z-20 flex h-16 items-center justify-between md:h-20">
         {/* Marca */}
         <Link href="/" aria-label={t('brandAria')} className="group flex items-center gap-3">
-          {/* Emblema circular del logo real (JP transparente) */}
+          {/* Medallón crema con el emblema JP — específico del header */}
           <Image
-            src="/logo-jpichardo-emblem.png"
+            src="/logo-jpichardo-header.png"
             alt="JPichardo Ministries"
-            width={48}
-            height={48}
+            width={56}
+            height={56}
             priority
-            className="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-105 md:h-11 md:w-11"
+            className="h-11 w-11 object-contain transition-transform duration-300 group-hover:scale-105 md:h-12 md:w-12"
           />
           <span className="hidden items-center leading-none min-[360px]:flex">
             <span className="whitespace-nowrap font-display text-sm font-semibold tracking-tightish text-gold-300 sm:text-lg">
