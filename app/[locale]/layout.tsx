@@ -7,6 +7,8 @@ import { fontVariables } from '@/lib/fonts';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { SmoothScroll } from '@/components/motion/SmoothScroll';
+import { ScrollProgress } from '@/components/motion/ScrollProgress';
+import { CursorGlow } from '@/components/motion/CursorGlow';
 import { WhatsAppFab } from '@/components/ui/WhatsAppFab';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { churchJsonLd } from '@/lib/jsonld';
@@ -81,6 +83,8 @@ export default async function LocaleLayout({
       <body className="min-h-screen bg-navy-900 font-sans text-cream-50 antialiased">
         <JsonLd data={churchJsonLd} />
         <SmoothScroll />
+        <ScrollProgress />
+        <CursorGlow />
         <NextIntlClientProvider messages={messages}>
           <a
             href="#main"

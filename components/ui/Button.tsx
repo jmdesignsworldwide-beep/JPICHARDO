@@ -5,7 +5,7 @@ type Variant = 'primary' | 'secondary' | 'ghost';
 type Size = 'md' | 'lg';
 
 const base =
-  'group inline-flex items-center justify-center gap-2 rounded-full font-label font-semibold tracking-wide2 uppercase transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400 disabled:cursor-not-allowed';
+  'group inline-flex items-center justify-center gap-2 rounded-full font-label font-semibold tracking-wide2 uppercase transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400 active:scale-[0.97] disabled:cursor-not-allowed';
 
 const sizes: Record<Size, string> = {
   md: 'px-6 py-3 text-[0.7rem]',

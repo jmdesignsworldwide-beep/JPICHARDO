@@ -24,7 +24,8 @@ export function DevotionalGrid({
       {Array.from({ length: count }, (_, i) => i + 1).map((n, i) => (
         <Reveal
           key={n}
-          delay={(i % columns) * 0.05}
+          from="scale"
+          delay={(i % columns) * 0.06}
           className="group relative aspect-square overflow-hidden rounded-xl border border-gold-500/20 bg-navy-900/60 ring-1 ring-gold-500/10 transition-all duration-300 hover:-translate-y-1 hover:border-gold-400/50 hover:shadow-gold"
         >
           <Image

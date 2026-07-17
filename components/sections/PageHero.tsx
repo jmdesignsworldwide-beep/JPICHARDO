@@ -4,6 +4,7 @@ import { Reveal } from '@/components/ui/Reveal';
 import { TextReveal } from '@/components/motion/TextReveal';
 import { AuroraBackground } from '@/components/motion/AuroraBackground';
 import { LightRays } from '@/components/motion/LightRays';
+import { GoldParticles } from '@/components/motion/GoldParticles';
 
 /**
  * Hero secundario para páginas interiores, con marco editorial dorado,
@@ -32,6 +33,7 @@ export function PageHero({
       <div aria-hidden className="absolute inset-0 -z-20 bg-navy-900" />
       <AuroraBackground className="-z-10 opacity-50" />
       <LightRays className="-z-10 opacity-70" />
+      <GoldParticles className="-z-10" />
       <div
         aria-hidden
         className="absolute inset-0 -z-10 opacity-70"
