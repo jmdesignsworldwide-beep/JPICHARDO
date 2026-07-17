@@ -3,7 +3,7 @@
     "home": "Home",
     "about": "About",
     "pastor": "Pastor",
-    "book": "The Book",
+    "book": "Books",
     "devotional": "Devotional",
     "visit": "Visit Us",
     "menu": "Menu",
@@ -46,6 +46,27 @@
       "hook": "Every great journey begins with a single step.",
       "verse": "Your word is a lamp for my feet, a light on my path.",
       "verseRef": "Psalm 119:105"
+    },
+    "heroSlides": [
+      {
+        "titleTop": "Beginning",
+        "titleBottom": "My Journey",
+        "subtitle": "A manual for those beginning in the faith",
+        "hook": "Every great journey begins with a single step.",
+        "cta": "Explore the book"
+      },
+      {
+        "titleTop": "Interpersonal Relationships",
+        "titleBottom": "in the Church",
+        "subtitle": "The church doesn't only need sound doctrine — it also needs healthy relationships.",
+        "hook": "Christian unity is not an ideal, it's a command.",
+        "cta": "Explore the book"
+      }
+    ],
+    "heroNav": {
+      "prev": "Previous book",
+      "next": "Next book",
+      "goto": "View book"
     },
     "welcome": {
       "eyebrow": "Welcome home",
@@ -170,10 +191,10 @@
       "caption": "More than two decades serving Blessing House and the nations."
     },
     "bookTeaser": {
-      "label": "His first book",
-      "title": "Beginning My Journey",
-      "body": "Foundations for the Christian Life. A resource written by the pastor to walk with the new believer through their first steps.",
-      "cta": "Explore the book"
+      "label": "His books",
+      "title": "Author of two books",
+      "body": "Pastor José Pichardo is the author of “Comenzando Mi Viaje” —foundations for the Christian life— and “Relaciones Interpersonales en la Iglesia” —unity and healthy relationships in the body of Christ.",
+      "cta": "See the books"
     },
     "connect": {
       "label": "Connect with the ministry",
@@ -254,6 +275,95 @@
       "body": "The book will be available very soon. Leave us your contact and we'll let you know the moment it launches.",
       "available": "Available on Amazon.",
       "notify": "Notify me"
+    }
+  },
+  "books": {
+    "meta": {
+      "title": "Books",
+      "description": "The books by Pastor José Pichardo: Comenzando Mi Viaje and Relaciones Interpersonales en la Iglesia — foundations and healthy relationships for the Christian life."
+    },
+    "hero": {
+      "eyebrow": "Publications",
+      "title": "The books by Pastor José Pichardo",
+      "subtitle": "Biblical, clear, and practical resources to walk with you on the journey of faith."
+    },
+    "by": "by Pastor José Pichardo",
+    "synopsisLabel": "Synopsis",
+    "chaptersLabel": "Contents",
+    "formatsLabel": "Available formats"
+  },
+  "book2": {
+    "meta": {
+      "title": "Relaciones Interpersonales en la Iglesia",
+      "description": "Relaciones Interpersonales en la Iglesia, by José Pichardo. Based on Romans 14: ten chapters in three parts on unity, conscience, and love in the body of Christ."
+    },
+    "hero": {
+      "eyebrow": "The second book",
+      "title": "Relaciones Interpersonales en la Iglesia",
+      "titleTop": "Relaciones Interpersonales",
+      "titleBottom": "en la Iglesia",
+      "subtitle": "The church doesn't only need sound doctrine — it also needs healthy relationships.",
+      "author": "by Pastor José Pichardo",
+      "hook": "Christian unity is not an ideal, it's a command.",
+      "verse": "So then, let us pursue what makes for peace and for mutual edification.",
+      "verseRef": "Romans 14:19",
+      "support": "Ten chapters in three parts · based on Romans 14"
+    },
+    "synopsis": {
+      "label": "Synopsis",
+      "paragraphs": [
+        "The local church is, by nature, a mosaic of cultural backgrounds, ages, convictions, and levels of spiritual maturity. That diversity is one of the greatest riches of the body of Christ, but also one of its greatest challenges: how do we live in unity when we think, feel, and practice our faith in different ways?",
+        "Based on a careful exposition of Romans 14, this book guides the reader through ten chapters organized in three parts: first, an honest diagnosis of the cultural and relational reality of the church; second, the theological principles Paul establishes about conscience, Christian freedom, and sacrifice out of love; and third, the practical application of those principles to real situations of congregational life, from differences in worship style to how we treat the new believer.",
+        "With a pastoral, direct, and deeply biblical tone, the author overturns a common assumption: the strictest is not always the most mature, nor the most flexible the weakest. Through concrete examples of church life, reflection questions, and moments of prayer at the close of each chapter, the reader is challenged to examine their own attitudes toward those who think differently, and to discover that love —not opinion— must be the final measure of our relationships within the body of Christ."
+      ]
+    },
+    "chapters": {
+      "label": "Ten chapters · three parts",
+      "title": "The arc of the book",
+      "parts": [
+        {
+          "label": "Part 1",
+          "title": "The diagnosis",
+          "body": "An honest look at the cultural and relational reality of the church: diversity as both a richness and a challenge."
+        },
+        {
+          "label": "Part 2",
+          "title": "The principles",
+          "body": "What Paul establishes in Romans 14 about conscience, Christian freedom, and sacrifice out of love."
+        },
+        {
+          "label": "Part 3",
+          "title": "The application",
+          "body": "How to bring those principles into the real life of the congregation — from worship style to how we treat the new believer."
+        }
+      ]
+    },
+    "idealFor": {
+      "label": "Ideal for",
+      "title": "A resource for church life",
+      "items": [
+        "Personal study",
+        "One-to-one discipleship",
+        "Small groups",
+        "Church leadership"
+      ]
+    },
+    "formats": {
+      "label": "Available formats",
+      "title": "Read it however you like",
+      "print": {
+        "title": "Hardcover & paperback",
+        "body": "Available in hardcover and paperback for your library and your study groups."
+      },
+      "digital": {
+        "title": "Kindle & devices",
+        "body": "Available on Kindle and to read on tablet, phone, and PC."
+      }
+    },
+    "cta": {
+      "title": "Healthy relationships in the body of Christ",
+      "body": "The book will be available very soon. Leave us your contact and we'll let you know the moment it launches.",
+      "available": "Available on Amazon."
     }
   },
   "devotional": {

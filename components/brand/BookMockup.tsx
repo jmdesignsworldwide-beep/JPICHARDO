@@ -20,10 +20,14 @@ export function BookMockup({
   className = '',
   floating = true,
   priority = false,
+  src = '/libro-portada-transparent.png',
+  alt = 'Portada del libro Comenzando Mi Viaje, por el Pastor José Pichardo',
 }: {
   className?: string;
   floating?: boolean;
   priority?: boolean;
+  src?: string;
+  alt?: string;
 }) {
   const reduce = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
@@ -84,8 +88,8 @@ export function BookMockup({
           }}
         >
           <Image
-            src="/libro-portada-transparent.png"
-            alt="Portada del libro Comenzando Mi Viaje, por el Pastor José Pichardo"
+            src={src}
+            alt={alt}
             width={818}
             height={1024}
             priority={priority}

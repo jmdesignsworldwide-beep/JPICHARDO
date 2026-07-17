@@ -9,7 +9,15 @@ import { ButtonAnchor, ButtonLink } from '@/components/ui/Button';
  *   no gris feo) + microenlace "Notifícame" hacia el contacto.
  * - true + BOOK_AMAZON_URL → botón activo "Comprar en Amazon".
  */
-export function BookCta({ align = 'center' }: { align?: 'center' | 'start' }) {
+export function BookCta({
+  align = 'center',
+  available = BOOK_AVAILABLE,
+  amazonUrl = BOOK_AMAZON_URL,
+}: {
+  align?: 'center' | 'start';
+  available?: boolean;
+  amazonUrl?: string;
+}) {
   const t = useTranslations('common');
   const tb = useTranslations('book.cta');
 
@@ -18,10 +26,10 @@ export function BookCta({ align = 'center' }: { align?: 'center' | 'start' }) {
       ? 'flex flex-col items-center text-center'
       : 'flex flex-col items-start text-left';
 
-  if (BOOK_AVAILABLE && BOOK_AMAZON_URL) {
+  if (available && amazonUrl) {
     return (
       <div className={wrap}>
-        <ButtonAnchor href={BOOK_AMAZON_URL} size="lg">
+        <ButtonAnchor href={amazonUrl} size="lg">
           <ShoppingCart className="h-4 w-4" />
           {t('buyOnAmazon')}
         </ButtonAnchor>
