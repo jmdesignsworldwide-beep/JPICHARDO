@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { HomeHero } from '@/components/sections/HomeHero';
+import { HeroCarousel } from '@/components/sections/HeroCarousel';
 import { Preloader } from '@/components/motion/Preloader';
 import { PillarsMarquee } from '@/components/sections/PillarsMarquee';
 import {
@@ -40,7 +40,7 @@ export default async function HomePage({
   return (
     <>
       <Preloader />
-      <HomeHero />
+      <HeroCarousel />
       <PillarsMarquee />
       <BookShowcaseHome />
       <PastorTeaser />

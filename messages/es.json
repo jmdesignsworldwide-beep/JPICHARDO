@@ -3,7 +3,7 @@
     "home": "Inicio",
     "about": "Nosotros",
     "pastor": "Pastor",
-    "book": "El Libro",
+    "book": "Libros",
     "devotional": "Devocional",
     "visit": "Visítanos",
     "menu": "Menú",
@@ -46,6 +46,27 @@
       "hook": "Todo gran viaje comienza con un primer paso.",
       "verse": "Tu palabra es una lámpara a mis pies; es una luz en mi sendero.",
       "verseRef": "Salmo 119:105"
+    },
+    "heroSlides": [
+      {
+        "titleTop": "Comenzando",
+        "titleBottom": "Mi Viaje",
+        "subtitle": "Un manual para aquellos que comienzan en la fe",
+        "hook": "Todo gran viaje comienza con un primer paso.",
+        "cta": "Conoce el libro"
+      },
+      {
+        "titleTop": "Relaciones Interpersonales",
+        "titleBottom": "en la Iglesia",
+        "subtitle": "La iglesia no solo necesita doctrina sana, también necesita relaciones sanas.",
+        "hook": "La unidad cristiana no es un ideal, es un mandato.",
+        "cta": "Conoce el libro"
+      }
+    ],
+    "heroNav": {
+      "prev": "Libro anterior",
+      "next": "Libro siguiente",
+      "goto": "Ver libro"
     },
     "welcome": {
       "eyebrow": "Bienvenido a casa",
@@ -170,10 +191,10 @@
       "caption": "Más de dos décadas sirviendo a Blessing House y a las naciones."
     },
     "bookTeaser": {
-      "label": "Su primer libro",
-      "title": "Comenzando Mi Viaje",
-      "body": "Fundamentos para la Vida Cristiana. Un recurso escrito por el pastor para acompañar al nuevo creyente en sus primeros pasos.",
-      "cta": "Conoce el libro"
+      "label": "Sus libros",
+      "title": "Autor de dos libros",
+      "body": "El Pastor José Pichardo es autor de «Comenzando Mi Viaje» —fundamentos para la vida cristiana— y «Relaciones Interpersonales en la Iglesia» —unidad y relaciones sanas en el cuerpo de Cristo.",
+      "cta": "Ver los libros"
     },
     "connect": {
       "label": "Conecta con el ministerio",
@@ -254,6 +275,95 @@
       "body": "El libro estará disponible muy pronto. Déjanos tu contacto y te avisamos apenas salga.",
       "available": "Disponible en Amazon.",
       "notify": "Notifícame"
+    }
+  },
+  "books": {
+    "meta": {
+      "title": "Libros",
+      "description": "Los libros del Pastor José Pichardo: Comenzando Mi Viaje y Relaciones Interpersonales en la Iglesia — fundamentos y relaciones sanas para la vida cristiana."
+    },
+    "hero": {
+      "eyebrow": "Publicaciones",
+      "title": "Los libros del Pastor José Pichardo",
+      "subtitle": "Recursos bíblicos, claros y prácticos para acompañarte en el camino de la fe."
+    },
+    "by": "por el Pastor José Pichardo",
+    "synopsisLabel": "Sinopsis",
+    "chaptersLabel": "Contenido",
+    "formatsLabel": "Formatos disponibles"
+  },
+  "book2": {
+    "meta": {
+      "title": "Relaciones Interpersonales en la Iglesia",
+      "description": "Relaciones Interpersonales en la Iglesia, por José Pichardo. Basado en Romanos 14: diez capítulos en tres partes sobre unidad, conciencia y amor en el cuerpo de Cristo."
+    },
+    "hero": {
+      "eyebrow": "El segundo libro",
+      "title": "Relaciones Interpersonales en la Iglesia",
+      "titleTop": "Relaciones Interpersonales",
+      "titleBottom": "en la Iglesia",
+      "subtitle": "La iglesia no solo necesita doctrina sana, también necesita relaciones sanas.",
+      "author": "por el Pastor José Pichardo",
+      "hook": "La unidad cristiana no es un ideal, es un mandato.",
+      "verse": "Así que, sigamos lo que contribuye a la paz y a la mutua edificación.",
+      "verseRef": "Romanos 14:19",
+      "support": "Diez capítulos en tres partes · basado en Romanos 14"
+    },
+    "synopsis": {
+      "label": "Sinopsis",
+      "paragraphs": [
+        "La iglesia local es, por naturaleza, un mosaico de trasfondos culturales, edades, convicciones y niveles de madurez espiritual. Esa diversidad es una de las mayores riquezas del cuerpo de Cristo, pero también uno de sus mayores desafíos: ¿cómo convivir en unidad cuando pensamos, sentimos y practicamos nuestra fe de maneras distintas?",
+        "Basado en una exposición cuidadosa de Romanos 14, este libro guía al lector a través de diez capítulos organizados en tres partes: primero, un diagnóstico honesto de la realidad cultural y relacional de la iglesia; segundo, los principios teológicos que Pablo establece sobre la conciencia, la libertad cristiana y el sacrificio por amor; y tercero, la aplicación práctica de esos principios a situaciones reales de la vida congregacional, desde diferencias en el estilo de adoración hasta la forma de tratar al nuevo creyente.",
+        "Con un tono pastoral, directo y profundamente bíblico, el autor invierte una suposición común: no siempre el más estricto es el más maduro, ni el más flexible el más débil. A través de ejemplos concretos de la vida de iglesia, preguntas de reflexión y momentos de oración al cierre de cada capítulo, el lector es desafiado a examinar sus propias actitudes hacia quienes piensan diferente, y a descubrir que el amor —no la opinión— debe ser la medida final de nuestras relaciones dentro del cuerpo de Cristo."
+      ]
+    },
+    "chapters": {
+      "label": "Diez capítulos · tres partes",
+      "title": "El recorrido del libro",
+      "parts": [
+        {
+          "label": "Parte 1",
+          "title": "El diagnóstico",
+          "body": "Una mirada honesta a la realidad cultural y relacional de la iglesia: la diversidad como riqueza y como desafío."
+        },
+        {
+          "label": "Parte 2",
+          "title": "Los principios",
+          "body": "Lo que Pablo establece en Romanos 14 sobre la conciencia, la libertad cristiana y el sacrificio por amor."
+        },
+        {
+          "label": "Parte 3",
+          "title": "La aplicación",
+          "body": "Cómo llevar esos principios a la vida real de la congregación — del estilo de adoración al trato con el nuevo creyente."
+        }
+      ]
+    },
+    "idealFor": {
+      "label": "Ideal para",
+      "title": "Un recurso para la vida de iglesia",
+      "items": [
+        "Estudio personal",
+        "Discipulado uno a uno",
+        "Grupos pequeños",
+        "Liderazgo de iglesias"
+      ]
+    },
+    "formats": {
+      "label": "Formatos disponibles",
+      "title": "Léelo como prefieras",
+      "print": {
+        "title": "Tapa dura y tapa blanda",
+        "body": "Disponible en tapa dura y tapa blanda para tu biblioteca y tus grupos de estudio."
+      },
+      "digital": {
+        "title": "Kindle y dispositivos",
+        "body": "Disponible en Kindle y para leer en tablet, celular y PC."
+      }
+    },
+    "cta": {
+      "title": "Relaciones sanas en el cuerpo de Cristo",
+      "body": "El libro estará disponible muy pronto. Déjanos tu contacto y te avisamos apenas salga.",
+      "available": "Disponible en Amazon."
     }
   },
   "devotional": {
