@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import {
   Instagram,
@@ -27,6 +28,17 @@ export function WelcomeTeaser() {
     <Section tone="navy">
       <Reveal className="mx-auto max-w-3xl text-center">
         <OrnamentFrame className="px-6 py-10 sm:px-12">
+          {/* Logo de Blessing House Church (azul) — SOLO en Inicio */}
+          <div className="mx-auto mb-7 w-36 overflow-hidden rounded-2xl border border-gold-500/20 shadow-book ring-1 ring-gold-500/15 sm:w-44">
+            <Image
+              src="/blessing-house.png"
+              alt="Blessing House Church"
+              width={1254}
+              height={1254}
+              sizes="180px"
+              className="h-auto w-full"
+            />
+          </div>
           {/* "Bienvenido a casa" + "Blessing House" como una sola unidad
               tipográfica coherente — mismo tamaño y alineación, sin salto brusco */}
           <h2 className="font-display text-4xl font-bold leading-[1.12] tracking-tightish sm:text-5xl">
@@ -88,8 +100,19 @@ export function DevotionalTeaser() {
         <Card hover={false} className="overflow-hidden !p-0">
           <div className="grid gap-8 p-8 md:grid-cols-[1.3fr_1fr] md:items-center md:p-12">
             <div>
-              <SectionLabel>{t('eyebrow')}</SectionLabel>
-              <SectionTitle className="mt-4 !text-3xl md:!text-4xl">
+              {/* Logo Devocional Biblia Abierta (DBA) — /dba-logo.png */}
+              <div className="mb-4 flex items-center gap-3">
+                <Image
+                  src="/dba-logo.png"
+                  alt="Devocional Biblia Abierta"
+                  width={96}
+                  height={96}
+                  sizes="56px"
+                  className="h-12 w-12 rounded-xl object-contain sm:h-14 sm:w-14"
+                />
+                <SectionLabel>{t('eyebrow')}</SectionLabel>
+              </div>
+              <SectionTitle className="!text-3xl md:!text-4xl">
                 {t('title')}
               </SectionTitle>
               <p className="mt-5 max-w-lg text-cream-50/75">{t('body')}</p>
