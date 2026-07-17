@@ -23,7 +23,7 @@ export function BookFicha({ book, flip = false }: { book: BookConfig; flip?: boo
       {/* Cabecera: portada 3D + título/subtítulo/gancho/CTA */}
       <div className="grid items-center gap-12 lg:grid-cols-2">
         <Reveal from="scale" className={flip ? 'lg:order-last' : ''}>
-          <BookMockup src={book.cover} alt={t('hero.title')} priority />
+          <BookMockup src={book.fichaHero ?? book.cover} alt={t('hero.title')} priority />
         </Reveal>
         <Reveal delay={0.1} className="text-center lg:text-left">
           <p className="eyebrow">{t('hero.eyebrow')}</p>
@@ -103,7 +103,12 @@ export function BookFicha({ book, flip = false }: { book: BookConfig; flip?: boo
       </div>
 
       {/* Galería del libro */}
-      <FichaGallery images={book.gallery} title={t('hero.title')} layout={book.galleryLayout} />
+      <FichaGallery
+        images={book.gallery}
+        title={t('hero.title')}
+        layout={book.galleryLayout}
+        coverSrc={book.cover}
+      />
     </Section>
   );
 }
@@ -182,18 +187,26 @@ function FichaGallery({
   images,
   title,
   layout,
+  coverSrc,
 }: {
   images: string[];
   title: string;
   layout: 'featured' | 'grid';
+  /** portada 3D transparente: recibe el panel cremita de fondo si aparece */
+  coverSrc?: string;
 }) {
   if (layout === 'featured') {
-    const spans = ['col-span-12 sm:col-span-5', 'col-span-7 sm:col-span-4', 'col-span-5 sm:col-span-3'];
+    // Reparto de anchos según cuántas imágenes haya (equilibrado con 2).
+    const spans =
+      images.length === 2
+        ? ['col-span-12 sm:col-span-6', 'col-span-12 sm:col-span-6']
+        : ['col-span-12 sm:col-span-5', 'col-span-7 sm:col-span-4', 'col-span-5 sm:col-span-3'];
     return (
       <div className="mx-auto mt-16 grid max-w-5xl grid-cols-12 items-end gap-4 sm:gap-6">
         {images.map((src, i) => {
           const [w, h] = GALLERY_DIMS[src] ?? [1024, 1400];
-          const cream = i === 2;
+          // El mockup transparente necesita fondo claro; el resto va sin panel.
+          const cream = src === coverSrc;
           return (
             <Reveal key={src} from="scale" delay={i * 0.1} className={spans[i] ?? 'col-span-4'}>
               <div
