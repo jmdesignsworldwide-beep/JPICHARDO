@@ -57,26 +57,25 @@ function VisitHero() {
 }
 
 function ChurchBrand() {
-  // SOLO aquí: marca de Blessing House Church (la iglesia física).
-  // FALLBACK: no existe un logo de iglesia en el repo, así que se usa el
-  // emblema JP transparente (sin recuadro). Cambiar el src cuando llegue el
-  // logo azul real de la iglesia.
+  // SOLO aquí: logo azul real de Blessing House Church (la iglesia física).
+  // El logo ya incluye el wordmark "BLESSING HOUSE CHURCH", por eso no se
+  // repite el título en texto.
   const t = useTranslations('visit.church');
   return (
     <Section tone="navy">
       <Reveal className="mx-auto max-w-2xl text-center">
-        <Image
-          src="/logo-jpichardo-emblem.png"
-          alt={t('logoAlt')}
-          width={112}
-          height={112}
-          className="mx-auto h-20 w-20 object-contain sm:h-24 sm:w-24"
-        />
-        <SectionLabel className="mt-6 block">{t('label')}</SectionLabel>
-        <h2 className="mt-2 font-display text-3xl font-bold tracking-tightish text-bone md:text-4xl">
-          {t('title')}
-        </h2>
-        <GoldDivider className="my-6" />
+        <SectionLabel>{t('label')}</SectionLabel>
+        <div className="mx-auto mt-6 w-full max-w-xs overflow-hidden rounded-2xl border border-gold-500/20 shadow-book ring-1 ring-gold-500/15">
+          <Image
+            src="/blessing-house.png"
+            alt={t('logoAlt')}
+            width={1254}
+            height={1254}
+            sizes="320px"
+            className="h-auto w-full"
+          />
+        </div>
+        <GoldDivider className="my-7" />
         <p className="mx-auto max-w-xl text-lg text-cream-50/80">{t('body')}</p>
       </Reveal>
     </Section>
