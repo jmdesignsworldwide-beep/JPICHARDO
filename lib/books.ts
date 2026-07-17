@@ -20,6 +20,8 @@ export interface BookConfig {
   cover: string;
   /** imagen grande de la cabecera de la ficha; si se omite, usa `cover` */
   fichaHero?: string;
+  /** banner ancho opcional que encabeza la ficha (banda a todo el ancho) */
+  banner?: string;
   /** fotos para la galería de la ficha */
   gallery: string[];
   /** disponibilidad de compra por libro */
@@ -52,6 +54,7 @@ export const BOOKS: BookConfig[] = [
     slug: 'relaciones-interpersonales',
     ns: 'book2',
     cover: '/relaciones-portada.png',
+    banner: '/relaciones-banner.png',
     gallery: ['/relaciones-foto-1.png', '/relaciones-foto-2.png', '/relaciones-foto-3.png'],
     available: false,
     amazonUrl: '',
