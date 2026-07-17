@@ -24,7 +24,7 @@ export function PageHero({
   children?: ReactNode;
 }) {
   const titleClass = `mx-auto max-w-4xl font-display text-4xl font-bold leading-[1.08] tracking-tightish sm:text-5xl md:text-6xl ${
-    foil ? 'text-gold-300' : 'text-cream-50'
+    foil ? 'text-foil-shimmer' : 'text-cream-50'
   }`;
 
   return (

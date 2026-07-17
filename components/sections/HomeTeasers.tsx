@@ -100,19 +100,19 @@ export function DevotionalTeaser() {
         <Card hover={false} className="overflow-hidden !p-0">
           <div className="grid gap-8 p-8 md:grid-cols-[1.3fr_1fr] md:items-center md:p-12">
             <div>
-              {/* Logo Devocional Biblia Abierta (DBA) — /dba-logo.png */}
+              {/* Logo Devocional Biblia Abierta (DBA) */}
               <div className="mb-4 flex items-center gap-3">
                 <Image
-                  src="/dba-logo.png"
+                  src="/logo-devocional.png"
                   alt="Devocional Biblia Abierta"
-                  width={96}
-                  height={96}
-                  sizes="56px"
-                  className="h-12 w-12 rounded-xl object-contain sm:h-14 sm:w-14"
+                  width={112}
+                  height={112}
+                  sizes="64px"
+                  className="h-14 w-14 rounded-xl object-cover ring-1 ring-gold-500/20 sm:h-16 sm:w-16"
                 />
                 <SectionLabel>{t('eyebrow')}</SectionLabel>
               </div>
-              <SectionTitle className="!text-3xl md:!text-4xl">
+              <SectionTitle className="!text-3xl md:!text-4xl" foil>
                 {t('title')}
               </SectionTitle>
               <p className="mt-5 max-w-lg text-cream-50/75">{t('body')}</p>

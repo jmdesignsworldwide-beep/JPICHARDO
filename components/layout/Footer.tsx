@@ -31,7 +31,7 @@ export function Footer() {
                 height={48}
                 className="h-11 w-11 object-contain"
               />
-              <p className="font-display text-lg font-semibold tracking-tightish text-gold-300">
+              <p className="font-display text-lg font-semibold tracking-tightish text-foil-shimmer">
                 {site.ministry}
               </p>
             </div>

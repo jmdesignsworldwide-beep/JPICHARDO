@@ -93,8 +93,13 @@ export function BookMockup({
             width={818}
             height={1024}
             priority={priority}
+            quality={92}
             sizes="(max-width: 768px) 60vw, 380px"
-            className="h-auto w-full select-none drop-shadow-[0_36px_48px_rgba(0,0,0,0.55)]"
+            className="h-auto w-full select-none"
+            style={{
+              filter:
+                'drop-shadow(0 24px 40px rgba(0,0,0,0.5)) drop-shadow(0 6px 16px rgba(0,0,0,0.35)) drop-shadow(0 1px 3px rgba(240,238,232,0.14))',
+            }}
           />
         </motion.div>
 
