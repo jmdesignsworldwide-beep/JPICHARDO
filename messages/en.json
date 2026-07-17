@@ -292,7 +292,8 @@
     "chaptersLabel": "Contents",
     "formatsLabel": "Available formats",
     "alsoLabel": "You may also like",
-    "alsoTitle": "Other books"
+    "alsoTitle": "Other books",
+    "viewBook": "View book"
   },
   "book2": {
     "meta": {

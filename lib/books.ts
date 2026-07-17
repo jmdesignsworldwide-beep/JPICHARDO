@@ -16,8 +16,10 @@ export interface BookConfig {
   slug: string;
   /** namespace i18n con hero/synopsis/chapters/formats/idealFor/cta */
   ns: 'book' | 'book2';
-  /** portada 3D transparente (hero + mockup + ficha) */
+  /** portada 3D transparente (hero rotativo + mockup + tarjeta de biblioteca) */
   cover: string;
+  /** imagen grande de la cabecera de la ficha; si se omite, usa `cover` */
+  fichaHero?: string;
   /** fotos para la galería de la ficha */
   gallery: string[];
   /** disponibilidad de compra por libro */
@@ -35,7 +37,11 @@ export const BOOKS: BookConfig[] = [
     slug: 'comenzando-mi-viaje',
     ns: 'book',
     cover: '/libro-portada-transparent.png',
-    gallery: ['/libro-foto-2.png', '/libro-foto-3.png', '/libro-portada-transparent.png'],
+    // La cabecera de la ficha muestra el arte promocional (JPichardo + Amazon);
+    // el mockup 3D transparente pasa a la galería. El `cover` transparente se
+    // conserva para el hero rotativo y la tarjeta de biblioteca.
+    fichaHero: '/libro-foto-2.png',
+    gallery: ['/libro-foto-3.png', '/libro-portada-transparent.png'],
     available: false,
     amazonUrl: '',
     chaptersLayout: 'grid12',
