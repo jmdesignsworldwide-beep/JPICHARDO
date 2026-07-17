@@ -84,10 +84,10 @@ export function BookMockup({
           }}
         >
           <Image
-            src="/libro-portada.png"
+            src="/libro-portada-transparent.png"
             alt="Portada del libro Comenzando Mi Viaje, por el Pastor José Pichardo"
-            width={1024}
-            height={1536}
+            width={818}
+            height={1024}
             priority={priority}
             sizes="(max-width: 768px) 60vw, 380px"
             className="h-auto w-full select-none drop-shadow-[0_36px_48px_rgba(0,0,0,0.55)]"

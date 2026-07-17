@@ -156,10 +156,10 @@ function BookTeaser() {
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <Reveal className="mx-auto w-56 sm:w-64">
           <Image
-            src="/libro-mockup-3d.png"
-            alt="Libro Comenzando Mi Viaje — mockup 3D"
-            width={1024}
-            height={1536}
+            src="/libro-portada-transparent.png"
+            alt="Libro Comenzando Mi Viaje — portada"
+            width={818}
+            height={1024}
             sizes="256px"
             className="h-auto w-full drop-shadow-[0_24px_36px_rgba(0,0,0,0.5)]"
           />

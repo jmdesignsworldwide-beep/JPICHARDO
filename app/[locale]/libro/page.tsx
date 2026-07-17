@@ -42,8 +42,8 @@ export default async function BookPage({
     <>
       <JsonLd data={bookJsonLd} />
       <BookHero />
-      <Synopsis />
       <BookBanner />
+      <Synopsis />
       <BookShowcase />
       <BookPhotos />
       <ChaptersSection />
@@ -56,19 +56,19 @@ export default async function BookPage({
 }
 
 function BookBanner() {
-  // Banner destacado del libro (banda visual premium, ancho).
+  // Banda de encabezado del libro — imagen COMPLETA sin recortar, responsive.
   return (
     <Section tone="navy">
       <Reveal className="mx-auto max-w-5xl">
-        <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-gold-500/20 shadow-book ring-1 ring-gold-500/15 sm:aspect-[21/8]">
-          <Image
-            src="/libro-banner.png"
-            alt="Comenzando Mi Viaje — Fundamentos para la Vida Cristiana, por el Pastor José Pichardo"
-            fill
-            sizes="(max-width: 1024px) 92vw, 1024px"
-            className="object-cover"
-          />
-        </div>
+        <Image
+          src="/libro-banner.png"
+          alt="Comenzando Mi Viaje — Fundamentos para la Vida Cristiana, por el Pastor José Pichardo"
+          width={1942}
+          height={809}
+          sizes="(max-width: 1024px) 92vw, 1024px"
+          priority
+          className="h-auto w-full rounded-2xl border border-gold-500/20 shadow-book ring-1 ring-gold-500/15"
+        />
       </Reveal>
     </Section>
   );
