@@ -373,6 +373,66 @@
   }
 }
 
+/* Shimmer del logo en la intro/preloader */
+@keyframes preloader-sweep {
+  0% {
+    transform: translateX(-130%) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(130%) skewX(-12deg);
+  }
+}
+
+/* Motas de luz dorada que ascienden lento */
+@keyframes mote-rise {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.85;
+  }
+  88% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate3d(var(--mote-drift, 10px), -104vh, 0);
+    opacity: 0;
+  }
+}
+
+@layer components {
+  .preloader-shimmer {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      110deg,
+      transparent 42%,
+      rgba(255, 255, 255, 0.55) 50%,
+      transparent 58%
+    );
+    transform: translateX(-130%) skewX(-12deg);
+    animation: preloader-sweep 1.5s ease-in-out 0.35s 1 forwards;
+    will-change: transform;
+  }
+
+  .gold-mote {
+    position: absolute;
+    bottom: -14px;
+    border-radius: 9999px;
+    background: radial-gradient(
+      circle,
+      rgba(232, 206, 138, 0.95),
+      rgba(201, 162, 75, 0.25) 60%,
+      transparent 72%
+    );
+    animation-name: mote-rise;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    will-change: transform, opacity;
+  }
+}
+
 /* Respeta usuarios con movimiento reducido: anula TODO el movimiento */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -389,7 +449,9 @@
   .light-rays,
   .marquee-track,
   .border-beam::before,
-  .text-foil-shimmer {
+  .text-foil-shimmer,
+  .gold-mote,
+  .preloader-shimmer {
     animation: none !important;
   }
 }

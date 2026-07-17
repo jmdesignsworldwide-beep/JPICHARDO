@@ -11,6 +11,7 @@ import { PillarsBand } from '@/components/sections/PillarsBand';
 import { ChaptersGrid } from '@/components/sections/ChaptersGrid';
 import { BookCta } from '@/components/sections/BookCta';
 import { BookGallery } from '@/components/sections/BookGallery';
+import { GoldParticles } from '@/components/motion/GoldParticles';
 import { PhotoShowcase } from '@/components/sections/PhotoShowcase';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { bookJsonLd } from '@/lib/jsonld';
@@ -158,6 +159,7 @@ function BookHero() {
     <section className="relative overflow-hidden pt-28 pb-16 md:pt-36">
       <div aria-hidden className="absolute inset-0 -z-10 bg-hero-sky opacity-90" />
       <div aria-hidden className="absolute inset-0 -z-10 bg-navy-veil" />
+      <GoldParticles className="-z-10" />
       <div className="container-x grid items-center gap-12 lg:grid-cols-2">
         <Reveal className="order-first lg:order-last">
           <BookMockup />

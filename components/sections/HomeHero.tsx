@@ -9,6 +9,7 @@ import { ButtonLink } from '@/components/ui/Button';
 import { AuroraBackground } from '@/components/motion/AuroraBackground';
 import { LightRays } from '@/components/motion/LightRays';
 import { Spotlight } from '@/components/motion/Spotlight';
+import { GoldParticles } from '@/components/motion/GoldParticles';
 
 export function HomeHero() {
   const t = useTranslations('home.hero');
@@ -38,6 +39,8 @@ export function HomeHero() {
       {/* Aurora que respira + rayos de luz de amanecer (tenues) */}
       <AuroraBackground className="-z-20 opacity-80" />
       <LightRays className="-z-10" />
+      {/* Motas de luz dorada ascendentes */}
+      <GoldParticles className="-z-10" />
       {/* Foco de luz que sigue el cursor (sutil) */}
       <Spotlight />
       {/* Sol / halo */}

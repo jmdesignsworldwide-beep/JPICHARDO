@@ -16,7 +16,8 @@ export function BookGallery({ className = '' }: { className?: string }) {
       {PHOTOS.map((src, i) => (
         <Reveal
           key={src}
-          delay={i * 0.08}
+          from="scale"
+          delay={i * 0.1}
           className="group relative aspect-[3/4] overflow-hidden rounded-xl border border-gold-500/20 bg-navy-900/60 ring-1 ring-gold-500/15 shadow-book transition-all duration-300 hover:-translate-y-1 hover:border-gold-400/50 hover:shadow-gold"
         >
           <Image

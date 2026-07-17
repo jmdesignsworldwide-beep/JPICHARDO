@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { HomeHero } from '@/components/sections/HomeHero';
+import { Preloader } from '@/components/motion/Preloader';
 import { PillarsMarquee } from '@/components/sections/PillarsMarquee';
 import {
   WelcomeTeaser,
@@ -38,6 +39,7 @@ export default async function HomePage({
 
   return (
     <>
+      <Preloader />
       <HomeHero />
       <PillarsMarquee />
       <WelcomeTeaser />

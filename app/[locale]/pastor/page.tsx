@@ -11,6 +11,7 @@ import { OrnamentFrame } from '@/components/ui/OrnamentFrame';
 import { PastorPortrait } from '@/components/brand/PastorPortrait';
 import { BrandLogo } from '@/components/brand/BrandLogo';
 import { NumberTicker } from '@/components/motion/NumberTicker';
+import { GoldParticles } from '@/components/motion/GoldParticles';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { pastorJsonLd } from '@/lib/jsonld';
 import { site } from '@/lib/config';
@@ -82,6 +83,7 @@ function PastorHero() {
             'radial-gradient(60% 60% at 50% 0%, rgba(30,58,95,0.5), transparent 70%)',
         }}
       />
+      <GoldParticles className="-z-10" />
       <div className="container-x grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <Reveal className="mx-auto w-full max-w-sm">
           <OrnamentFrame className="p-3">
