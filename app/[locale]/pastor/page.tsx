@@ -136,7 +136,9 @@ function Ministry() {
     <Section tone="navy">
       <Reveal>
         <OrnamentFrame className="mx-auto max-w-3xl px-6 py-12 text-center sm:px-12">
-          <div className="mx-auto w-56 sm:w-64">
+          {/* Medallón cremita (#F3EEE3) cuadrado con puntas redondeadas —
+              resalta el emblema JP sobre el fondo oscuro de la sección. */}
+          <div className="mx-auto flex aspect-square w-56 items-center justify-center rounded-[2rem] bg-bone p-7 shadow-book ring-1 ring-gold-500/25 sm:w-64 sm:p-9">
             <BrandLogo className="h-auto w-full" width={340} />
           </div>
           <SectionLabel className="mt-6 block">{t('label')}</SectionLabel>
