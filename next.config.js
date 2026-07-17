@@ -12,7 +12,9 @@ const ContentSecurityPolicy = [
   // Next.js inyecta scripts inline para hidratación; framer-motion es 'self'.
   "script-src 'self' 'unsafe-inline'",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob: https:",
+  // Todas las imágenes son del propio sitio (next/image sobre /public) o data:.
+  // Sin comodín https: — no cargamos imágenes de terceros.
+  "img-src 'self' data: blob:",
   "font-src 'self' data:",
   "connect-src 'self'",
   // Mapa embebido de Google Maps en Visítanos.

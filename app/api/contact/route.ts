@@ -29,6 +29,13 @@ export async function POST(request: Request) {
       return NextResponse.json(GENERIC_ERROR, { status: 415 });
     }
 
+    // Límite de tamaño del cuerpo (anti-DoS). El formulario real cabe en < 2KB;
+    // 10KB es holgado. Cualquier cosa mayor se rechaza sin leerla.
+    const contentLength = Number(request.headers.get('content-length') || 0);
+    if (contentLength > 10_000) {
+      return NextResponse.json(GENERIC_ERROR, { status: 413 });
+    }
+
     let raw: unknown;
     try {
       raw = await request.json();
