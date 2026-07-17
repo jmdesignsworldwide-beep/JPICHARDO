@@ -199,7 +199,9 @@ export function VisitTeaser() {
   const ts = useTranslations('visit.schedule');
   return (
     <Section tone="navy-deep">
-      <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+      {/* Dos columnas desde tablet (md): texto a la izquierda, tarjetas de
+          horario a la derecha (rellenan el hueco). En móvil apila. */}
+      <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-14 lg:gap-16">
         <Reveal>
           <SectionLabel>{t('eyebrow')}</SectionLabel>
           <SectionTitle className="mt-4">{t('title')}</SectionTitle>
@@ -214,7 +216,7 @@ export function VisitTeaser() {
         </Reveal>
 
         <Reveal delay={0.1} className="grid gap-4 sm:grid-cols-2">
-          <Card>
+          <Card className="h-full">
             <Clock className="h-6 w-6 text-gold-400" />
             <p className="mt-3 font-label text-[0.65rem] uppercase tracking-label text-gold-400">
               {ts('sunday.day')}
@@ -222,7 +224,7 @@ export function VisitTeaser() {
             <p className="mt-1 font-display text-2xl">{ts('sunday.time')}</p>
             <p className="mt-1 text-sm text-cream-50/65">{ts('sunday.name')}</p>
           </Card>
-          <Card>
+          <Card className="h-full">
             <HomeIcon className="h-6 w-6 text-gold-400" />
             <p className="mt-3 font-label text-[0.65rem] uppercase tracking-label text-gold-400">
               {ts('thursday.day')}
@@ -230,14 +232,18 @@ export function VisitTeaser() {
             <p className="mt-1 font-display text-2xl">{ts('thursday.time')}</p>
             <p className="mt-1 text-sm text-cream-50/65">{ts('thursday.name')}</p>
           </Card>
-          <Card className="sm:col-span-2">
-            <div className="flex items-start gap-3">
-              <MapPin className="mt-1 h-5 w-5 shrink-0 text-gold-400" />
-              <p className="text-sm text-cream-50/80">{site.address.full}</p>
-            </div>
-          </Card>
         </Reveal>
       </div>
+
+      {/* Dirección: banda ancha que cierra la sección a todo el ancho. */}
+      <Reveal delay={0.15} className="mt-6">
+        <Card>
+          <div className="flex items-center justify-center gap-3 text-center">
+            <MapPin className="h-5 w-5 shrink-0 text-gold-400" />
+            <p className="text-sm text-cream-50/80 sm:text-base">{site.address.full}</p>
+          </div>
+        </Card>
+      </Reveal>
     </Section>
   );
 }
