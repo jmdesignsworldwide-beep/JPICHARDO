@@ -29,7 +29,7 @@ export function WelcomeTeaser() {
         <OrnamentFrame className="px-6 py-10 sm:px-12">
           {/* "Bienvenido a casa" + "Blessing House" como una sola unidad
               tipográfica coherente — mismo tamaño y alineación, sin salto brusco */}
-          <h2 className="font-display text-4xl font-semibold leading-[1.12] tracking-tightish sm:text-5xl">
+          <h2 className="font-display text-4xl font-bold leading-[1.12] tracking-tightish sm:text-5xl">
             <span className="block font-normal text-bone/90">{t('eyebrow')}</span>
             <span className="block text-foil-shimmer">{t('title')}</span>
           </h2>

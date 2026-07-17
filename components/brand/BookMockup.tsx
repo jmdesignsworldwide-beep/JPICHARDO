@@ -56,10 +56,12 @@ export function BookMockup({
       className={`relative mx-auto w-[260px] sm:w-[320px] md:w-[380px] ${className}`}
       style={{ perspective: '1500px' }}
     >
-      {/* Resplandor dorado detrás (motivo de luz) */}
-      <div
+      {/* Resplandor dorado detrás (motivo de luz) que respira lento */}
+      <motion.div
         aria-hidden
-        className="absolute inset-0 -z-10 scale-110 blur-3xl"
+        animate={reduce ? undefined : { opacity: [0.72, 1, 0.72], scale: [1.06, 1.14, 1.06] }}
+        transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute inset-0 -z-10 blur-3xl"
         style={{
           background:
             'radial-gradient(closest-side, rgba(232,206,138,0.4), rgba(201,162,75,0.12), transparent 72%)',

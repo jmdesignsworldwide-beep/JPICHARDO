@@ -4,8 +4,8 @@ import { useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { BookOpen, MapPin } from 'lucide-react';
+import Image from 'next/image';
 import { BookMockup } from '@/components/brand/BookMockup';
-import { Logo } from '@/components/brand/Logo';
 import { ButtonLink } from '@/components/ui/Button';
 import { AuroraBackground } from '@/components/motion/AuroraBackground';
 import { LightRays } from '@/components/motion/LightRays';
@@ -83,7 +83,7 @@ export function HomeHero() {
             initial={reduce ? false : { opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.08 }}
-            className="mt-4 font-display text-[3rem] font-semibold leading-[1.04] tracking-tightish sm:text-6xl md:text-7xl xl:text-8xl"
+            className="mt-4 font-display text-[3rem] font-bold leading-[1.04] tracking-tightish sm:text-6xl md:text-7xl xl:text-8xl"
           >
             <span className="block font-normal text-bone/95">{t('titleTop')}</span>
             <span className="block text-foil-shimmer">{t('titleBottom')}</span>
@@ -153,13 +153,14 @@ export function HomeHero() {
         {/* Libro protagonista (portada real con flotación + tilt 3D) */}
         <div className="order-first flex flex-col items-center lg:order-last">
           <BookMockup priority />
-          {/* Marca al pie del libro — JPichardo Ministries (logo JP dorado) */}
-          <div className="mt-7 flex items-center gap-2.5 opacity-90">
-            <Logo size={30} />
-            <span className="font-display text-sm font-semibold tracking-tightish text-bone/85">
-              {site.ministry}
-            </span>
-          </div>
+          {/* Marca al pie del libro — logo JP real (lockup completo) */}
+          <Image
+            src="/logo-jpichardo.png"
+            alt={site.ministry}
+            width={320}
+            height={320}
+            className="mt-6 h-auto w-[190px] opacity-95 md:w-[220px]"
+          />
         </div>
       </motion.div>
     </section>

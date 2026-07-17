@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import Image from 'next/image';
 import { Link, usePathname } from '@/i18n/navigation';
-import { Logo } from '@/components/brand/Logo';
 import { LocaleSwitcher } from './LocaleSwitcher';
 import { site } from '@/lib/config';
 import { NAV_ITEMS } from '@/lib/nav';
@@ -58,14 +58,17 @@ export function Header() {
       <div className="container-x flex h-16 items-center justify-between md:h-20">
         {/* Marca */}
         <Link href="/" aria-label={t('brandAria')} className="group flex items-center gap-3">
-          <span
-            className="rounded-full ring-1 ring-gold-500/25 transition-shadow group-hover:ring-gold-400/50"
-            style={{ boxShadow: '0 2px 14px rgba(0,0,0,0.35)' }}
-          >
-            <Logo size={40} />
-          </span>
+          {/* Emblema circular del logo real (JP transparente) */}
+          <Image
+            src="/logo-jpichardo-emblem.png"
+            alt="JPichardo Ministries"
+            width={48}
+            height={48}
+            priority
+            className="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-105 md:h-11 md:w-11"
+          />
           <span className="hidden items-center leading-none sm:flex">
-            <span className="font-display text-lg font-semibold tracking-tightish text-bone">
+            <span className="font-display text-lg font-semibold tracking-tightish text-gold-300">
               {site.ministry}
             </span>
           </span>

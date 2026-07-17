@@ -23,7 +23,7 @@ export function ChaptersGrid() {
               {String(i + 1).padStart(2, '0')}
             </span>
             <span className="h-8 w-px bg-gold-500/30" aria-hidden />
-            <span className="font-serif text-lg leading-snug text-cream-50/90">
+            <span className="font-display text-lg font-medium leading-snug tracking-tightish text-cream-50/90">
               {t(`items.${key}`)}
             </span>
           </div>

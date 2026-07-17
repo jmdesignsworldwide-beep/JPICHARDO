@@ -56,7 +56,7 @@ function Intro() {
   return (
     <Section tone="navy">
       <Reveal className="mx-auto max-w-3xl text-center">
-        <p className="font-serif text-2xl italic leading-relaxed text-cream-50/85 md:text-3xl">
+        <p className="font-display text-2xl font-medium leading-relaxed tracking-tightish text-cream-50/85 md:text-3xl">
           {t('intro')}
         </p>
       </Reveal>

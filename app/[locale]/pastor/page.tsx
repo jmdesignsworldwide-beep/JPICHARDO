@@ -93,11 +93,11 @@ function PastorHero() {
 
         <Reveal delay={0.1} className="text-center lg:text-left">
           <p className="eyebrow">{t('eyebrow')}</p>
-          <h1 className="mt-4 font-display text-5xl font-semibold leading-[1.05] tracking-tightish text-foil md:text-6xl">
+          <h1 className="mt-4 font-display text-5xl font-bold leading-[1.05] tracking-tightish text-foil md:text-6xl">
             {t('title')}
           </h1>
           <GoldDivider className="my-6 justify-center lg:justify-start" />
-          <p className="font-serif text-xl italic text-cream-50/80 md:text-2xl">
+          <p className="font-display text-xl text-cream-50/75 md:text-2xl">
             {t('subtitle')}
           </p>
         </Reveal>

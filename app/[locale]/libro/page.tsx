@@ -164,7 +164,7 @@ function BookHero() {
         </Reveal>
         <Reveal delay={0.1} className="text-center lg:text-left">
           <p className="eyebrow">{t('eyebrow')}</p>
-          <h1 className="mt-4 font-display text-[2.75rem] font-semibold leading-[1.04] tracking-tightish text-foil-shimmer sm:text-6xl md:text-7xl">
+          <h1 className="mt-4 font-display text-[2.75rem] font-bold leading-[1.04] tracking-tightish text-foil-shimmer sm:text-6xl md:text-7xl">
             {t('title')}
           </h1>
           <p className="mt-4 font-display text-2xl font-normal tracking-tightish text-bone/90 md:text-3xl">
