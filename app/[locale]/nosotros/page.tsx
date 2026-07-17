@@ -37,6 +37,7 @@ export default async function AboutPage({
       <AboutHero />
       <Intro />
       <MissionVisionValues />
+      <MinistryInfo />
       <Functions />
       <AboutCta />
     </>
@@ -106,6 +107,30 @@ function MissionVisionValues() {
             </ul>
           </Card>
         </Reveal>
+      </div>
+    </Section>
+  );
+}
+
+function MinistryInfo() {
+  const t = useTranslations('about.ministryInfo');
+  const paragraphs = t.raw('paragraphs') as string[];
+  return (
+    /* BORRADOR - pendiente aprobación pastor */
+    <Section tone="navy">
+      <Reveal className="mx-auto max-w-3xl text-center">
+        <SectionLabel>{t('label')}</SectionLabel>
+        <SectionTitle className="mt-4" foil>
+          {t('title')}
+        </SectionTitle>
+        <GoldDivider className="my-6" />
+      </Reveal>
+      <div className="mx-auto mt-4 max-w-3xl space-y-6">
+        {paragraphs.map((p, i) => (
+          <Reveal as="p" key={i} delay={i * 0.08} className="text-lg leading-relaxed text-cream-50/80">
+            {p}
+          </Reveal>
+        ))}
       </div>
     </Section>
   );

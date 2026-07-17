@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
-import { BookOpen, CheckCircle2 } from 'lucide-react';
+import { BookOpen, CheckCircle2, Tablet, Smartphone, Monitor } from 'lucide-react';
 import { BookMockup } from '@/components/brand/BookMockup';
 import { Section, SectionLabel, SectionTitle } from '@/components/ui/Section';
 import { GoldDivider } from '@/components/ui/GoldDivider';
@@ -9,6 +10,7 @@ import { Reveal } from '@/components/ui/Reveal';
 import { PillarsBand } from '@/components/sections/PillarsBand';
 import { ChaptersGrid } from '@/components/sections/ChaptersGrid';
 import { BookCta } from '@/components/sections/BookCta';
+import { BookGallery } from '@/components/sections/BookGallery';
 import { PhotoShowcase } from '@/components/sections/PhotoShowcase';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { bookJsonLd } from '@/lib/jsonld';
@@ -41,12 +43,83 @@ export default async function BookPage({
       <JsonLd data={bookJsonLd} />
       <BookHero />
       <Synopsis />
+      <BookBanner />
       <BookShowcase />
+      <BookPhotos />
       <ChaptersSection />
       <PillarsBand tone="navy-deep" />
       <IdealFor />
+      <Formats />
       <FinalCta />
     </>
+  );
+}
+
+function BookBanner() {
+  // Banner destacado del libro (banda visual premium, ancho).
+  return (
+    <Section tone="navy">
+      <Reveal className="mx-auto max-w-5xl">
+        <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-gold-500/20 shadow-book ring-1 ring-gold-500/15 sm:aspect-[21/8]">
+          <Image
+            src="/libro-banner.png"
+            alt="Comenzando Mi Viaje — Fundamentos para la Vida Cristiana, por el Pastor José Pichardo"
+            fill
+            sizes="(max-width: 1024px) 92vw, 1024px"
+            className="object-cover"
+          />
+        </div>
+      </Reveal>
+    </Section>
+  );
+}
+
+function BookPhotos() {
+  const t = useTranslations('home.bookShowcase');
+  return (
+    <Section tone="navy-deep">
+      <Reveal className="mb-8 text-center">
+        <SectionLabel>{t('galleryLabel')}</SectionLabel>
+      </Reveal>
+      <div className="mx-auto max-w-3xl">
+        <BookGallery />
+      </div>
+    </Section>
+  );
+}
+
+function Formats() {
+  const t = useTranslations('book.formats');
+  return (
+    <Section tone="navy">
+      <Reveal className="text-center">
+        <SectionLabel>{t('label')}</SectionLabel>
+        <SectionTitle className="mt-4">{t('title')}</SectionTitle>
+        <GoldDivider className="my-6" />
+      </Reveal>
+      <div className="mx-auto mt-8 grid max-w-3xl gap-6 sm:grid-cols-2">
+        <Reveal>
+          <div className="glass h-full rounded-2xl p-8">
+            <span className="flex h-14 w-14 items-center justify-center rounded-full border border-gold-500/30 bg-gold-500/5 text-gold-400">
+              <BookOpen className="h-6 w-6" strokeWidth={1.6} />
+            </span>
+            <h3 className="mt-5 font-display text-2xl">{t('print.title')}</h3>
+            <p className="mt-3 text-cream-50/75">{t('print.body')}</p>
+          </div>
+        </Reveal>
+        <Reveal delay={0.08}>
+          <div className="glass h-full rounded-2xl p-8">
+            <span className="flex items-center gap-2 text-gold-400">
+              <Tablet className="h-6 w-6" strokeWidth={1.6} />
+              <Smartphone className="h-6 w-6" strokeWidth={1.6} />
+              <Monitor className="h-6 w-6" strokeWidth={1.6} />
+            </span>
+            <h3 className="mt-5 font-display text-2xl">{t('digital.title')}</h3>
+            <p className="mt-3 text-cream-50/75">{t('digital.body')}</p>
+          </div>
+        </Reveal>
+      </div>
+    </Section>
   );
 }
 

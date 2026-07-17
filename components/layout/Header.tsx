@@ -64,11 +64,8 @@ export function Header() {
           >
             <Logo size={40} />
           </span>
-          <span className="hidden flex-col leading-none sm:flex">
+          <span className="hidden items-center leading-none sm:flex">
             <span className="font-display text-lg font-semibold tracking-tightish text-bone">
-              {site.name}
-            </span>
-            <span className="mt-0.5 font-label text-[0.54rem] uppercase tracking-label text-gold-400">
               {site.ministry}
             </span>
           </span>

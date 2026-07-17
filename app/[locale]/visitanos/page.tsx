@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { Clock, Home as HomeIcon, MapPin, Phone, Mail, Facebook, Navigation } from 'lucide-react';
@@ -37,6 +38,7 @@ export default async function VisitPage({
   return (
     <>
       <VisitHero />
+      <ChurchBrand />
       <Schedule />
       <Location />
       <ContactSection />
@@ -48,6 +50,50 @@ function VisitHero() {
   const t = useTranslations('visit.hero');
   return (
     <PageHero eyebrow={t('eyebrow')} title={t('title')} subtitle={t('subtitle')} />
+  );
+}
+
+function ChurchBrand() {
+  // SOLO aquí: logo e imagen de Blessing House Church (la iglesia física).
+  const t = useTranslations('visit.church');
+  return (
+    <Section tone="navy">
+      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <Reveal>
+          <div className="flex items-center gap-4">
+            <span className="flex shrink-0 items-center justify-center rounded-2xl border border-gold-500/20 bg-bone/5 p-3">
+              <Image
+                src="/blessing-house-logo.png"
+                alt={t('logoAlt')}
+                width={80}
+                height={80}
+                className="h-14 w-14 object-contain sm:h-16 sm:w-16"
+              />
+            </span>
+            <div>
+              <SectionLabel>{t('label')}</SectionLabel>
+              <h2 className="mt-1 font-display text-3xl font-semibold tracking-tightish text-bone md:text-4xl">
+                {t('title')}
+              </h2>
+            </div>
+          </div>
+          <GoldDivider className="my-6 justify-start" />
+          <p className="max-w-lg text-lg text-cream-50/80">{t('body')}</p>
+        </Reveal>
+
+        <Reveal delay={0.1}>
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-gold-500/20 shadow-book ring-1 ring-gold-500/15">
+            <Image
+              src="/blessing-house-foto.jpg"
+              alt={t('photoAlt')}
+              fill
+              sizes="(max-width: 1024px) 92vw, 560px"
+              className="object-cover"
+            />
+          </div>
+        </Reveal>
+      </div>
+    </Section>
   );
 }
 

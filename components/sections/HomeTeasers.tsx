@@ -15,6 +15,9 @@ import { OrnamentFrame } from '@/components/ui/OrnamentFrame';
 import { Card } from '@/components/ui/Card';
 import { PastorPortrait } from '@/components/brand/PastorPortrait';
 import { PhotoShowcase } from '@/components/sections/PhotoShowcase';
+import { BookMockup } from '@/components/brand/BookMockup';
+import { BookGallery } from '@/components/sections/BookGallery';
+import { DevotionalGrid } from '@/components/sections/DevotionalGrid';
 import { site } from '@/lib/config';
 
 /* ── Bienvenida ─────────────────────────────────────────── */
@@ -24,10 +27,12 @@ export function WelcomeTeaser() {
     <Section tone="navy">
       <Reveal className="mx-auto max-w-3xl text-center">
         <OrnamentFrame className="px-6 py-10 sm:px-12">
-          <SectionLabel>{t('eyebrow')}</SectionLabel>
-          <SectionTitle className="mt-4" foil>
-            {t('title')}
-          </SectionTitle>
+          {/* "Bienvenido a casa" + "Blessing House" como una sola unidad
+              tipográfica coherente — mismo tamaño y alineación, sin salto brusco */}
+          <h2 className="font-display text-4xl font-semibold leading-[1.12] tracking-tightish sm:text-5xl">
+            <span className="block font-normal text-bone/90">{t('eyebrow')}</span>
+            <span className="block text-foil-shimmer">{t('title')}</span>
+          </h2>
           <GoldDivider className="my-6" />
           <p className="font-serif text-2xl italic leading-relaxed text-cream-50/90 md:text-3xl">
             “{t('tagline')}”
@@ -104,19 +109,8 @@ export function DevotionalTeaser() {
               </div>
             </div>
 
-            {/* Mosaico ilustrativo de estilo (composición de diseño) */}
-            <div className="grid grid-cols-3 gap-2" aria-hidden>
-              {[...Array(6)].map((_, i) => (
-                <div
-                  key={i}
-                  className="flex aspect-square items-center justify-center rounded-lg border border-gold-500/20 bg-gradient-to-br from-navy-600/40 to-navy-900 text-gold-500/60"
-                >
-                  <span className="font-serif text-xs italic">
-                    {['Sal', 'Pro', 'Jn', 'Fil', 'Rom', 'Is'][i]}
-                  </span>
-                </div>
-              ))}
-            </div>
+            {/* Publicaciones reales del Devocional Biblia Abierta */}
+            <DevotionalGrid count={6} columns={3} />
           </div>
         </Card>
       </Reveal>
@@ -130,7 +124,7 @@ export function BookShowcaseHome() {
   const tc = useTranslations('common');
   return (
     <Section tone="navy">
-      <Reveal className="mx-auto mb-10 max-w-2xl text-center">
+      <Reveal className="mx-auto mb-12 max-w-2xl text-center">
         <SectionLabel>{t('eyebrow')}</SectionLabel>
         <SectionTitle className="mt-4" foil>
           {t('title')}
@@ -139,12 +133,26 @@ export function BookShowcaseHome() {
         <p className="text-cream-50/75">{t('body')}</p>
       </Reveal>
 
-      <PhotoShowcase
-        src="/libro-en-estante.png"
-        alt="Una mano toma el libro Comenzando Mi Viaje de una estantería — tu primer paso hacia una fe firme."
-        width={1122}
-        height={1402}
-      />
+      {/* Portada real (flotación + tilt 3D) junto a la galería de fotos */}
+      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <Reveal>
+          <BookMockup />
+        </Reveal>
+        <Reveal delay={0.1}>
+          <SectionLabel>{t('galleryLabel')}</SectionLabel>
+          <BookGallery className="mt-5" />
+        </Reveal>
+      </div>
+
+      {/* Imagen editorial existente (se conserva) */}
+      <div className="mt-16">
+        <PhotoShowcase
+          src="/libro-en-estante.png"
+          alt="Una mano toma el libro Comenzando Mi Viaje de una estantería — tu primer paso hacia una fe firme."
+          width={1122}
+          height={1402}
+        />
+      </div>
 
       <div className="mt-8 flex justify-center">
         <ButtonLink href="/libro">

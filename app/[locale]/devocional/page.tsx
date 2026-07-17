@@ -7,6 +7,7 @@ import { Section, SectionLabel, SectionTitle } from '@/components/ui/Section';
 import { GoldDivider } from '@/components/ui/GoldDivider';
 import { Reveal } from '@/components/ui/Reveal';
 import { ButtonAnchor } from '@/components/ui/Button';
+import { DevotionalGrid } from '@/components/sections/DevotionalGrid';
 import { site } from '@/lib/config';
 import { buildMetadata } from '@/lib/seo';
 
@@ -36,8 +37,9 @@ export default async function DevotionalPage({
     <>
       <DevHero />
       <Intro />
-      <Follow />
+      <AboutDev />
       <Gallery />
+      <Follow />
       <FollowCta />
     </>
   );
@@ -78,6 +80,23 @@ function Intro() {
       <Reveal className="mx-auto max-w-3xl text-center">
         <BookOpenText className="mx-auto h-8 w-8 text-gold-400" />
         <SectionLabel className="mt-5 block">{t('label')}</SectionLabel>
+        <GoldDivider className="my-6" />
+        <p className="text-lg leading-relaxed text-cream-50/80">{t('body')}</p>
+      </Reveal>
+    </Section>
+  );
+}
+
+function AboutDev() {
+  const t = useTranslations('devotional.about');
+  return (
+    /* BORRADOR - pendiente aprobación pastor */
+    <Section tone="navy-deep">
+      <Reveal className="mx-auto max-w-3xl text-center">
+        <SectionLabel>{t('label')}</SectionLabel>
+        <SectionTitle className="mt-4" foil>
+          {t('title')}
+        </SectionTitle>
         <GoldDivider className="my-6" />
         <p className="text-lg leading-relaxed text-cream-50/80">{t('body')}</p>
       </Reveal>
@@ -142,35 +161,14 @@ function Follow() {
 }
 
 function Gallery() {
-  // Mosaico ilustrativo del estilo del devocional (composición de diseño,
-  // no fotos de stock). Cada tarjeta evoca una publicación diaria.
-  const refs = [
-    'Salmos 23',
-    'Proverbios 3:5',
-    'Filipenses 4:13',
-    'Isaías 40:31',
-    'Josué 1:9',
-    'Romanos 8:28',
-    'Salmos 46:1',
-    'Jeremías 29:11',
-  ];
+  const t = useTranslations('devotional.follow');
+  // Publicaciones reales del Devocional Biblia Abierta (/devocional-1..10.jpg).
   return (
     <Section tone="navy">
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-        {refs.map((r, i) => (
-          <Reveal
-            key={r}
-            delay={(i % 4) * 0.05}
-            className="flex aspect-square flex-col items-center justify-center rounded-xl border border-gold-500/15 bg-gradient-to-br from-navy-600/40 via-navy-800 to-navy-900 p-4 text-center"
-          >
-            <span className="font-label text-[0.55rem] uppercase tracking-label text-gold-400/80">
-              Biblia Abierta
-            </span>
-            <span className="mt-2 font-serif text-lg italic text-cream-50/90">{r}</span>
-            <span className="mt-3 h-px w-8 bg-gold-500/40" aria-hidden />
-          </Reveal>
-        ))}
-      </div>
+      <Reveal className="mb-8 text-center">
+        <SectionLabel>{t('label')}</SectionLabel>
+      </Reveal>
+      <DevotionalGrid count={10} columns={4} />
     </Section>
   );
 }

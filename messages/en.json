@@ -8,7 +8,7 @@
     "visit": "Visit Us",
     "menu": "Menu",
     "close": "Close",
-    "brandAria": "Blessing House — Home"
+    "brandAria": "JPichardo Ministries — Home"
   },
   "common": {
     "knowTheBook": "Explore the book",
@@ -19,7 +19,8 @@
     "seeDevotional": "See the devotional",
     "comingSoonAmazon": "Coming soon on Amazon",
     "comingSoonHint": "Notify me when it's available",
-    "buyOnAmazon": "Buy on Amazon",
+    "buyOnAmazon": "Get your book",
+    "availableOnAmazon": "Available on Amazon",
     "backToBook": "See the book",
     "draftNotice": "Content under pastoral review",
     "getDirections": "Get directions",
@@ -36,7 +37,7 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "JPichardo Ministries · Blessing House",
+      "eyebrow": "JPichardo Ministries",
       "titleTop": "Beginning",
       "titleBottom": "My Journey",
       "subtitle": "Un manual para aquellos que comienzan en la fe",
@@ -73,7 +74,8 @@
     "bookShowcase": {
       "eyebrow": "The book",
       "title": "A first step toward a firm faith",
-      "body": "Comenzando Mi Viaje walks with the new believer through clear, practical biblical foundations — one step at a time."
+      "body": "Comenzando Mi Viaje walks with the new believer through clear, practical biblical foundations — one step at a time.",
+      "galleryLabel": "Inside the book"
     }
   },
   "about": {
@@ -103,6 +105,15 @@
         "Family and life in community",
         "Evangelism and service",
         "Continual spiritual growth"
+      ]
+    },
+    "ministryInfo": {
+      "label": "JPichardo Ministries",
+      "title": "A ministry that forms disciples",
+      "paragraphs": [
+        "JPichardo Ministries is the teaching and discipleship platform founded by Pastor José Pichardo. Its heart is simple and firm: to preach the Gospel of Jesus Christ with clarity and to walk with every believer from their first step of faith to a solid, fruitful maturity.",
+        "Through preaching, disciple-making, and the strengthening of the local church, the ministry seeks to make sure no one walks alone. Its vision reaches beyond a single congregation: to reach the nations with a fresh, biblical, and relevant message.",
+        "As part of that work, the ministry develops resources that build up everyday faith: the book Comenzando Mi Viaje —foundations for the Christian life— and Devocional Biblia Abierta, with daily reflections that reach thousands. Pastor José Pichardo also ministers as an international speaker, serving the church within and beyond the United States."
       ]
     },
     "functions": {
@@ -225,10 +236,22 @@
         "Small groups"
       ]
     },
+    "formats": {
+      "label": "Available formats",
+      "title": "Read it however you like",
+      "print": {
+        "title": "Hardcover & paperback",
+        "body": "Available in hardcover and paperback, with matte-finish pages for a comfortable, elegant read."
+      },
+      "digital": {
+        "title": "Kindle & devices",
+        "body": "Available on Kindle and to read on tablet, phone, and PC — your journey always with you, wherever you are."
+      }
+    },
     "cta": {
       "title": "Begin your journey",
       "body": "The book will be available very soon. Leave us your contact and we'll let you know the moment it launches.",
-      "available": "This book is now available. Get it on Amazon.",
+      "available": "Available on Amazon.",
       "notify": "Notify me"
     }
   },
@@ -245,6 +268,11 @@
     "intro": {
       "label": "Every day, the Word",
       "body": "Devocional Biblia Abierta brings the Word of God to your screen every day: verses from Proverbs, Psalms, and more, with visual design that inspires and builds up. A daily pause to feed your faith, wherever you are."
+    },
+    "about": {
+      "label": "What Biblia Abierta is",
+      "title": "A community that grows every day",
+      "body": "Devocional Biblia Abierta is the daily content arm of JPichardo Ministries: posts with verses and short reflections that walk with your spiritual growth, one day at a time. Present on Instagram and TikTok, it reaches thousands of people with a fresh, biblical, and heartfelt message — a pause to meet with God in the middle of the everyday."
     },
     "follow": {
       "label": "Follow us",
@@ -283,6 +311,13 @@
         "time": "In homes",
         "name": "Blessing Groups (home cell groups)"
       }
+    },
+    "church": {
+      "label": "Our church",
+      "title": "Blessing House Church",
+      "body": "Blessing House Church is our physical home in Freeport, NY — a community with open doors for you and your family. Come and worship, grow, and find a blessing.",
+      "logoAlt": "Blessing House Church logo",
+      "photoAlt": "Blessing House Church in Freeport, NY"
     },
     "location": {
       "label": "Where we are",

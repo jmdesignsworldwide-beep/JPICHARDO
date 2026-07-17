@@ -188,6 +188,17 @@
   }
 }
 
+/* Glow dorado muy suave y lento (estado "Próximamente" del libro) */
+@keyframes soft-glow {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.62;
+  }
+}
+
 /* Barrido de brillo dorado (shine) sobre títulos foil y botones */
 @keyframes shine-sweep {
   0% {
