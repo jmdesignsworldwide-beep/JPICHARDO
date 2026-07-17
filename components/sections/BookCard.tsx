@@ -11,7 +11,7 @@ import type { BookConfig } from '@/lib/books';
  */
 export function BookCard({ book, delay = 0 }: { book: BookConfig; delay?: number }) {
   const t = useTranslations(book.ns);
-  const tc = useTranslations('common');
+  const tb = useTranslations('books');
 
   return (
     <Reveal from="scale" delay={delay} className="h-full">
@@ -35,7 +35,7 @@ export function BookCard({ book, delay = 0 }: { book: BookConfig; delay?: number
           {t('hero.subtitle')}
         </p>
         <span className="mt-auto inline-flex items-center justify-center gap-2 pt-6 font-label text-[0.7rem] font-semibold uppercase tracking-wide2 text-gold-400">
-          {tc('knowTheBook')}
+          {tb('viewBook')}
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </span>
       </Link>
