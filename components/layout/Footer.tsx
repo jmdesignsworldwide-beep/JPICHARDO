@@ -21,23 +21,22 @@ export function Footer() {
     <footer className="border-t border-gold-500/15 bg-ink-950 text-cream-50">
       <div className="container-x py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-          {/* Marca */}
+          {/* Marca — logo cuadrado con puntas redondeadas y fondo cremita */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3">
-              <Image
-                src="/logo-jpichardo-emblem.png"
-                alt={site.ministry}
-                width={48}
-                height={48}
-                className="h-11 w-11 object-contain"
-              />
+              <span className="block overflow-hidden rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.25)] ring-1 ring-gold-500/20">
+                <Image
+                  src="/logo-jpichardo-header.png"
+                  alt={site.ministry}
+                  width={56}
+                  height={56}
+                  className="h-12 w-12 object-cover"
+                />
+              </span>
               <p className="font-display text-lg font-semibold tracking-tightish text-foil-shimmer">
                 {site.ministry}
               </p>
             </div>
-            <p className="mt-5 max-w-xs text-cream-50/70">
-              {t('tagline')}
-            </p>
           </div>
 
           {/* Explora */}
