@@ -161,7 +161,12 @@ export function BookShowcaseHome() {
       {/* Portada real (flotación + tilt 3D) junto a la galería de fotos */}
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <Reveal>
-          <BookMockup />
+          {/* Libro principal = arte promocional (JPichardo + Amazon); el mockup
+              3D transparente pasa a la galería. */}
+          <BookMockup
+            src="/libro-foto-2.png"
+            alt="Comenzando Mi Viaje — arte promocional del libro por el Pastor José Pichardo"
+          />
         </Reveal>
         <Reveal delay={0.1}>
           <SectionLabel>{t('galleryLabel')}</SectionLabel>
