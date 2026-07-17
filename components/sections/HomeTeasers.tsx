@@ -67,13 +67,15 @@ export function PastorTeaser() {
   const t = useTranslations('home.pastor');
   return (
     <Section tone="navy-deep">
-      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-        <Reveal className="order-last lg:order-first">
+      {/* Dos columnas desde tablet (md); en móvil apila con la foto arriba
+          y el texto centrado debajo para que no quede desbalanceado. */}
+      <div className="grid items-center gap-10 md:grid-cols-2 md:gap-14 lg:gap-16">
+        <Reveal className="order-last text-center md:order-first md:text-left">
           <SectionLabel>{t('eyebrow')}</SectionLabel>
           <SectionTitle className="mt-4">{t('title')}</SectionTitle>
-          <GoldDivider className="my-6 ml-0 justify-start" />
-          <p className="max-w-lg text-lg text-cream-50/75">{t('body')}</p>
-          <div className="mt-8">
+          <GoldDivider className="my-6 justify-center md:justify-start" />
+          <p className="mx-auto max-w-lg text-lg text-cream-50/75 md:mx-0">{t('body')}</p>
+          <div className="mt-8 flex justify-center md:justify-start">
             <ButtonLink href="/pastor">
               {t('cta')}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -81,7 +83,7 @@ export function PastorTeaser() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.1} className="mx-auto w-full max-w-sm">
+        <Reveal delay={0.1} className="mx-auto w-full max-w-sm md:mx-0 md:ml-auto">
           <div className="border-beam overflow-hidden rounded-2xl shadow-book ring-1 ring-gold-500/25">
             <PastorPortrait className="block w-full" />
           </div>
