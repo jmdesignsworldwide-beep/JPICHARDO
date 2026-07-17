@@ -1,8 +1,17 @@
 import type { MetadataRoute } from 'next';
 import { site } from '@/lib/config';
 import { routing } from '@/i18n/routing';
+import { BOOKS } from '@/lib/books';
 
-const PATHS = ['', '/nosotros', '/pastor', '/libro', '/devocional', '/visitanos'];
+const PATHS = [
+  '',
+  '/nosotros',
+  '/pastor',
+  '/libros',
+  ...BOOKS.map((b) => `/libros/${b.slug}`),
+  '/devocional',
+  '/visitanos',
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];

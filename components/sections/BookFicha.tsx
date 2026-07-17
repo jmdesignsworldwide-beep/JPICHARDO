@@ -1,60 +1,19 @@
-import type { Metadata } from 'next';
 import Image from 'next/image';
-import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { BookOpen, CheckCircle2, Tablet, Smartphone, Monitor } from 'lucide-react';
 import { BookMockup } from '@/components/brand/BookMockup';
-import { PageHero } from '@/components/sections/PageHero';
 import { Section, SectionLabel, SectionTitle } from '@/components/ui/Section';
 import { GoldDivider } from '@/components/ui/GoldDivider';
 import { Reveal } from '@/components/ui/Reveal';
 import { ChaptersGrid } from '@/components/sections/ChaptersGrid';
 import { BookCta } from '@/components/sections/BookCta';
-import { JsonLd } from '@/components/seo/JsonLd';
-import { bookJsonLd } from '@/lib/jsonld';
-import { buildMetadata } from '@/lib/seo';
-import { BOOKS, type BookConfig } from '@/lib/books';
+import type { BookConfig } from '@/lib/books';
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'books.meta' });
-  return buildMetadata({
-    locale,
-    path: '/libro',
-    title: t('title'),
-    description: t('description'),
-  });
-}
-
-export default async function BooksPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
-  setRequestLocale(locale);
-  return (
-    <>
-      <JsonLd data={bookJsonLd} />
-      <LibraryHero />
-      {BOOKS.map((book, i) => (
-        <BookFicha key={book.id} book={book} flip={i % 2 === 1} />
-      ))}
-    </>
-  );
-}
-
-function LibraryHero() {
-  const t = useTranslations('books.hero');
-  return <PageHero eyebrow={t('eyebrow')} title={t('title')} subtitle={t('subtitle')} foil />;
-}
-
-/* ── Ficha completa por libro (data-driven) ─────────────────── */
-function BookFicha({ book, flip }: { book: BookConfig; flip: boolean }) {
+/**
+ * Ficha completa de UN libro (data-driven). Se usa en la página de detalle
+ * /libros/[slug]. Lee el contenido del namespace i18n del libro (book / book2).
+ */
+export function BookFicha({ book, flip = false }: { book: BookConfig; flip?: boolean }) {
   const t = useTranslations(book.ns);
   const synopsis = t.raw('synopsis.paragraphs') as string[];
   const idealItems = t.raw('idealFor.items') as string[];
@@ -64,14 +23,14 @@ function BookFicha({ book, flip }: { book: BookConfig; flip: boolean }) {
       {/* Cabecera: portada 3D + título/subtítulo/gancho/CTA */}
       <div className="grid items-center gap-12 lg:grid-cols-2">
         <Reveal from="scale" className={flip ? 'lg:order-last' : ''}>
-          <BookMockup src={book.cover} alt={t('hero.title')} />
+          <BookMockup src={book.cover} alt={t('hero.title')} priority />
         </Reveal>
         <Reveal delay={0.1} className="text-center lg:text-left">
           <p className="eyebrow">{t('hero.eyebrow')}</p>
-          <h2 className="mt-4 font-display text-[clamp(2rem,5vw,3.75rem)] font-bold uppercase leading-[1.05] tracking-tightish text-foil-shimmer">
+          <h1 className="mt-4 font-display text-[clamp(1.8rem,4vw,3rem)] font-bold uppercase leading-[1.06] tracking-tightish text-foil-shimmer">
             {t('hero.title')}
-          </h2>
-          <p className="mt-4 font-display text-xl font-normal tracking-tightish text-bone/90 md:text-2xl">
+          </h1>
+          <p className="mt-4 font-display text-lg font-normal tracking-tightish text-bone/90 md:text-xl">
             {t('hero.subtitle')}
           </p>
           <p className="mt-2 font-label text-xs uppercase tracking-label text-gold-400">
@@ -229,13 +188,12 @@ function FichaGallery({
   layout: 'featured' | 'grid';
 }) {
   if (layout === 'featured') {
-    // [0]=grande izq · [1]=medio · [2]=pequeño der (libro solo, sobre fondo cremita)
     const spans = ['col-span-12 sm:col-span-5', 'col-span-7 sm:col-span-4', 'col-span-5 sm:col-span-3'];
     return (
       <div className="mx-auto mt-16 grid max-w-5xl grid-cols-12 items-end gap-4 sm:gap-6">
         {images.map((src, i) => {
           const [w, h] = GALLERY_DIMS[src] ?? [1024, 1400];
-          const cream = i === 2; // el libro solo → panel cremita premium
+          const cream = i === 2;
           return (
             <Reveal key={src} from="scale" delay={i * 0.1} className={spans[i] ?? 'col-span-4'}>
               <div
