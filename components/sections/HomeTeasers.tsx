@@ -150,8 +150,7 @@ export function BookShowcaseHome() {
   return (
     <Section tone="navy">
       <Reveal className="mx-auto mb-12 max-w-2xl text-center">
-        <SectionLabel>{t('eyebrow')}</SectionLabel>
-        <SectionTitle className="mt-4" foil>
+        <SectionTitle foil>
           {t('title')}
         </SectionTitle>
         <GoldDivider className="my-6" />
