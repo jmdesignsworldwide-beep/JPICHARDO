@@ -30,22 +30,24 @@ export function BookCta({ align = 'center' }: { align?: 'center' | 'start' }) {
     );
   }
 
-  // Estado "Próximamente" — premium, dorado, con brillo sutil (no deshabilitado feo).
+  // Estado "Próximamente" — pastilla premium sobria: borde dorado, fondo sutil
+  // y un glow MUY suave y lento. Sin líneas cruzando ni beam giratorio.
   return (
     <div className={wrap}>
       <div
-        className="border-beam group relative inline-flex cursor-default items-center gap-2 overflow-hidden rounded-full border border-gold-500/60 bg-gradient-to-r from-gold-600/20 via-gold-500/10 to-gold-600/20 px-8 py-4 font-label text-xs font-semibold uppercase tracking-wide2 text-gold-300 shadow-gold"
+        className="relative inline-flex cursor-default items-center gap-2.5 rounded-full border border-gold-500/50 bg-gold-500/[0.06] px-8 py-4 font-label text-xs font-semibold uppercase tracking-wide2 text-gold-200 shadow-[0_0_28px_-8px_rgba(201,162,75,0.4)]"
         aria-disabled="true"
         role="button"
         title={t('comingSoonAmazon')}
       >
+        {/* Glow dorado muy suave y lento (se detiene con prefers-reduced-motion) */}
         <span
           aria-hidden
-          className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent group-hover:translate-x-full"
-          style={{ transition: 'transform 1.1s ease' }}
+          className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-gold-500/15 blur-md"
+          style={{ animation: 'soft-glow 5s ease-in-out infinite' }}
         />
         <Sparkles className="h-4 w-4 text-gold-400" />
-        <span className="text-gold-200">{t('comingSoonAmazon')}</span>
+        <span>{t('comingSoonAmazon')}</span>
       </div>
 
       {/* Microtexto "Notifícame" — enlaza al contacto */}

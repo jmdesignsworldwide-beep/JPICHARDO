@@ -5,10 +5,12 @@ import { useTranslations } from 'next-intl';
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { BookOpen, MapPin } from 'lucide-react';
 import { BookMockup } from '@/components/brand/BookMockup';
+import { Logo } from '@/components/brand/Logo';
 import { ButtonLink } from '@/components/ui/Button';
 import { AuroraBackground } from '@/components/motion/AuroraBackground';
 import { LightRays } from '@/components/motion/LightRays';
 import { Spotlight } from '@/components/motion/Spotlight';
+import { site } from '@/lib/config';
 
 export function HomeHero() {
   const t = useTranslations('home.hero');
@@ -148,21 +150,18 @@ export function HomeHero() {
           </motion.figure>
         </div>
 
-        {/* Libro protagonista (mockup 3D real) */}
-        <div className="order-first lg:order-last">
+        {/* Libro protagonista (portada real con flotación + tilt 3D) */}
+        <div className="order-first flex flex-col items-center lg:order-last">
           <BookMockup priority />
+          {/* Marca al pie del libro — JPichardo Ministries (logo JP dorado) */}
+          <div className="mt-7 flex items-center gap-2.5 opacity-90">
+            <Logo size={30} />
+            <span className="font-display text-sm font-semibold tracking-tightish text-bone/85">
+              {site.ministry}
+            </span>
+          </div>
         </div>
       </motion.div>
-
-      {/* Indicador de scroll */}
-      <div
-        aria-hidden
-        className="absolute inset-x-0 bottom-6 mx-auto flex w-full justify-center"
-      >
-        <span className="flex h-9 w-5 items-start justify-center rounded-full border border-gold-500/40 p-1">
-          <span className="h-2 w-1 animate-pulse rounded-full bg-gold-400" />
-        </span>
-      </div>
     </section>
   );
 }

@@ -8,7 +8,7 @@
     "visit": "Visítanos",
     "menu": "Menú",
     "close": "Cerrar",
-    "brandAria": "Blessing House — Inicio"
+    "brandAria": "JPichardo Ministries — Inicio"
   },
   "common": {
     "knowTheBook": "Conoce el libro",
@@ -19,7 +19,8 @@
     "seeDevotional": "Ver el devocional",
     "comingSoonAmazon": "Próximamente en Amazon",
     "comingSoonHint": "Notifícame cuando esté disponible",
-    "buyOnAmazon": "Comprar en Amazon",
+    "buyOnAmazon": "Adquiere tu libro",
+    "availableOnAmazon": "Disponible en Amazon",
     "backToBook": "Ver el libro",
     "draftNotice": "Contenido en revisión pastoral",
     "getDirections": "Cómo llegar",
@@ -36,7 +37,7 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "JPichardo Ministries · Blessing House",
+      "eyebrow": "JPichardo Ministries",
       "titleTop": "Comenzando",
       "titleBottom": "Mi Viaje",
       "subtitle": "Un manual para aquellos que comienzan en la fe",
@@ -73,7 +74,8 @@
     "bookShowcase": {
       "eyebrow": "El libro",
       "title": "Un primer paso hacia una fe firme",
-      "body": "Comenzando Mi Viaje acompaña al nuevo creyente con fundamentos bíblicos claros y prácticos, un paso a la vez."
+      "body": "Comenzando Mi Viaje acompaña al nuevo creyente con fundamentos bíblicos claros y prácticos, un paso a la vez.",
+      "galleryLabel": "El libro por dentro"
     }
   },
   "about": {
@@ -103,6 +105,15 @@
         "La familia y la vida en comunidad",
         "La evangelización y el servicio",
         "El crecimiento espiritual continuo"
+      ]
+    },
+    "ministryInfo": {
+      "label": "JPichardo Ministries",
+      "title": "Un ministerio que forma discípulos",
+      "paragraphs": [
+        "JPichardo Ministries es la plataforma de enseñanza y discipulado fundada por el Pastor José Pichardo. Su corazón es sencillo y firme: predicar el Evangelio de Jesucristo con claridad y acompañar a cada creyente desde su primer paso de fe hasta una madurez sólida y fructífera.",
+        "A través de la predicación, la formación de discípulos y el fortalecimiento de la iglesia local, el ministerio busca que ninguna persona quede sola en su caminar. La visión se extiende más allá de una sola congregación: alcanzar a las naciones con un mensaje fresco, bíblico y relevante.",
+        "Como parte de esa labor, el ministerio desarrolla recursos que edifican la fe cotidiana: el libro Comenzando Mi Viaje —fundamentos para la vida cristiana— y el Devocional Biblia Abierta, con reflexiones diarias que llegan a miles de personas. El Pastor José Pichardo ministra también como conferencista internacional, sirviendo a la iglesia dentro y fuera de los Estados Unidos."
       ]
     },
     "functions": {
@@ -225,10 +236,22 @@
         "Grupos pequeños"
       ]
     },
+    "formats": {
+      "label": "Formatos disponibles",
+      "title": "Léelo como prefieras",
+      "print": {
+        "title": "Tapa dura y tapa blanda",
+        "body": "Disponible en tapa dura y tapa blanda, con hojas en acabado mate (matte) para una lectura cómoda y elegante."
+      },
+      "digital": {
+        "title": "Kindle y dispositivos",
+        "body": "Disponible en Kindle y para leer en tablet, celular y PC — tu viaje siempre contigo, dondequiera que estés."
+      }
+    },
     "cta": {
       "title": "Comienza tu viaje",
       "body": "El libro estará disponible muy pronto. Déjanos tu contacto y te avisamos apenas salga.",
-      "available": "Este libro ya está disponible. Consíguelo en Amazon.",
+      "available": "Disponible en Amazon.",
       "notify": "Notifícame"
     }
   },
@@ -245,6 +268,11 @@
     "intro": {
       "label": "Cada día, la Palabra",
       "body": "Devocional Biblia Abierta lleva la Palabra de Dios a tu pantalla todos los días: versículos de Proverbios, Salmos y más, con un diseño visual que inspira y edifica. Una pausa diaria para alimentar tu fe, dondequiera que estés."
+    },
+    "about": {
+      "label": "Qué es Biblia Abierta",
+      "title": "Una comunidad que crece cada día",
+      "body": "Devocional Biblia Abierta es el brazo de contenido diario de JPichardo Ministries: publicaciones con versículos y reflexiones breves que acompañan tu crecimiento espiritual, un día a la vez. Presente en Instagram y TikTok, alcanza a miles de personas con un mensaje fresco, bíblico y cercano — una pausa para reencontrarte con Dios en medio de la rutina."
     },
     "follow": {
       "label": "Síguenos",
@@ -283,6 +311,13 @@
         "time": "En los hogares",
         "name": "Grupos de Bendición (Células)"
       }
+    },
+    "church": {
+      "label": "Nuestra iglesia",
+      "title": "Blessing House Church",
+      "body": "Blessing House Church es nuestra casa física en Freeport, NY — una comunidad con las puertas abiertas para ti y tu familia. Ven a adorar, crecer y encontrar una bendición.",
+      "logoAlt": "Logo de Blessing House Church",
+      "photoAlt": "Blessing House Church en Freeport, NY"
     },
     "location": {
       "label": "Dónde estamos",
