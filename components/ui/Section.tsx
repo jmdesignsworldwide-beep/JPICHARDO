@@ -59,7 +59,7 @@ export function SectionTitle({
 }) {
   return (
     <h2
-      className={`font-display text-3xl font-bold leading-[1.12] tracking-tightish sm:text-4xl md:text-5xl ${
+      className={`font-display text-2xl font-bold leading-[1.14] tracking-tightish sm:text-3xl md:text-4xl ${
         foil ? 'text-foil-shimmer' : ''
       } ${className}`}
     >

@@ -61,7 +61,7 @@ const nextConfig = {
   // Enrutado de idioma en la CAPA DE ROUTING de Vercel (sin middleware edge,
   // que falla en este proyecto). "/" y las rutas sin prefijo → "/es[/...]".
   async redirects() {
-    const paths = ['nosotros', 'pastor', 'libro', 'devocional', 'visitanos'];
+    const paths = ['nosotros', 'pastor', 'libros', 'devocional', 'visitanos'];
     return [
       { source: '/', destination: '/es', permanent: false },
       ...paths.map((p) => ({
@@ -69,6 +69,10 @@ const nextConfig = {
         destination: `/es/${p}`,
         permanent: false,
       })),
+      // Legado: "El Libro" pasó a "Libros" — redirige enlaces viejos.
+      { source: '/libro', destination: '/es/libros', permanent: false },
+      { source: '/es/libro', destination: '/es/libros', permanent: false },
+      { source: '/en/libro', destination: '/en/libros', permanent: false },
     ];
   },
 };

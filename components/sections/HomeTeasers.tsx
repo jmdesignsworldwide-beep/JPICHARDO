@@ -41,7 +41,7 @@ export function WelcomeTeaser() {
           </div>
           {/* "Bienvenido a casa" + "Blessing House" como una sola unidad
               tipográfica coherente — mismo tamaño y alineación, sin salto brusco */}
-          <h2 className="font-display text-4xl font-bold leading-[1.12] tracking-tightish sm:text-5xl">
+          <h2 className="font-display text-3xl font-bold leading-[1.14] tracking-tightish sm:text-4xl">
             <span className="block font-normal text-bone/90">{t('eyebrow')}</span>
             <span className="block text-foil-shimmer">{t('title')}</span>
           </h2>
@@ -178,7 +178,7 @@ export function BookShowcaseHome() {
       </div>
 
       <div className="mt-8 flex justify-center">
-        <ButtonLink href="/libro">
+        <ButtonLink href="/libros">
           {tc('knowTheBook')}
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </ButtonLink>

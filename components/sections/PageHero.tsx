@@ -23,7 +23,7 @@ export function PageHero({
   foil?: boolean;
   children?: ReactNode;
 }) {
-  const titleClass = `mx-auto max-w-4xl font-display text-4xl font-bold leading-[1.08] tracking-tightish sm:text-5xl md:text-6xl ${
+  const titleClass = `mx-auto max-w-4xl text-balance font-display text-3xl font-bold leading-[1.1] tracking-tightish sm:text-4xl md:text-5xl ${
     foil ? 'text-foil-shimmer' : 'text-cream-50'
   }`;
 

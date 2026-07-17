@@ -51,8 +51,19 @@ export default async function VisitPage({
 
 function VisitHero() {
   const t = useTranslations('visit.hero');
+  // "Blessing House" queda junto en su propia línea (salto controlado + nowrap).
   return (
-    <PageHero eyebrow={t('eyebrow')} title={t('title')} subtitle={t('subtitle')} />
+    <PageHero
+      eyebrow={t('eyebrow')}
+      title={
+        <>
+          {t('title')}
+          <br />
+          <span className="whitespace-nowrap">Blessing House</span>
+        </>
+      }
+      subtitle={t('subtitle')}
+    />
   );
 }
 
@@ -78,11 +89,11 @@ function ChurchBrand() {
         <GoldDivider className="my-7" />
         <p className="mx-auto max-w-xl text-lg text-cream-50/80">{t('body')}</p>
         {/* BORRADOR - pendiente aprobación pastor */}
-        <div className="mt-7">
+        <div className="mx-auto mt-12 max-w-md border-t border-gold-500/15 pt-10 pb-2">
           <p className="font-label text-[0.7rem] uppercase tracking-label text-gold-400">
             {t('pastorsLabel')}
           </p>
-          <p className="mt-2 font-display text-xl font-semibold tracking-tightish text-bone md:text-2xl">
+          <p className="mt-4 font-display text-xl font-semibold tracking-tightish text-bone md:text-2xl">
             {t('pastorsNames')}
           </p>
         </div>

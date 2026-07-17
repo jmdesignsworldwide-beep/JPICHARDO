@@ -6,7 +6,7 @@ export const NAV_ITEMS = [
   { href: '/', key: 'home' },
   { href: '/nosotros', key: 'about' },
   { href: '/pastor', key: 'pastor' },
-  { href: '/libro', key: 'book' },
+  { href: '/libros', key: 'book' },
   { href: '/devocional', key: 'devotional' },
   { href: '/visitanos', key: 'visit' },
 ] as const;

@@ -172,7 +172,7 @@ function BookTeaser() {
           <SectionTitle className="mt-3">{t('title')}</SectionTitle>
           <p className="mt-5 max-w-lg text-lg text-cream-50/75">{t('body')}</p>
           <div className="mt-8">
-            <ButtonLink href="/libro">
+            <ButtonLink href="/libros">
               {t('cta')}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </ButtonLink>

@@ -290,7 +290,9 @@
     "by": "por el Pastor José Pichardo",
     "synopsisLabel": "Sinopsis",
     "chaptersLabel": "Contenido",
-    "formatsLabel": "Formatos disponibles"
+    "formatsLabel": "Formatos disponibles",
+    "alsoLabel": "También te puede interesar",
+    "alsoTitle": "Otros libros"
   },
   "book2": {
     "meta": {
@@ -406,7 +408,7 @@
     },
     "hero": {
       "eyebrow": "Visítanos",
-      "title": "Te esperamos en Blessing House",
+      "title": "Te esperamos en",
       "subtitle": "Ven a adorar con nosotros — hay una bendición esperándote."
     },
     "schedule": {
@@ -430,7 +432,7 @@
       "logoAlt": "Logo de Blessing House Church",
       "photoAlt": "Blessing House Church en Freeport, NY",
       "pastorsLabel": "Nuestros pastores",
-      "pastorsNames": "Luchi Pichardo y José Pichardo"
+      "pastorsNames": "José Pichardo y Luchi Pichardo"
     },
     "location": {
       "label": "Dónde estamos",

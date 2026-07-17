@@ -129,21 +129,21 @@ export function HeroCarousel() {
                 transition={fade}
                 className={i === index ? '' : 'pointer-events-none'}
               >
-                <h1 className="font-display text-[clamp(2.4rem,8vw,6.5rem)] font-bold uppercase leading-[1.04] tracking-tightish">
+                <h1 className="font-display text-[clamp(2rem,5.5vw,4.75rem)] font-bold uppercase leading-[1.05] tracking-tightish">
                   <span className="block font-normal text-bone/95">{slide.titleTop}</span>
                   <span className="block text-foil-shimmer">{slide.titleBottom}</span>
                 </h1>
 
-                <p className="mx-auto mt-6 max-w-xl font-display text-2xl font-normal tracking-tightish text-bone/90 md:text-3xl lg:mx-0">
+                <p className="mx-auto mt-5 max-w-xl font-display text-xl font-normal tracking-tightish text-bone/90 md:text-2xl lg:mx-0">
                   {slide.subtitle}
                 </p>
 
-                <p className="mt-4 font-serif text-2xl italic text-gold-400 md:text-3xl">
+                <p className="mt-4 font-serif text-xl italic text-gold-400 md:text-2xl">
                   “{slide.hook}”
                 </p>
 
                 <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-                  <ButtonLink href="/libro" size="lg">
+                  <ButtonLink href={`/libros/${BOOKS[i]?.slug ?? ''}`} size="lg">
                     <BookOpen className="h-4 w-4" />
                     {slide.cta}
                   </ButtonLink>
