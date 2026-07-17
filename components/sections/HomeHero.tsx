@@ -4,13 +4,11 @@ import { useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { BookOpen, MapPin } from 'lucide-react';
-import Image from 'next/image';
 import { BookMockup } from '@/components/brand/BookMockup';
 import { ButtonLink } from '@/components/ui/Button';
 import { AuroraBackground } from '@/components/motion/AuroraBackground';
 import { LightRays } from '@/components/motion/LightRays';
 import { Spotlight } from '@/components/motion/Spotlight';
-import { site } from '@/lib/config';
 
 export function HomeHero() {
   const t = useTranslations('home.hero');
@@ -153,14 +151,6 @@ export function HomeHero() {
         {/* Libro protagonista (portada real con flotación + tilt 3D) */}
         <div className="order-first flex flex-col items-center lg:order-last">
           <BookMockup priority />
-          {/* Marca al pie del libro — logo JP real (lockup completo) */}
-          <Image
-            src="/logo-jpichardo.png"
-            alt={site.ministry}
-            width={320}
-            height={320}
-            className="mt-6 h-auto w-[190px] opacity-95 md:w-[220px]"
-          />
         </div>
       </motion.div>
     </section>
