@@ -25,7 +25,8 @@
     "draftNotice": "Content under pastoral review",
     "getDirections": "Get directions",
     "sendMessage": "Send message",
-    "follow": "Follow"
+    "follow": "Follow",
+    "whatsappAria": "Message us on WhatsApp"
   },
   "pillars": {
     "sectionLabel": "The pillars of the journey",
@@ -330,6 +331,36 @@
       "phone": "Phone",
       "email": "Email",
       "facebook": "Facebook"
+    },
+    "faq": {
+      "label": "Frequently asked questions",
+      "title": "Before your visit",
+      "items": [
+        {
+          "q": "What time are the services?",
+          "a": "Sundays at 7:00 PM is the main service. On Thursdays we have the Blessing Groups (home cell groups) in homes."
+        },
+        {
+          "q": "Where are you located?",
+          "a": "70 West Merrick RD, Freeport, NY 11520. You'll find the map and a \"Get directions\" link on this same page."
+        },
+        {
+          "q": "Are the services in Spanish?",
+          "a": "Yes, our services are in Spanish."
+        },
+        {
+          "q": "Do I need to be a member to attend?",
+          "a": "No, everyone is welcome. Come as you are — a blessing is waiting for you."
+        },
+        {
+          "q": "How do I contact the church?",
+          "a": "By phone or WhatsApp at +1 516-444-9094, by email at blessinghousecchurch@gmail.com, or through our social media."
+        },
+        {
+          "q": "Where can I get the book \"Comenzando Mi Viaje\"?",
+          "a": "It will be available soon on Amazon (hardcover, paperback, and Kindle). Write to us and we'll let you know the moment it launches."
+        }
+      ]
     },
     "formLink": "Contact form"
   },

@@ -1,24 +1,22 @@
-import { Space_Grotesk, Instrument_Serif } from 'next/font/google';
-import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
+import { Inter, Newsreader } from 'next/font/google';
 
-// Display / títulos — grotesque moderna de alto contraste (look Vercel/Linear).
-export const fontDisplay = Space_Grotesk({
+// TIPOGRAFÍA DEFINITIVA (bloqueada) — fuente única de verdad.
+// Inter → TODO el texto (display, subtítulos, cuerpo, botones, labels, nav).
+// Newsreader itálica → SOLO gancho, versículos y citas.
+
+export const fontSans = Inter({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-display',
+  variable: '--font-sans',
   weight: ['400', '500', '600', '700'],
 });
 
-// Acento — serif italic refinada SOLO para el gancho y el versículo (calidez).
-export const fontAccent = Instrument_Serif({
+export const fontAccent = Newsreader({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-accent',
-  weight: ['400'],
+  weight: ['400', '500'],
   style: ['normal', 'italic'],
 });
 
-// Body → Geist Sans · Labels/eyebrows → Geist Mono (self-hosted, Vercel).
-// Exponen --font-geist-sans / --font-geist-mono.
-export const fontVariables = `${fontDisplay.variable} ${fontAccent.variable} ${GeistSans.variable} ${GeistMono.variable}`;
+export const fontVariables = `${fontSans.variable} ${fontAccent.variable}`;

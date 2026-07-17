@@ -21,6 +21,8 @@ const config: Config = {
         slate: '#8A97AD',
         gold: {
           DEFAULT: '#C9A24B',
+          200: '#F5E7C3', // dorado muy claro (texto sobre oscuro)
+          300: '#EED89F', // dorado claro
           400: '#E8CE8A', // gold-lite (highlights/foil)
           500: '#C9A24B', // dorado principal
           600: '#A67C2E', // dorado profundo
@@ -40,19 +42,17 @@ const config: Config = {
         silver: '#8A97AD', // → slate
       },
       fontFamily: {
-        // Display / títulos — Space Grotesk (grotesque moderna, look Vercel/Linear)
-        display: ['var(--font-display)', 'Space Grotesk', 'system-ui', 'sans-serif'],
-        // Body — Geist Sans (self-hosted)
-        sans: ['var(--font-geist-sans)', 'Geist', 'system-ui', 'sans-serif'],
-        // Labels / eyebrows — Geist Mono
-        label: ['var(--font-geist-mono)', 'ui-monospace', 'monospace'],
-        // Acento — Instrument Serif italic (solo gancho + versículo)
-        serif: ['var(--font-accent)', 'Instrument Serif', 'Georgia', 'serif'],
+        // TODO el texto usa Inter (display, cuerpo, botones, nav, labels)
+        display: ['var(--font-sans)', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-sans)', 'Inter', 'system-ui', 'sans-serif'],
+        label: ['var(--font-sans)', 'Inter', 'system-ui', 'sans-serif'],
+        // Acento — Newsreader italic (SOLO gancho + versículos + citas)
+        serif: ['var(--font-accent)', 'Newsreader', 'Georgia', 'serif'],
       },
       letterSpacing: {
-        label: '0.25em',
+        label: '0.3em',
         wide2: '0.14em',
-        tightish: '-0.03em',
+        tightish: '-0.035em',
       },
       backgroundImage: {
         'gold-foil':

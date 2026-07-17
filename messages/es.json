@@ -25,7 +25,8 @@
     "draftNotice": "Contenido en revisión pastoral",
     "getDirections": "Cómo llegar",
     "sendMessage": "Enviar mensaje",
-    "follow": "Seguir"
+    "follow": "Seguir",
+    "whatsappAria": "Escríbenos por WhatsApp"
   },
   "pillars": {
     "sectionLabel": "Los pilares del viaje",
@@ -330,6 +331,36 @@
       "phone": "Teléfono",
       "email": "Correo",
       "facebook": "Facebook"
+    },
+    "faq": {
+      "label": "Preguntas frecuentes",
+      "title": "Antes de tu visita",
+      "items": [
+        {
+          "q": "¿A qué hora son los servicios?",
+          "a": "Domingos a las 7:00 PM es el servicio principal. Los jueves tenemos los Grupos de Bendición (células) en los hogares."
+        },
+        {
+          "q": "¿Dónde están ubicados?",
+          "a": "70 West Merrick RD, Freeport, NY 11520. Encuentra el mapa y el enlace \"Cómo llegar\" en esta misma página."
+        },
+        {
+          "q": "¿Los servicios son en español?",
+          "a": "Sí, nuestros servicios son en español."
+        },
+        {
+          "q": "¿Necesito ser miembro para asistir?",
+          "a": "No, todos son bienvenidos. Ven como eres — hay una bendición esperándote."
+        },
+        {
+          "q": "¿Cómo contacto a la iglesia?",
+          "a": "Por teléfono o WhatsApp al +1 516-444-9094, por correo a blessinghousecchurch@gmail.com, o a través de nuestras redes sociales."
+        },
+        {
+          "q": "¿Dónde consigo el libro \"Comenzando Mi Viaje\"?",
+          "a": "Estará disponible próximamente en Amazon (tapa dura, tapa blanda y Kindle). Escríbenos y te avisamos apenas salga."
+        }
+      ]
     },
     "formLink": "Formulario de contacto"
   },

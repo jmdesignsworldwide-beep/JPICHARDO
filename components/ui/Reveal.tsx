@@ -4,8 +4,8 @@ import { motion, useReducedMotion, type Variants } from 'framer-motion';
 import type { ReactNode } from 'react';
 
 const variantsFor = (y: number): Variants => ({
-  hidden: { opacity: 0, y },
-  show: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y, scale: 0.98 },
+  show: { opacity: 1, y: 0, scale: 1 },
 });
 
 /**

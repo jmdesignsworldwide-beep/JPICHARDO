@@ -7,6 +7,7 @@ import { fontVariables } from '@/lib/fonts';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { SmoothScroll } from '@/components/motion/SmoothScroll';
+import { WhatsAppFab } from '@/components/ui/WhatsAppFab';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { churchJsonLd } from '@/lib/jsonld';
 import { site } from '@/lib/config';
@@ -37,10 +38,8 @@ export async function generateMetadata({
       locale === 'en'
         ? 'A church with a fresh message to bless you. Home of the book “Comenzando Mi Viaje” by Pastor José Pichardo.'
         : 'Una iglesia con un mensaje fresco para bendecirte. Hogar del libro “Comenzando Mi Viaje” del Pastor José Pichardo.',
-    icons: {
-      icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
-      apple: [{ url: '/logo-jpichardo.png' }],
-    },
+    // Favicon vía convención de archivos: app/icon.png y app/apple-icon.png
+    // (emblema JP sobre fondo midnight). Next los detecta automáticamente.
     manifest: '/manifest.webmanifest',
     openGraph: {
       type: 'website',
@@ -92,6 +91,7 @@ export default async function LocaleLayout({
           <Header />
           <main id="main">{children}</main>
           <Footer />
+          <WhatsAppFab />
         </NextIntlClientProvider>
       </body>
     </html>

@@ -1,7 +1,7 @@
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { MapPin, Phone, Mail, Facebook, Instagram, Music2, LinkIcon } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
-import { Logo } from '@/components/brand/Logo';
 import { GoldDivider } from '@/components/ui/GoldDivider';
 import { site } from '@/lib/config';
 import { NAV_ITEMS } from '@/lib/nav';
@@ -24,15 +24,18 @@ export function Footer() {
           {/* Marca */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3">
-              <Logo size={44} />
-              <div className="leading-none">
-                <p className="font-display text-lg text-foil">{site.name}</p>
-                <p className="font-label text-[0.55rem] uppercase tracking-label text-silver/70">
-                  {site.ministry}
-                </p>
-              </div>
+              <Image
+                src="/logo-jpichardo-emblem.png"
+                alt={site.ministry}
+                width={48}
+                height={48}
+                className="h-11 w-11 object-contain"
+              />
+              <p className="font-display text-lg font-semibold tracking-tightish text-gold-300">
+                {site.ministry}
+              </p>
             </div>
-            <p className="mt-5 max-w-xs font-serif text-lg italic text-cream-50/75">
+            <p className="mt-5 max-w-xs text-cream-50/70">
               {t('tagline')}
             </p>
           </div>

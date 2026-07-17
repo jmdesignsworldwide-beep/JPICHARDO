@@ -10,6 +10,7 @@ import { GoldDivider } from '@/components/ui/GoldDivider';
 import { Reveal } from '@/components/ui/Reveal';
 import { ButtonAnchor } from '@/components/ui/Button';
 import { ContactForm } from '@/components/sections/ContactForm';
+import { Faq } from '@/components/sections/Faq';
 import { site, MAPS_EMBED_SRC, MAPS_LINK } from '@/lib/config';
 import { buildMetadata } from '@/lib/seo';
 
@@ -41,6 +42,8 @@ export default async function VisitPage({
       <ChurchBrand />
       <Schedule />
       <Location />
+      {/* BORRADOR - pendiente aprobación pastor */}
+      <Faq />
       <ContactSection />
     </>
   );
