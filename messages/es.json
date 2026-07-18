@@ -263,15 +263,20 @@
       ]
     },
     "formats": {
-      "label": "Formatos disponibles",
+      "label": "Formatos y precios",
       "title": "Léelo como prefieras",
-      "print": {
-        "title": "Tapa dura y tapa blanda",
-        "body": "Disponible en tapa dura y tapa blanda, con hojas en acabado mate (matte) para una lectura cómoda y elegante."
+      "note": "Precios en USD.",
+      "ebook": {
+        "name": "eBook (Kindle)",
+        "caption": "Lectura digital"
       },
-      "digital": {
-        "title": "Kindle y dispositivos",
-        "body": "Disponible en Kindle y para leer en tablet, celular y PC — tu viaje siempre contigo, dondequiera que estés."
+      "paperback": {
+        "name": "Tapa blanda",
+        "caption": "Edición de tapa blanda"
+      },
+      "hardcover": {
+        "name": "Tapa dura",
+        "caption": "Edición de tapa dura"
       }
     },
     "cta": {
@@ -366,15 +371,20 @@
       ]
     },
     "formats": {
-      "label": "Formatos disponibles",
+      "label": "Formatos y precios",
       "title": "Léelo como prefieras",
-      "print": {
-        "title": "Tapa dura y tapa blanda",
-        "body": "Disponible en tapa dura y tapa blanda para tu biblioteca y tus grupos de estudio."
+      "note": "Precios en USD.",
+      "ebook": {
+        "name": "eBook (Kindle)",
+        "caption": "Lectura digital"
       },
-      "digital": {
-        "title": "Kindle y dispositivos",
-        "body": "Disponible en Kindle y para leer en tablet, celular y PC."
+      "paperback": {
+        "name": "Tapa blanda",
+        "caption": "Edición de tapa blanda"
+      },
+      "hardcover": {
+        "name": "Tapa dura",
+        "caption": "Edición de tapa dura"
       }
     },
     "cta": {

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { BookOpen, CheckCircle2, Tablet, Smartphone, Monitor, Quote } from 'lucide-react';
+import { BookOpen, CheckCircle2, Tablet, Book, Quote } from 'lucide-react';
 import { BookMockup } from '@/components/brand/BookMockup';
 import { Section, SectionLabel, SectionTitle } from '@/components/ui/Section';
 import { GoldDivider } from '@/components/ui/GoldDivider';
@@ -92,8 +92,8 @@ export function BookFicha({ book, flip = false }: { book: BookConfig; flip?: boo
         </div>
       </div>
 
-      {/* Formatos */}
-      <FormatsBlock ns={book.ns} />
+      {/* Formatos y precios */}
+      <FormatsBlock book={book} />
 
       {/* Ideal para */}
       <div className="mx-auto mt-16">
@@ -186,38 +186,44 @@ function BookParts({ ns }: { ns: 'book' | 'book2' }) {
   );
 }
 
-/* Bloque de formatos (namespace-aware) */
-function FormatsBlock({ ns }: { ns: 'book' | 'book2' }) {
-  const t = useTranslations(`${ns}.formats`);
+/* Formatos y precios (data-driven): 3 tarjetas con ícono + precio por formato */
+function FormatsBlock({ book }: { book: BookConfig }) {
+  const t = useTranslations(`${book.ns}.formats`);
+  const usd = (n: number) =>
+    `$${n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  const cards = [
+    { key: 'ebook', price: book.prices.ebook, Icon: Tablet },
+    { key: 'paperback', price: book.prices.paperback, Icon: Book },
+    { key: 'hardcover', price: book.prices.hardcover, Icon: BookOpen },
+  ] as const;
+
   return (
-    <div className="mx-auto mt-16 max-w-3xl">
+    <div className="mx-auto mt-16 max-w-4xl">
       <Reveal className="text-center">
         <SectionLabel>{t('label')}</SectionLabel>
         <SectionTitle className="mt-4">{t('title')}</SectionTitle>
         <GoldDivider className="my-6" />
       </Reveal>
-      <div className="mt-8 grid gap-6 sm:grid-cols-2">
-        <Reveal>
-          <div className="glass h-full rounded-2xl p-8">
+      <div className="mt-8 grid gap-6 sm:grid-cols-3">
+        {cards.map(({ key, price, Icon }, i) => (
+          <Reveal
+            key={key}
+            from="scale"
+            delay={i * 0.08}
+            className="glass flex h-full flex-col items-center rounded-2xl p-8 text-center"
+          >
             <span className="flex h-14 w-14 items-center justify-center rounded-full border border-gold-500/30 bg-gold-500/5 text-gold-400">
-              <BookOpen className="h-6 w-6" strokeWidth={1.6} />
+              <Icon className="h-6 w-6" strokeWidth={1.6} />
             </span>
-            <h3 className="mt-5 font-display text-2xl">{t('print.title')}</h3>
-            <p className="mt-3 text-cream-50/75">{t('print.body')}</p>
-          </div>
-        </Reveal>
-        <Reveal delay={0.08}>
-          <div className="glass h-full rounded-2xl p-8">
-            <span className="flex items-center gap-2 text-gold-400">
-              <Tablet className="h-6 w-6" strokeWidth={1.6} />
-              <Smartphone className="h-6 w-6" strokeWidth={1.6} />
-              <Monitor className="h-6 w-6" strokeWidth={1.6} />
-            </span>
-            <h3 className="mt-5 font-display text-2xl">{t('digital.title')}</h3>
-            <p className="mt-3 text-cream-50/75">{t('digital.body')}</p>
-          </div>
-        </Reveal>
+            <h3 className="mt-5 font-display text-xl">{t(`${key}.name`)}</h3>
+            <p className="mt-1 text-sm text-cream-50/60">{t(`${key}.caption`)}</p>
+            <p className="mt-4 font-display text-3xl font-bold text-foil">{usd(price)}</p>
+          </Reveal>
+        ))}
       </div>
+      <p className="mt-6 text-center font-label text-[0.7rem] uppercase tracking-label text-cream-50/50">
+        {t('note')}
+      </p>
     </div>
   );
 }
