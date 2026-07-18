@@ -24,6 +24,8 @@ export interface BookConfig {
   banner?: string;
   /** fotos para la galería de la ficha */
   gallery: string[];
+  /** precios por formato en USD (referencia, se muestran en la ficha) */
+  prices: { ebook: number; paperback: number; hardcover: number };
   /** disponibilidad de compra por libro */
   available: boolean;
   amazonUrl: string;
@@ -45,6 +47,7 @@ export const BOOKS: BookConfig[] = [
     // conserva para el hero rotativo y la tarjeta de biblioteca.
     fichaHero: '/libro-foto-2.png',
     gallery: ['/libro-foto-3.png', '/libro-portada-transparent.png'],
+    prices: { ebook: 6.99, paperback: 12.99, hardcover: 18.99 },
     available: false,
     amazonUrl: '',
     chaptersLayout: 'grid12',
@@ -57,6 +60,7 @@ export const BOOKS: BookConfig[] = [
     cover: '/relaciones-portada.png',
     banner: '/relaciones-banner.png',
     gallery: ['/relaciones-foto-1.png', '/relaciones-foto-2.png', '/relaciones-foto-3.png'],
+    prices: { ebook: 6.99, paperback: 11.99, hardcover: 17.99 },
     available: false,
     amazonUrl: '',
     chaptersLayout: 'parts',

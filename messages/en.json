@@ -263,15 +263,20 @@
       ]
     },
     "formats": {
-      "label": "Available formats",
+      "label": "Formats & prices",
       "title": "Read it however you like",
-      "print": {
-        "title": "Hardcover & paperback",
-        "body": "Available in hardcover and paperback, with matte-finish pages for a comfortable, elegant read."
+      "note": "Prices in USD.",
+      "ebook": {
+        "name": "eBook (Kindle)",
+        "caption": "Digital reading"
       },
-      "digital": {
-        "title": "Kindle & devices",
-        "body": "Available on Kindle and to read on tablet, phone, and PC — your journey always with you, wherever you are."
+      "paperback": {
+        "name": "Paperback",
+        "caption": "Paperback edition"
+      },
+      "hardcover": {
+        "name": "Hardcover",
+        "caption": "Hardcover edition"
       }
     },
     "cta": {
@@ -366,15 +371,20 @@
       ]
     },
     "formats": {
-      "label": "Available formats",
+      "label": "Formats & prices",
       "title": "Read it however you like",
-      "print": {
-        "title": "Hardcover & paperback",
-        "body": "Available in hardcover and paperback for your library and your study groups."
+      "note": "Prices in USD.",
+      "ebook": {
+        "name": "eBook (Kindle)",
+        "caption": "Digital reading"
       },
-      "digital": {
-        "title": "Kindle & devices",
-        "body": "Available on Kindle and to read on tablet, phone, and PC."
+      "paperback": {
+        "name": "Paperback",
+        "caption": "Paperback edition"
+      },
+      "hardcover": {
+        "name": "Hardcover",
+        "caption": "Hardcover edition"
       }
     },
     "cta": {
