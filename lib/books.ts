@@ -39,6 +39,7 @@ export const BOOKS: BookConfig[] = [
     slug: 'comenzando-mi-viaje',
     ns: 'book',
     cover: '/libro-portada-transparent.png',
+    banner: '/libro-banner.png',
     // La cabecera de la ficha muestra el arte promocional (JPichardo + Amazon);
     // el mockup 3D transparente pasa a la galería. El `cover` transparente se
     // conserva para el hero rotativo y la tarjeta de biblioteca.
