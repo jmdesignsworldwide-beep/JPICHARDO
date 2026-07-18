@@ -224,11 +224,15 @@
     },
     "synopsis": {
       "label": "Sinopsis",
+      "lead": "Todo gran viaje comienza con un primer paso.",
       "paragraphs": [
-        "La vida cristiana no termina cuando una persona recibe a Jesucristo; en realidad, allí comienza una nueva aventura de crecimiento, transformación y discipulado. Comenzando Mi Viaje ha sido escrito para acompañar al nuevo creyente en sus primeros pasos, ofreciendo fundamentos bíblicos claros, prácticos y accesibles para desarrollar una relación firme con Dios.",
-        "A lo largo de doce capítulos, el lector descubrirá las verdades esenciales de la fe cristiana: la salvación, el señorío de Cristo, el bautismo, la cena del Señor, el valor de la Biblia, la oración, la fe, el poder del Espíritu Santo, la evangelización, los compromisos del creyente, el carácter de Cristo y la perseverancia hasta el final.",
-        "Cada capítulo incluye aplicaciones prácticas, preguntas para la reflexión y herramientas que facilitan el crecimiento espiritual, haciendo de este libro un excelente recurso para el estudio personal, el discipulado uno a uno, las clases para nuevos creyentes y los grupos pequeños."
-      ]
+        "La vida cristiana no termina cuando una persona recibe a Jesucristo; en realidad, allí comienza una nueva aventura de crecimiento, transformación y discipulado. Comenzando Mi Viaje ha sido escrito para acompañar al nuevo creyente en esos primeros pasos, ofreciendo fundamentos bíblicos claros, prácticos y accesibles para desarrollar una relación firme con Dios.",
+        "A lo largo de doce capítulos, el lector descubrirá las verdades esenciales de la fe cristiana: la salvación, el señorío de Cristo, el bautismo, la Cena del Señor, el valor de la Biblia, la oración, la fe, la guía del Espíritu Santo, la importancia de la iglesia, la evangelización, los compromisos del creyente y el desarrollo de una vida que agrade a Dios.",
+        "Cada capítulo incluye aplicaciones prácticas, preguntas para la reflexión y herramientas que facilitan el crecimiento espiritual, haciendo de este libro un excelente recurso para el estudio personal, el discipulado uno a uno, las clases para nuevos creyentes y los grupos pequeños.",
+        "Comenzando Mi Viaje no es solo un libro para leer; es una guía para caminar con Cristo y establecer fundamentos sólidos que perduren toda la vida.",
+        "Si has comenzado tu camino con Cristo, este libro será un compañero fiel en tus primeros pasos. Y si tienes el privilegio de discipular a otros, encontrarás en estas páginas una herramienta bíblica, práctica y probada para guiarlos hacia una fe firme y madura."
+      ],
+      "closing": "Este libro no representa el final de un curso, sino el comienzo de una vida de crecimiento, obediencia y comunión con Jesucristo. Porque el crecimiento espiritual comienza con un paso de fe y continúa durante toda una vida de discipulado."
     },
     "chapters": {
       "label": "Doce capítulos",
@@ -275,6 +279,15 @@
       "body": "El libro estará disponible muy pronto. Déjanos tu contacto y te avisamos apenas salga.",
       "available": "Disponible en Amazon.",
       "notify": "Notifícame"
+    },
+    "quotes": {
+      "label": "Citas",
+      "title": "Frases del libro",
+      "items": [
+        "La cruz demuestra, al mismo tiempo, la gravedad del pecado y la inmensidad del amor de Dios.",
+        "El arrepentimiento no es simplemente sentir remordimiento; es un cambio de dirección.",
+        "La fe significa descansar completamente en la obra que Cristo realizó en la cruz."
+      ]
     }
   },
   "books": {
@@ -317,7 +330,8 @@
       "paragraphs": [
         "La iglesia local es, por naturaleza, un mosaico de trasfondos culturales, edades, convicciones y niveles de madurez espiritual. Esa diversidad es una de las mayores riquezas del cuerpo de Cristo, pero también uno de sus mayores desafíos: ¿cómo convivir en unidad cuando pensamos, sentimos y practicamos nuestra fe de maneras distintas?",
         "Basado en una exposición cuidadosa de Romanos 14, este libro guía al lector a través de diez capítulos organizados en tres partes: primero, un diagnóstico honesto de la realidad cultural y relacional de la iglesia; segundo, los principios teológicos que Pablo establece sobre la conciencia, la libertad cristiana y el sacrificio por amor; y tercero, la aplicación práctica de esos principios a situaciones reales de la vida congregacional, desde diferencias en el estilo de adoración hasta la forma de tratar al nuevo creyente.",
-        "Con un tono pastoral, directo y profundamente bíblico, el autor invierte una suposición común: no siempre el más estricto es el más maduro, ni el más flexible el más débil. A través de ejemplos concretos de la vida de iglesia, preguntas de reflexión y momentos de oración al cierre de cada capítulo, el lector es desafiado a examinar sus propias actitudes hacia quienes piensan diferente, y a descubrir que el amor —no la opinión— debe ser la medida final de nuestras relaciones dentro del cuerpo de Cristo."
+        "Con un tono pastoral, directo y profundamente bíblico, el autor invierte una suposición común: no siempre el más estricto es el más maduro, ni el más flexible el más débil. A través de ejemplos concretos de la vida de iglesia, preguntas de reflexión y momentos de oración al cierre de cada capítulo, el lector es desafiado a examinar sus propias actitudes hacia quienes piensan diferente, y a descubrir que el amor —no la opinión— debe ser la medida final de nuestras relaciones dentro del cuerpo de Cristo.",
+        "Relaciones Interpersonales en la Iglesia es una herramienta ideal para el estudio personal, el discipulado uno a uno, los grupos pequeños y el liderazgo de iglesias que desean crecer en madurez, respeto mutuo y unidad genuina."
       ]
     },
     "chapters": {

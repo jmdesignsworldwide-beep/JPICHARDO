@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { BookOpen, CheckCircle2, Tablet, Smartphone, Monitor } from 'lucide-react';
+import { BookOpen, CheckCircle2, Tablet, Smartphone, Monitor, Quote } from 'lucide-react';
 import { BookMockup } from '@/components/brand/BookMockup';
 import { Section, SectionLabel, SectionTitle } from '@/components/ui/Section';
 import { GoldDivider } from '@/components/ui/GoldDivider';
@@ -57,6 +57,13 @@ export function BookFicha({ book, flip = false }: { book: BookConfig; flip?: boo
           <SectionLabel>{t('synopsis.label')}</SectionLabel>
           <GoldDivider className="my-6" />
         </Reveal>
+        {t.has('synopsis.lead') && (
+          <Reveal className="mb-8 text-center">
+            <p className="font-serif text-2xl italic leading-snug text-foil md:text-3xl">
+              {t('synopsis.lead')}
+            </p>
+          </Reveal>
+        )}
         <div className="space-y-6">
           {synopsis.map((p, i) => (
             <Reveal as="p" key={i} delay={i * 0.06} className="text-lg leading-relaxed text-cream-50/80">
@@ -64,6 +71,13 @@ export function BookFicha({ book, flip = false }: { book: BookConfig; flip?: boo
             </Reveal>
           ))}
         </div>
+        {t.has('synopsis.closing') && (
+          <Reveal className="mt-10">
+            <blockquote className="rounded-2xl border border-gold-500/25 bg-navy-800/50 p-7 text-center font-serif text-lg italic leading-relaxed text-cream-50/90 shadow-book sm:p-9 sm:text-xl">
+              “{t('synopsis.closing')}”
+            </blockquote>
+          </Reveal>
+        )}
       </div>
 
       {/* Estructura / capítulos */}
@@ -102,6 +116,9 @@ export function BookFicha({ book, flip = false }: { book: BookConfig; flip?: boo
         </div>
       </div>
 
+      {/* Frases del libro (opcional, solo si el libro las define) */}
+      {t.has('quotes.items') && <BookQuotes ns={book.ns} />}
+
       {/* Galería del libro */}
       <FichaGallery
         images={book.gallery}
@@ -110,6 +127,36 @@ export function BookFicha({ book, flip = false }: { book: BookConfig; flip?: boo
         coverSrc={book.cover}
       />
     </Section>
+  );
+}
+
+/* Frases destacadas del libro (opcional) — citas elegantes en tarjetas */
+function BookQuotes({ ns }: { ns: 'book' | 'book2' }) {
+  const t = useTranslations(ns);
+  const items = t.raw('quotes.items') as string[];
+  return (
+    <div className="mx-auto mt-16">
+      <Reveal className="text-center">
+        <SectionLabel>{t('quotes.label')}</SectionLabel>
+        <SectionTitle className="mt-4">{t('quotes.title')}</SectionTitle>
+        <GoldDivider className="my-6" />
+      </Reveal>
+      <div className="mx-auto mt-8 grid max-w-4xl gap-6 md:grid-cols-3">
+        {items.map((q, i) => (
+          <Reveal
+            key={i}
+            from="scale"
+            delay={i * 0.08}
+            className="glass flex h-full flex-col rounded-2xl p-7"
+          >
+            <Quote className="h-7 w-7 shrink-0 text-gold-400" aria-hidden />
+            <p className="mt-4 font-serif text-lg italic leading-relaxed text-cream-50/85">
+              “{q}”
+            </p>
+          </Reveal>
+        ))}
+      </div>
+    </div>
   );
 }
 

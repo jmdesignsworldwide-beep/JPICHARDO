@@ -224,11 +224,15 @@
     },
     "synopsis": {
       "label": "Synopsis",
+      "lead": "Every great journey begins with a first step.",
       "paragraphs": [
-        "The Christian life does not end when a person receives Jesus Christ; in truth, that is where a new adventure of growth, transformation, and discipleship begins. Comenzando Mi Viaje was written to walk with the new believer through their first steps, offering clear, practical, and accessible biblical foundations for developing a firm relationship with God.",
-        "Across twelve chapters, the reader discovers the essential truths of the Christian faith: salvation, the lordship of Christ, baptism, the Lord's Supper, the value of the Bible, prayer, faith, the power of the Holy Spirit, evangelism, the commitments of the believer, the character of Christ, and perseverance to the end.",
-        "Each chapter includes practical applications, questions for reflection, and tools that foster spiritual growth, making this book an excellent resource for personal study, one-to-one discipleship, new-believer classes, and small groups."
-      ]
+        "The Christian life does not end when a person receives Jesus Christ; in reality, that is where a new adventure of growth, transformation, and discipleship begins. Comenzando Mi Viaje was written to accompany the new believer through those first steps, offering clear, practical, and accessible biblical foundations for building a firm relationship with God.",
+        "Across twelve chapters, the reader will discover the essential truths of the Christian faith: salvation, the lordship of Christ, baptism, the Lord’s Supper, the value of the Bible, prayer, faith, the guidance of the Holy Spirit, the importance of the church, evangelism, the commitments of the believer, and the development of a life that pleases God.",
+        "Each chapter includes practical applications, questions for reflection, and tools that foster spiritual growth, making this book an excellent resource for personal study, one-on-one discipleship, classes for new believers, and small groups.",
+        "Comenzando Mi Viaje is not merely a book to read; it is a guide for walking with Christ and laying solid foundations that will last a lifetime.",
+        "If you have begun your walk with Christ, this book will be a faithful companion in your first steps. And if you have the privilege of discipling others, you will find in these pages a biblical, practical, and proven tool to guide them toward a firm and mature faith."
+      ],
+      "closing": "This book does not represent the end of a course, but the beginning of a life of growth, obedience, and communion with Jesus Christ. For spiritual growth begins with a step of faith and continues throughout a lifetime of discipleship."
     },
     "chapters": {
       "label": "Twelve chapters",
@@ -275,6 +279,15 @@
       "body": "The book will be available very soon. Leave us your contact and we'll let you know the moment it launches.",
       "available": "Available on Amazon.",
       "notify": "Notify me"
+    },
+    "quotes": {
+      "label": "Quotes",
+      "title": "Lines from the book",
+      "items": [
+        "The cross reveals, at one and the same time, the gravity of sin and the immensity of God’s love.",
+        "Repentance is not merely feeling remorse; it is a change of direction.",
+        "Faith means resting completely in the work Christ accomplished on the cross."
+      ]
     }
   },
   "books": {
@@ -317,7 +330,8 @@
       "paragraphs": [
         "The local church is, by nature, a mosaic of cultural backgrounds, ages, convictions, and levels of spiritual maturity. That diversity is one of the greatest riches of the body of Christ, but also one of its greatest challenges: how do we live in unity when we think, feel, and practice our faith in different ways?",
         "Based on a careful exposition of Romans 14, this book guides the reader through ten chapters organized in three parts: first, an honest diagnosis of the cultural and relational reality of the church; second, the theological principles Paul establishes about conscience, Christian freedom, and sacrifice out of love; and third, the practical application of those principles to real situations of congregational life, from differences in worship style to how we treat the new believer.",
-        "With a pastoral, direct, and deeply biblical tone, the author overturns a common assumption: the strictest is not always the most mature, nor the most flexible the weakest. Through concrete examples of church life, reflection questions, and moments of prayer at the close of each chapter, the reader is challenged to examine their own attitudes toward those who think differently, and to discover that love —not opinion— must be the final measure of our relationships within the body of Christ."
+        "With a pastoral, direct, and deeply biblical tone, the author overturns a common assumption: the strictest is not always the most mature, nor the most flexible the weakest. Through concrete examples of church life, reflection questions, and moments of prayer at the close of each chapter, the reader is challenged to examine their own attitudes toward those who think differently, and to discover that love —not opinion— must be the final measure of our relationships within the body of Christ.",
+        "Relaciones Interpersonales en la Iglesia is an ideal tool for personal study, one-on-one discipleship, small groups, and the leadership of churches that desire to grow in maturity, mutual respect, and genuine unity."
       ]
     },
     "chapters": {
