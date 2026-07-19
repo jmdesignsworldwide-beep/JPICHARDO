@@ -47,7 +47,7 @@ export const BOOKS: BookConfig[] = [
     // conserva para el hero rotativo y la tarjeta de biblioteca.
     fichaHero: '/libro-foto-2.png',
     gallery: ['/libro-foto-3.png', '/libro-portada-transparent.png'],
-    prices: { ebook: 6.99, paperback: 12.99, hardcover: 18.99 },
+    prices: { ebook: 4.99, paperback: 12.99, hardcover: 18.99 },
     available: false,
     amazonUrl: '',
     chaptersLayout: 'grid12',
