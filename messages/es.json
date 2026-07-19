@@ -26,7 +26,8 @@
     "getDirections": "Cómo llegar",
     "sendMessage": "Enviar mensaje",
     "follow": "Seguir",
-    "whatsappAria": "Escríbenos por WhatsApp"
+    "whatsappAria": "Escríbenos por WhatsApp",
+    "buyEbook": "Comprar eBook en Amazon"
   },
   "pillars": {
     "sectionLabel": "Los pilares del viaje",
@@ -277,12 +278,15 @@
       "hardcover": {
         "name": "Tapa dura",
         "caption": "Edición de tapa dura"
-      }
+      },
+      "statusAvailable": "Disponible",
+      "statusSoon": "Próximamente",
+      "buy": "Comprar en Amazon"
     },
     "cta": {
       "title": "Comienza tu viaje",
       "body": "El libro estará disponible muy pronto. Déjanos tu contacto y te avisamos apenas salga.",
-      "available": "Disponible en Amazon.",
+      "available": "Disponible ahora en Amazon — edición Kindle (eBook). Tapa blanda y tapa dura: próximamente.",
       "notify": "Notifícame"
     },
     "quotes": {
@@ -389,7 +393,10 @@
       "hardcover": {
         "name": "Tapa dura",
         "caption": "Edición de tapa dura"
-      }
+      },
+      "statusAvailable": "Disponible",
+      "statusSoon": "Próximamente",
+      "buy": "Comprar en Amazon"
     },
     "cta": {
       "title": "Relaciones sanas en el cuerpo de Cristo",

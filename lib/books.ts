@@ -51,8 +51,9 @@ export const BOOKS: BookConfig[] = [
     fichaHero: '/libro-foto-2.png',
     gallery: ['/libro-foto-3.png', '/comenzando-portada.png'],
     prices: { ebook: 4.99, paperback: 12.99, hardcover: 18.99 },
-    available: false,
-    amazonUrl: '',
+    // Solo el eBook (Kindle) está a la venta; tapa blanda/dura aún no.
+    available: true,
+    amazonUrl: 'https://a.co/d/0hdATjV6',
     chaptersLayout: 'grid12',
     galleryLayout: 'featured',
   },

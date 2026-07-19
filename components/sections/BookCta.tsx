@@ -32,7 +32,7 @@ export function BookCta({
   if (available && amazonUrl) {
     return (
       <div className={wrap}>
-        <TrackedBuyButton href={amazonUrl} slug={slug} label={t('buyOnAmazon')} />
+        <TrackedBuyButton href={amazonUrl} slug={slug} label={t('buyEbook')} />
         <p className="mt-3 text-sm text-cream-50/60">{tb('available')}</p>
       </div>
     );

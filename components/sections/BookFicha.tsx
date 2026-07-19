@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { BookOpen, CheckCircle2, Tablet, Book, Quote, Download } from 'lucide-react';
+import { BookOpen, CheckCircle2, Tablet, Book, Quote, Download, ShoppingCart } from 'lucide-react';
 import { BookMockup } from '@/components/brand/BookMockup';
+import { TrackedAnchor } from '@/components/analytics/TrackedAnchor';
 import { Section, SectionLabel, SectionTitle } from '@/components/ui/Section';
 import { GoldDivider } from '@/components/ui/GoldDivider';
 import { Reveal } from '@/components/ui/Reveal';
@@ -220,21 +221,52 @@ function FormatsBlock({ book }: { book: BookConfig }) {
         <GoldDivider className="my-6" />
       </Reveal>
       <div className="mt-8 grid gap-6 sm:grid-cols-3">
-        {cards.map(({ key, price, Icon }, i) => (
-          <Reveal
-            key={key}
-            from="scale"
-            delay={i * 0.08}
-            className="glass flex h-full flex-col items-center rounded-2xl p-8 text-center"
-          >
-            <span className="flex h-14 w-14 items-center justify-center rounded-full border border-gold-500/30 bg-gold-500/5 text-gold-400">
-              <Icon className="h-6 w-6" strokeWidth={1.6} />
-            </span>
-            <h3 className="mt-5 font-display text-xl">{t(`${key}.name`)}</h3>
-            <p className="mt-1 text-sm text-cream-50/60">{t(`${key}.caption`)}</p>
-            <p className="mt-4 font-display text-3xl font-bold text-foil">{usd(price)}</p>
-          </Reveal>
-        ))}
+        {cards.map(({ key, price, Icon }, i) => {
+          // Solo el eBook está a la venta (con link de Amazon); tapas: próximamente.
+          const ebookAvailable = key === 'ebook' && book.available && !!book.amazonUrl;
+          const comingSoon = key !== 'ebook' && book.available;
+          return (
+            <Reveal
+              key={key}
+              from="scale"
+              delay={i * 0.08}
+              className={`glass flex h-full flex-col items-center rounded-2xl p-8 text-center ${
+                ebookAvailable ? 'ring-1 ring-gold-400/40' : ''
+              }`}
+            >
+              <span className="flex h-14 w-14 items-center justify-center rounded-full border border-gold-500/30 bg-gold-500/5 text-gold-400">
+                <Icon className="h-6 w-6" strokeWidth={1.6} />
+              </span>
+              <h3 className="mt-5 font-display text-xl">{t(`${key}.name`)}</h3>
+              <p className="mt-1 text-sm text-cream-50/60">{t(`${key}.caption`)}</p>
+              <p className="mt-4 font-display text-3xl font-bold text-foil">{usd(price)}</p>
+
+              {ebookAvailable && (
+                <>
+                  <span className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-gold-500/15 px-3 py-1 font-label text-[0.6rem] uppercase tracking-wide2 text-gold-300">
+                    <span className="h-1.5 w-1.5 rounded-full bg-gold-400" />
+                    {t('statusAvailable')}
+                  </span>
+                  <TrackedAnchor
+                    event={{ type: 'amazon', bookSlug: book.slug }}
+                    href={book.amazonUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group mt-4 inline-flex items-center gap-2 rounded-full bg-hero-gold px-5 py-2.5 font-label text-[0.68rem] font-semibold uppercase tracking-wide2 text-navy-900 shadow-gold transition-all hover:-translate-y-0.5"
+                  >
+                    <ShoppingCart className="h-3.5 w-3.5" />
+                    {t('buy')}
+                  </TrackedAnchor>
+                </>
+              )}
+              {comingSoon && (
+                <span className="mt-3 inline-flex items-center rounded-full border border-cream-50/15 px-3 py-1 font-label text-[0.6rem] uppercase tracking-wide2 text-cream-50/45">
+                  {t('statusSoon')}
+                </span>
+              )}
+            </Reveal>
+          );
+        })}
       </div>
       <p className="mt-6 text-center font-label text-[0.7rem] uppercase tracking-label text-cream-50/50">
         {t('note')}

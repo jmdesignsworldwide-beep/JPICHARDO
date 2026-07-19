@@ -26,7 +26,8 @@
     "getDirections": "Get directions",
     "sendMessage": "Send message",
     "follow": "Follow",
-    "whatsappAria": "Message us on WhatsApp"
+    "whatsappAria": "Message us on WhatsApp",
+    "buyEbook": "Buy the eBook on Amazon"
   },
   "pillars": {
     "sectionLabel": "The pillars of the journey",
@@ -277,12 +278,15 @@
       "hardcover": {
         "name": "Hardcover",
         "caption": "Hardcover edition"
-      }
+      },
+      "statusAvailable": "Available",
+      "statusSoon": "Coming soon",
+      "buy": "Buy on Amazon"
     },
     "cta": {
       "title": "Begin your journey",
       "body": "The book will be available very soon. Leave us your contact and we'll let you know the moment it launches.",
-      "available": "Available on Amazon.",
+      "available": "Available now on Amazon — Kindle edition (eBook). Paperback and hardcover: coming soon.",
       "notify": "Notify me"
     },
     "quotes": {
@@ -389,7 +393,10 @@
       "hardcover": {
         "name": "Hardcover",
         "caption": "Hardcover edition"
-      }
+      },
+      "statusAvailable": "Available",
+      "statusSoon": "Coming soon",
+      "buy": "Buy on Amazon"
     },
     "cta": {
       "title": "Healthy relationships in the body of Christ",
