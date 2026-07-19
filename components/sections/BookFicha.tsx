@@ -46,7 +46,7 @@ export function BookFicha({ book, flip = false }: { book: BookConfig; flip?: boo
             </figcaption>
           </figure>
           <div className="mt-8 flex justify-center lg:justify-start">
-            <BookCta align="start" available={book.available} amazonUrl={book.amazonUrl} />
+            <BookCta align="start" available={book.available} amazonUrl={book.amazonUrl} slug={book.slug} />
           </div>
         </Reveal>
       </div>

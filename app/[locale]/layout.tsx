@@ -10,6 +10,7 @@ import { SmoothScroll } from '@/components/motion/SmoothScroll';
 import { ScrollProgress } from '@/components/motion/ScrollProgress';
 import { CursorGlow } from '@/components/motion/CursorGlow';
 import { WhatsAppFab } from '@/components/ui/WhatsAppFab';
+import { PageViewTracker } from '@/components/analytics/PageViewTracker';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { churchJsonLd } from '@/lib/jsonld';
 import { site } from '@/lib/config';
@@ -85,6 +86,7 @@ export default async function LocaleLayout({
         <SmoothScroll />
         <ScrollProgress />
         <CursorGlow />
+        <PageViewTracker />
         <NextIntlClientProvider messages={messages}>
           <a
             href="#main"

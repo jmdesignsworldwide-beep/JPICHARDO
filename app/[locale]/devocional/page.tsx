@@ -7,7 +7,8 @@ import { PageHero } from '@/components/sections/PageHero';
 import { Section, SectionLabel, SectionTitle } from '@/components/ui/Section';
 import { GoldDivider } from '@/components/ui/GoldDivider';
 import { Reveal } from '@/components/ui/Reveal';
-import { ButtonAnchor } from '@/components/ui/Button';
+import { TrackedAnchor } from '@/components/analytics/TrackedAnchor';
+import { TrackedDevotionalButton } from '@/components/analytics/TrackedDevotionalButton';
 import { DevotionalGrid } from '@/components/sections/DevotionalGrid';
 import { site } from '@/lib/config';
 import { buildMetadata } from '@/lib/seo';
@@ -57,10 +58,10 @@ function FollowCta() {
         </SectionTitle>
         <p className="mx-auto mt-5 max-w-xl text-cream-50/75">{t('body')}</p>
         <div className="mt-8 flex justify-center">
-          <ButtonAnchor href={site.social.linktree}>
+          <TrackedDevotionalButton href={site.social.linktree} target="linktree">
             <LinkIcon className="h-4 w-4" />
             {t('button')}
-          </ButtonAnchor>
+          </TrackedDevotionalButton>
         </div>
       </Reveal>
     </Section>
@@ -122,6 +123,7 @@ function Follow() {
   const links = [
     {
       href: site.social.instagram,
+      target: 'instagram' as const,
       Icon: Instagram,
       label: t('instagram'),
       handle: site.devotional.instagramHandle,
@@ -129,6 +131,7 @@ function Follow() {
     },
     {
       href: site.social.tiktok,
+      target: 'tiktok' as const,
       Icon: Music2,
       label: t('tiktok'),
       handle: site.devotional.tiktokHandle,
@@ -136,6 +139,7 @@ function Follow() {
     },
     {
       href: site.social.linktree,
+      target: 'linktree' as const,
       Icon: LinkIcon,
       label: t('linktree'),
       handle: 'linktr.ee/Blessing_House',
@@ -151,9 +155,10 @@ function Follow() {
         <GoldDivider className="my-6" />
       </Reveal>
       <div className="mt-8 grid gap-5 md:grid-cols-3">
-        {links.map(({ href, Icon, label, handle, meta }, i) => (
+        {links.map(({ href, target, Icon, label, handle, meta }, i) => (
           <Reveal key={label} delay={i * 0.08}>
-            <a
+            <TrackedAnchor
+              event={{ type: 'devotional', target }}
               href={href}
               target="_blank"
               rel="noopener noreferrer"
@@ -165,7 +170,7 @@ function Follow() {
               <span className="mt-5 font-display text-2xl">{label}</span>
               <span className="mt-1 text-sm text-gold-400">{handle}</span>
               {meta && <span className="mt-1 text-xs text-cream-50/60">{meta}</span>}
-            </a>
+            </TrackedAnchor>
           </Reveal>
         ))}
       </div>

@@ -9,7 +9,8 @@ import {
   Home as HomeIcon,
 } from 'lucide-react';
 import { Section, SectionLabel, SectionTitle } from '@/components/ui/Section';
-import { ButtonLink, ButtonAnchor } from '@/components/ui/Button';
+import { ButtonLink } from '@/components/ui/Button';
+import { TrackedDevotionalButton } from '@/components/analytics/TrackedDevotionalButton';
 import { GoldDivider } from '@/components/ui/GoldDivider';
 import { Reveal } from '@/components/ui/Reveal';
 import { OrnamentFrame } from '@/components/ui/OrnamentFrame';
@@ -119,14 +120,14 @@ export function DevotionalTeaser() {
               </SectionTitle>
               <p className="mt-5 max-w-lg text-cream-50/75">{t('body')}</p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <ButtonAnchor href={site.social.instagram} variant="secondary" aria-label="Instagram">
+                <TrackedDevotionalButton href={site.social.instagram} target="instagram" variant="secondary" ariaLabel="Instagram">
                   <Instagram className="h-4 w-4" />
                   Instagram
-                </ButtonAnchor>
-                <ButtonAnchor href={site.social.tiktok} variant="secondary" aria-label="TikTok">
+                </TrackedDevotionalButton>
+                <TrackedDevotionalButton href={site.social.tiktok} target="tiktok" variant="secondary" ariaLabel="TikTok">
                   <Music2 className="h-4 w-4" />
                   TikTok
-                </ButtonAnchor>
+                </TrackedDevotionalButton>
                 <ButtonLink href="/devocional" variant="ghost">
                   {t('cta')}
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

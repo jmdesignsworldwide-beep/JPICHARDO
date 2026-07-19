@@ -545,5 +545,14 @@
     "title": "Page not found",
     "body": "The page you're looking for doesn't exist or was moved.",
     "home": "Back to home"
+  },
+  "newsletter": {
+    "label": "Updates",
+    "title": "Notify me when it's available",
+    "body": "Leave your email and we'll let you know when the books go on sale and about new releases. No spam.",
+    "placeholder": "Your email address",
+    "button": "Notify me",
+    "success": "Done! We'll let you know.",
+    "error": "Couldn't sign you up. Please try again."
   }
 }
