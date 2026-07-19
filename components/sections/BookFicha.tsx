@@ -232,7 +232,7 @@ function FormatsBlock({ book }: { book: BookConfig }) {
 const GALLERY_DIMS: Record<string, [number, number]> = {
   '/libro-foto-2.png': [1024, 1536],
   '/libro-foto-3.png': [1086, 1448],
-  '/libro-portada-transparent.png': [818, 1024],
+  '/comenzando-portada.png': [500, 500],
 };
 
 /* Galería de fotos del libro — 'featured' (grande/medio/pequeño) o 'grid' (3 iguales) */

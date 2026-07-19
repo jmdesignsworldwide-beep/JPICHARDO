@@ -6,8 +6,8 @@ import { Reveal } from '@/components/ui/Reveal';
  * 3D transparente ocupa el cuadro central (con fondo cremita y `contain` para
  * que no se recorte); las demás son fotos ambientadas (`cover`).
  */
-const PHOTOS = ['/libro-foto.png', '/libro-portada-transparent.png', '/libro-foto-3.png'];
-const COVER = '/libro-portada-transparent.png';
+const PHOTOS = ['/libro-foto.png', '/comenzando-portada.png', '/libro-foto-3.png'];
+const COVER = '/comenzando-portada.png';
 
 export function BookGallery({ className = '' }: { className?: string }) {
   return (

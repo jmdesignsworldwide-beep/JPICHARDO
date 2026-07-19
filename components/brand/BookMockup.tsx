@@ -20,7 +20,7 @@ export function BookMockup({
   className = '',
   floating = true,
   priority = false,
-  src = '/libro-portada-transparent.png',
+  src = '/comenzando-portada.png',
   alt = 'Portada del libro Comenzando Mi Viaje, por el Pastor José Pichardo',
 }: {
   className?: string;
