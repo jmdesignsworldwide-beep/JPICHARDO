@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useTransition, type FormEvent } from 'react';
-import { Lock, User, Loader2 } from 'lucide-react';
+import { Lock, Mail, Loader2 } from 'lucide-react';
 import { loginAction } from '@/app/portal/actions';
 
 const MESSAGES: Record<string, string> = {
@@ -28,18 +28,19 @@ export function LoginForm() {
   return (
     <form onSubmit={onSubmit} className="mt-8 space-y-4 text-left">
       <div>
-        <label htmlFor="username" className="mb-1.5 block font-label text-[0.7rem] uppercase tracking-label text-gold-400">
-          Usuario
+        <label htmlFor="email" className="mb-1.5 block font-label text-[0.7rem] uppercase tracking-label text-gold-400">
+          Correo
         </label>
         <div className="relative">
-          <User className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gold-400/70" />
+          <Mail className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gold-400/70" />
           <input
-            id="username"
-            name="username"
-            autoComplete="username"
+            id="email"
+            name="email"
+            type="email"
+            autoComplete="email"
             required
             className="w-full rounded-xl border border-gold-500/25 bg-navy-900/60 py-3 pl-11 pr-4 text-cream-50 outline-none transition-colors placeholder:text-cream-50/40 focus:border-gold-400/60"
-            placeholder="Pichardo"
+            placeholder="admin@jpichardo.com"
           />
         </div>
       </div>

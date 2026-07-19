@@ -8,6 +8,11 @@ y la captura de datos solo se encienden cuando las variables están presentes.
 > Nada de esto se puede hacer desde el repositorio: requiere tu cuenta de
 > Supabase. Sigue estos pasos una sola vez.
 
+## 0. Login del portal
+Se entra a `/portal` con el **correo + contraseña** de un usuario de Supabase
+Auth (ver paso 3). No hay usuario aparte ni variable extra: es el login
+estándar de Supabase.
+
 ## 1. Crear proyecto Supabase
 1. Entra a https://supabase.com → **New project**.
 2. Guarda de **Project Settings → API**:
@@ -23,34 +28,33 @@ En **SQL Editor**, pega y ejecuta el contenido de
 
 ## 3. Crear el usuario del pastor (Auth)
 En **Authentication → Users → Add user → Create new user**:
-- Email: elige uno para el admin (ej. `pichardo@blessinghouse.co`).
+- Email: el correo del admin (ej. `admin@jpichardo.com`).
 - Password: una **contraseña temporal** (el pastor la cambia luego desde el
   portal). Marca *Auto Confirm User*.
 
-> El pastor entrará con **usuario `Pichardo`** (no el correo). El código mapea
-> ese usuario al correo admin que configures en el paso 4.
+> El login es con **ese correo + contraseña** directamente (no hay usuario
+> aparte ni variable extra que configurar).
 
 ## 4. Variables de entorno en Vercel
 En **Vercel → Project → Settings → Environment Variables** (Production y
-Preview), añade:
+Preview) — la integración oficial Supabase↔Vercel ya crea estas tres:
 
 | Variable | Valor |
 | --- | --- |
 | `NEXT_PUBLIC_SUPABASE_URL` | Project URL |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | anon public key |
 | `SUPABASE_SERVICE_ROLE_KEY` | service_role key (**server-only**) |
-| `PORTAL_ADMIN_EMAIL` | el correo del usuario del paso 3 |
 
 ⚠️ Nunca pongas la `service_role` con prefijo `NEXT_PUBLIC_`, ni la compartas
-por chat/correo. Redespliega después de añadirlas.
+por chat/correo. Redespliega después de conectarlas.
 
 ## 5. Correr el Security Advisor
 En **Supabase → Advisors → Security Advisor**, ejecútalo y confirma que no haya
 warnings (las tablas deben salir con RLS habilitado). Si aparece algo, avísame.
 
 ## 6. Cambiar la contraseña
-El pastor entra a `/portal` con usuario `Pichardo` + la contraseña temporal, y
-desde el propio portal (tarjeta **"Cambiar contraseña"**) la actualiza.
+El pastor entra a `/portal` con su **correo + contraseña temporal**, y desde el
+propio portal (tarjeta **"Cambiar contraseña"**) la actualiza.
 
 ---
 

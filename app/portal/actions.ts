@@ -3,17 +3,15 @@
 import { redirect } from 'next/navigation';
 import { headers } from 'next/headers';
 import { getServerSupabase } from '@/lib/supabase/server';
-import { PORTAL_ADMIN_EMAIL, isSupabaseConfigured } from '@/lib/supabase/env';
+import { isSupabaseConfigured } from '@/lib/supabase/env';
 import { rateLimitGeneric, getClientIp } from '@/lib/rate-limit';
-
-// Nombre de usuario visible del portal (se mapea al correo admin de Supabase).
-const USERNAME = 'pichardo';
 
 export type LoginState = { error?: 'invalid' | 'unconfigured' | 'rate_limited' };
 
 /**
- * Login del portal. Rate limit por IP; error SIEMPRE genérico (no revela si el
- * usuario existe). Toda la comunicación con Supabase ocurre server-side.
+ * Login del portal — correo + contraseña directos contra Supabase Auth. Rate
+ * limit por IP; error SIEMPRE genérico (no revela si el usuario existe). Toda
+ * la comunicación con Supabase ocurre server-side.
  */
 export async function loginAction(formData: FormData): Promise<LoginState> {
   const ip = getClientIp(await headers());
@@ -21,21 +19,16 @@ export async function loginAction(formData: FormData): Promise<LoginState> {
     return { error: 'rate_limited' };
   }
 
-  if (!isSupabaseConfigured() || !PORTAL_ADMIN_EMAIL) return { error: 'unconfigured' };
+  if (!isSupabaseConfigured()) return { error: 'unconfigured' };
 
-  const username = String(formData.get('username') ?? '').trim().toLowerCase();
+  const email = String(formData.get('email') ?? '').trim().toLowerCase();
   const password = String(formData.get('password') ?? '');
+  if (!email || !password) return { error: 'invalid' };
 
   const supabase = await getServerSupabase();
   if (!supabase) return { error: 'unconfigured' };
 
-  // Usuario incorrecto → mismo error genérico que credencial inválida.
-  if (username !== USERNAME || password.length < 1) return { error: 'invalid' };
-
-  const { error } = await supabase.auth.signInWithPassword({
-    email: PORTAL_ADMIN_EMAIL,
-    password,
-  });
+  const { error } = await supabase.auth.signInWithPassword({ email, password });
   if (error) return { error: 'invalid' };
 
   redirect('/portal');
