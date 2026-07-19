@@ -40,13 +40,13 @@ export const BOOKS: BookConfig[] = [
     id: 'comenzando',
     slug: 'comenzando-mi-viaje',
     ns: 'book',
-    cover: '/libro-portada-transparent.png',
+    cover: '/comenzando-portada.png',
     banner: '/libro-banner.png',
     // La cabecera de la ficha muestra el arte promocional (JPichardo + Amazon);
     // el mockup 3D transparente pasa a la galería. El `cover` transparente se
     // conserva para el hero rotativo y la tarjeta de biblioteca.
     fichaHero: '/libro-foto-2.png',
-    gallery: ['/libro-foto-3.png', '/libro-portada-transparent.png'],
+    gallery: ['/libro-foto-3.png', '/comenzando-portada.png'],
     prices: { ebook: 4.99, paperback: 12.99, hardcover: 18.99 },
     available: false,
     amazonUrl: '',

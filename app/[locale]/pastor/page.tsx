@@ -160,7 +160,7 @@ function BookTeaser() {
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <Reveal className="mx-auto w-56 sm:w-64">
           <Image
-            src="/libro-portada-transparent.png"
+            src="/comenzando-portada.png"
             alt="Libro Comenzando Mi Viaje — portada"
             width={818}
             height={1024}
