@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { PageHero } from '@/components/sections/PageHero';
 import { Section } from '@/components/ui/Section';
 import { BookCard } from '@/components/sections/BookCard';
+import { NewsletterSignup } from '@/components/sections/NewsletterSignup';
 import { BOOKS } from '@/lib/books';
 import { buildMetadata } from '@/lib/seo';
 
@@ -39,6 +40,7 @@ export default async function LibrosPage({
           ))}
         </div>
       </Section>
+      <NewsletterSignup source="libros" />
     </>
   );
 }

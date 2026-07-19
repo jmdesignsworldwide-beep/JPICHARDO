@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import NextLink from 'next/link';
 import { useTranslations } from 'next-intl';
 import { MapPin, Phone, Mail, Facebook, Instagram, Music2, LinkIcon } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
@@ -138,6 +139,18 @@ export function Footer() {
               Instagram
             </a>
           </p>
+        </div>
+
+        {/* Acceso discreto al portal privado — casi invisible (solo quien
+            sabe lo encuentra). No indexado, no en navegación ni sitemap. */}
+        <div className="mt-6 text-center">
+          <NextLink
+            href="/portal"
+            aria-label="·"
+            className="inline-block select-none px-2 text-cream-50/15 transition-colors hover:text-gold-400/60"
+          >
+            ·
+          </NextLink>
         </div>
       </div>
     </footer>

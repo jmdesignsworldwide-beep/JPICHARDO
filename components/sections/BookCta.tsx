@@ -1,7 +1,8 @@
 import { useTranslations } from 'next-intl';
-import { ShoppingCart, BellRing, Sparkles } from 'lucide-react';
+import { BellRing, Sparkles } from 'lucide-react';
 import { BOOK_AVAILABLE, BOOK_AMAZON_URL } from '@/lib/book';
-import { ButtonAnchor, ButtonLink } from '@/components/ui/Button';
+import { ButtonLink } from '@/components/ui/Button';
+import { TrackedBuyButton } from '@/components/analytics/TrackedBuyButton';
 
 /**
  * CTA de compra del libro. Controlado por UNA sola variable (BOOK_AVAILABLE).
@@ -13,10 +14,12 @@ export function BookCta({
   align = 'center',
   available = BOOK_AVAILABLE,
   amazonUrl = BOOK_AMAZON_URL,
+  slug = 'comenzando-mi-viaje',
 }: {
   align?: 'center' | 'start';
   available?: boolean;
   amazonUrl?: string;
+  slug?: string;
 }) {
   const t = useTranslations('common');
   const tb = useTranslations('book.cta');
@@ -29,10 +32,7 @@ export function BookCta({
   if (available && amazonUrl) {
     return (
       <div className={wrap}>
-        <ButtonAnchor href={amazonUrl} size="lg">
-          <ShoppingCart className="h-4 w-4" />
-          {t('buyOnAmazon')}
-        </ButtonAnchor>
+        <TrackedBuyButton href={amazonUrl} slug={slug} label={t('buyOnAmazon')} />
         <p className="mt-3 text-sm text-cream-50/60">{tb('available')}</p>
       </div>
     );

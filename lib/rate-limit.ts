@@ -55,6 +55,34 @@ export function rateLimit(ip: string): {
   };
 }
 
+/**
+ * Limitador genérico de ventana deslizante en memoria para otros endpoints
+ * (captura de analíticas, suscripción, login del portal). Misma naturaleza
+ * anti-abuso por instancia. La `key` se usa solo en memoria; no se persiste.
+ */
+const genericStore = new Map<string, Hit>();
+
+export function rateLimitGeneric(
+  key: string,
+  max: number,
+  windowMs: number,
+): { ok: boolean; retryAfter: number } {
+  const now = Date.now();
+  if (genericStore.size >= 10_000) {
+    for (const [k, hit] of genericStore) if (hit.resetAt <= now) genericStore.delete(k);
+  }
+  const existing = genericStore.get(key);
+  if (!existing || existing.resetAt <= now) {
+    genericStore.set(key, { count: 1, resetAt: now + windowMs });
+    return { ok: true, retryAfter: 0 };
+  }
+  if (existing.count >= max) {
+    return { ok: false, retryAfter: Math.ceil((existing.resetAt - now) / 1000) };
+  }
+  existing.count += 1;
+  return { ok: true, retryAfter: 0 };
+}
+
 /** Extrae la IP del cliente de forma robusta detrás de proxies (Vercel). */
 export function getClientIp(headers: Headers): string {
   const forwarded = headers.get('x-forwarded-for');

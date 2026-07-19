@@ -545,5 +545,14 @@
     "title": "Página no encontrada",
     "body": "La página que buscas no existe o fue movida.",
     "home": "Volver al inicio"
+  },
+  "newsletter": {
+    "label": "Novedades",
+    "title": "Avísame cuando esté disponible",
+    "body": "Déjanos tu correo y te avisaremos cuando los libros estén a la venta y de nuevas publicaciones. Sin spam.",
+    "placeholder": "Tu correo electrónico",
+    "button": "Avísame",
+    "success": "¡Listo! Te avisaremos.",
+    "error": "No se pudo registrar. Intenta de nuevo."
   }
 }
