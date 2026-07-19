@@ -10,5 +10,6 @@
  * El botón pasa automáticamente a "Comprar en Amazon" (target _blank,
  * rel noopener noreferrer). No hay que tocar ningún otro archivo.
  */
-export const BOOK_AVAILABLE = false;
-export const BOOK_AMAZON_URL = ''; // ej. 'https://www.amazon.com/dp/XXXXXXXXXX'
+// Comenzando Mi Viaje ya está en Amazon (por ahora solo el eBook/Kindle).
+export const BOOK_AVAILABLE = true;
+export const BOOK_AMAZON_URL = 'https://a.co/d/0hdATjV6';
