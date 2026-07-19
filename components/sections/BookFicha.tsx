@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { BookOpen, CheckCircle2, Tablet, Book, Quote } from 'lucide-react';
+import { BookOpen, CheckCircle2, Tablet, Book, Quote, Download } from 'lucide-react';
 import { BookMockup } from '@/components/brand/BookMockup';
 import { Section, SectionLabel, SectionTitle } from '@/components/ui/Section';
 import { GoldDivider } from '@/components/ui/GoldDivider';
@@ -48,6 +48,21 @@ export function BookFicha({ book, flip = false }: { book: BookConfig; flip?: boo
           <div className="mt-8 flex justify-center lg:justify-start">
             <BookCta align="start" available={book.available} amazonUrl={book.amazonUrl} slug={book.slug} />
           </div>
+
+          {/* Adelanto gratis (Capítulo 1) — descarga directa del PDF */}
+          {book.preview && (
+            <div className="mt-6 flex flex-col items-center lg:items-start">
+              <a
+                href={book.preview}
+                download
+                className="group inline-flex items-center justify-center gap-2 rounded-full border border-gold-500/50 px-6 py-3 font-label text-[0.7rem] font-semibold uppercase tracking-wide2 text-gold-400 transition-all duration-300 hover:border-gold-400 hover:bg-gold-500/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400"
+              >
+                <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+                {t('preview.label')}
+              </a>
+              <p className="mt-2 max-w-xs text-sm text-cream-50/55">{t('preview.hint')}</p>
+            </div>
+          )}
         </Reveal>
       </div>
 

@@ -22,6 +22,8 @@ export interface BookConfig {
   fichaHero?: string;
   /** banner ancho opcional que encabeza la ficha (banda a todo el ancho) */
   banner?: string;
+  /** PDF de adelanto gratis (Capítulo 1) para descargar; opcional por libro */
+  preview?: string;
   /** fotos para la galería de la ficha */
   gallery: string[];
   /** precios por formato en USD (referencia, se muestran en la ficha) */
@@ -42,6 +44,7 @@ export const BOOKS: BookConfig[] = [
     ns: 'book',
     cover: '/comenzando-portada.png',
     banner: '/libro-banner.png',
+    preview: '/comenzando-adelanto-capitulo-1.pdf',
     // La cabecera de la ficha muestra el arte promocional (JPichardo + Amazon);
     // el mockup 3D transparente pasa a la galería. El `cover` transparente se
     // conserva para el hero rotativo y la tarjeta de biblioteca.
