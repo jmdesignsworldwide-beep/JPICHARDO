@@ -28,7 +28,9 @@ export interface BookConfig {
   gallery: string[];
   /** precios por formato en USD (referencia, se muestran en la ficha) */
   prices: { ebook: number; paperback: number; hardcover: number };
-  /** disponibilidad de compra por libro */
+  /** qué formatos están a la venta en Amazon (el resto: "Próximamente") */
+  formatStatus: { ebook: boolean; paperback: boolean; hardcover: boolean };
+  /** disponibilidad de compra por libro (true si algún formato está a la venta) */
   available: boolean;
   amazonUrl: string;
   /** cómo se listan los capítulos en la ficha */
@@ -51,7 +53,8 @@ export const BOOKS: BookConfig[] = [
     fichaHero: '/libro-foto-2.png',
     gallery: ['/libro-foto-3.png', '/comenzando-portada.png'],
     prices: { ebook: 4.99, paperback: 12.99, hardcover: 18.99 },
-    // Solo el eBook (Kindle) está a la venta; tapa blanda/dura aún no.
+    // Los 3 formatos a la venta; un solo link lleva a la página del libro.
+    formatStatus: { ebook: true, paperback: true, hardcover: true },
     available: true,
     amazonUrl: 'https://a.co/d/0hdATjV6',
     chaptersLayout: 'grid12',
@@ -65,8 +68,10 @@ export const BOOKS: BookConfig[] = [
     banner: '/relaciones-banner.png',
     gallery: ['/relaciones-foto-1.png', '/relaciones-foto-2.png', '/relaciones-foto-3.png'],
     prices: { ebook: 6.99, paperback: 11.99, hardcover: 17.99 },
-    available: false,
-    amazonUrl: '',
+    // Solo el eBook (Kindle) a la venta; tapa blanda/dura aún no publicadas.
+    formatStatus: { ebook: true, paperback: false, hardcover: false },
+    available: true,
+    amazonUrl: 'https://a.co/d/0bfH9X2W',
     chaptersLayout: 'parts',
     galleryLayout: 'grid',
   },

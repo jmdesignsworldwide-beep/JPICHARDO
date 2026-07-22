@@ -19,7 +19,7 @@
     "seeDevotional": "See the devotional",
     "comingSoonAmazon": "Coming soon on Amazon",
     "comingSoonHint": "Notify me when it's available",
-    "buyOnAmazon": "Get your book",
+    "buyOnAmazon": "Buy on Amazon",
     "availableOnAmazon": "Available on Amazon",
     "backToBook": "See the book",
     "draftNotice": "Content under pastoral review",
@@ -27,7 +27,9 @@
     "sendMessage": "Send message",
     "follow": "Follow",
     "whatsappAria": "Message us on WhatsApp",
-    "buyEbook": "Buy the eBook on Amazon"
+    "buyEbook": "Buy eBook on Amazon",
+    "availableAll": "Available on Amazon.",
+    "availableEbook": "Available on Amazon — Kindle edition (eBook)."
   },
   "pillars": {
     "sectionLabel": "The pillars of the journey",
