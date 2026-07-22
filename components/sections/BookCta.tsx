@@ -15,14 +15,16 @@ export function BookCta({
   available = BOOK_AVAILABLE,
   amazonUrl = BOOK_AMAZON_URL,
   slug = 'comenzando-mi-viaje',
+  ebookOnly = false,
 }: {
   align?: 'center' | 'start';
   available?: boolean;
   amazonUrl?: string;
   slug?: string;
+  /** true → solo el eBook está a la venta (texto específico de Kindle). */
+  ebookOnly?: boolean;
 }) {
   const t = useTranslations('common');
-  const tb = useTranslations('book.cta');
 
   const wrap =
     align === 'center'
@@ -32,8 +34,14 @@ export function BookCta({
   if (available && amazonUrl) {
     return (
       <div className={wrap}>
-        <TrackedBuyButton href={amazonUrl} slug={slug} label={t('buyEbook')} />
-        <p className="mt-3 text-sm text-cream-50/60">{tb('available')}</p>
+        <TrackedBuyButton
+          href={amazonUrl}
+          slug={slug}
+          label={ebookOnly ? t('buyEbook') : t('buyOnAmazon')}
+        />
+        <p className="mt-3 text-sm text-cream-50/60">
+          {ebookOnly ? t('availableEbook') : t('availableAll')}
+        </p>
       </div>
     );
   }

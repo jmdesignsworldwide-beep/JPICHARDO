@@ -19,7 +19,7 @@
     "seeDevotional": "Ver el devocional",
     "comingSoonAmazon": "Próximamente en Amazon",
     "comingSoonHint": "Notifícame cuando esté disponible",
-    "buyOnAmazon": "Adquiere tu libro",
+    "buyOnAmazon": "Comprar en Amazon",
     "availableOnAmazon": "Disponible en Amazon",
     "backToBook": "Ver el libro",
     "draftNotice": "Contenido en revisión pastoral",
@@ -27,7 +27,9 @@
     "sendMessage": "Enviar mensaje",
     "follow": "Seguir",
     "whatsappAria": "Escríbenos por WhatsApp",
-    "buyEbook": "Comprar eBook en Amazon"
+    "buyEbook": "Comprar eBook en Amazon",
+    "availableAll": "Disponible en Amazon.",
+    "availableEbook": "Disponible en Amazon — edición Kindle (eBook)."
   },
   "pillars": {
     "sectionLabel": "Los pilares del viaje",

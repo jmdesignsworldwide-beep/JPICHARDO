@@ -47,7 +47,13 @@ export function BookFicha({ book, flip = false }: { book: BookConfig; flip?: boo
             </figcaption>
           </figure>
           <div className="mt-8 flex justify-center lg:justify-start">
-            <BookCta align="start" available={book.available} amazonUrl={book.amazonUrl} slug={book.slug} />
+            <BookCta
+              align="start"
+              available={book.available}
+              amazonUrl={book.amazonUrl}
+              slug={book.slug}
+              ebookOnly={book.formatStatus.ebook && !book.formatStatus.paperback && !book.formatStatus.hardcover}
+            />
           </div>
 
           {/* Adelanto gratis (Capítulo 1) — descarga directa del PDF */}
@@ -222,9 +228,9 @@ function FormatsBlock({ book }: { book: BookConfig }) {
       </Reveal>
       <div className="mt-8 grid gap-6 sm:grid-cols-3">
         {cards.map(({ key, price, Icon }, i) => {
-          // Solo el eBook está a la venta (con link de Amazon); tapas: próximamente.
-          const ebookAvailable = key === 'ebook' && book.available && !!book.amazonUrl;
-          const comingSoon = key !== 'ebook' && book.available;
+          // Disponibilidad por formato (data-driven): con link a Amazon o "Próximamente".
+          const ebookAvailable = book.formatStatus[key] && !!book.amazonUrl;
+          const comingSoon = !book.formatStatus[key];
           return (
             <Reveal
               key={key}
