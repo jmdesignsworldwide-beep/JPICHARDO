@@ -153,7 +153,7 @@ export function BookFicha({ book, flip = false }: { book: BookConfig; flip?: boo
 }
 
 /* Frases destacadas del libro (opcional) — citas elegantes en tarjetas */
-function BookQuotes({ ns }: { ns: 'book' | 'book2' }) {
+function BookQuotes({ ns }: { ns: 'book' | 'book2' | 'book3' }) {
   const t = useTranslations(ns);
   const items = t.raw('quotes.items') as string[];
   return (
@@ -183,7 +183,7 @@ function BookQuotes({ ns }: { ns: 'book' | 'book2' }) {
 }
 
 /* Capítulos en 3 partes (libro 2) */
-function BookParts({ ns }: { ns: 'book' | 'book2' }) {
+function BookParts({ ns }: { ns: 'book' | 'book2' | 'book3' }) {
   const t = useTranslations(ns);
   const parts = t.raw('chapters.parts') as { label: string; title: string; body: string }[];
   return (

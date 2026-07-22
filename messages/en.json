@@ -64,6 +64,13 @@
         "subtitle": "The church doesn't only need sound doctrine — it also needs healthy relationships.",
         "hook": "Christian unity is not an ideal, it's a command.",
         "cta": "Explore the book"
+      },
+      {
+        "titleTop": "From the Pulpit",
+        "titleBottom": "to the Heart",
+        "subtitle": "Messages That Transform Lives",
+        "hook": "May the preached Word not stay in the ear, but reach — and transform — the heart.",
+        "cta": "Explore the book"
       }
     ],
     "heroNav": {
@@ -195,8 +202,8 @@
     },
     "bookTeaser": {
       "label": "His books",
-      "title": "Author of two books",
-      "body": "Pastor José Pichardo is the author of “Comenzando Mi Viaje” —foundations for the Christian life— and “Relaciones Interpersonales en la Iglesia” —unity and healthy relationships in the body of Christ.",
+      "title": "Author of three books",
+      "body": "Pastor José Pichardo is the author of “Comenzando Mi Viaje” —foundations for the Christian life—, “Relaciones Interpersonales en la Iglesia” —unity and healthy relationships in the body of Christ— and “Desde el Púlpito al Corazón” —35 messages that transform lives.",
       "cta": "See the books"
     },
     "connect": {
@@ -567,5 +574,122 @@
     "button": "Notify me",
     "success": "Done! We'll let you know.",
     "error": "Couldn't sign you up. Please try again."
+  },
+  "book3": {
+    "meta": {
+      "title": "Desde el Púlpito al Corazón",
+      "description": "Desde el Púlpito al Corazón, by José Pichardo. 35 messages in 10 thematic sections — a discipleship guide so the preached Word transforms the heart."
+    },
+    "hero": {
+      "eyebrow": "The third book",
+      "title": "Desde el Púlpito al Corazón",
+      "titleTop": "From the Pulpit",
+      "titleBottom": "to the Heart",
+      "subtitle": "Messages That Transform Lives",
+      "author": "by Pastor José Pichardo",
+      "hook": "May the preached Word not stay in the ear, but reach — and transform — the heart.",
+      "verse": "For the word of God is alive and active, sharper than any two-edged sword.",
+      "verseRef": "Hebrews 4:12",
+      "support": "155 pages · 35 messages in 10 sections"
+    },
+    "synopsis": {
+      "label": "Synopsis",
+      "paragraphs": [
+        "Desde el Púlpito al Corazón gathers 35 messages born of years of pastoral ministry, now turned into a discipleship guide for your daily life. Each message —first preached from the pulpit and now placed in your hands— walks you through essential themes of the Christian life: patience in times of waiting, discerning the voice of God, the restoration of a wounded soul, life in the Spirit, generosity, leadership under pressure, humility, revival, and devotional discipline.",
+        "Organized into ten thematic sections, each chapter includes an introduction, clear teaching points, a conclusion with practical application, questions for personal reflection, and a closing prayer.",
+        "Whether you read it on your own, one message at a time, or use it as a guide for your small group or discipleship group, this book seeks one thing: that the preached Word not stay in the ear, but reach — and transform — the heart."
+      ]
+    },
+    "chapters": {
+      "label": "35 messages · 10 sections",
+      "title": "The journey of the book",
+      "parts": [
+        {
+          "label": "Section 01",
+          "title": "Patience in the waiting",
+          "body": "How to trust God's timing when the answer is slow to come."
+        },
+        {
+          "label": "Section 02",
+          "title": "Discerning God's voice",
+          "body": "Learning to recognize and follow the Lord's leading amid the noise."
+        },
+        {
+          "label": "Section 03",
+          "title": "Restoration of the soul",
+          "body": "Healing and hope for the wounded heart."
+        },
+        {
+          "label": "Section 04",
+          "title": "Life in the Spirit",
+          "body": "Walking in the fullness and power of the Holy Spirit."
+        },
+        {
+          "label": "Section 05",
+          "title": "A generous life",
+          "body": "The heart that gives and blesses others as God designed."
+        },
+        {
+          "label": "Section 06",
+          "title": "Leadership under pressure",
+          "body": "Serving with integrity and steadiness when everything gets hard."
+        },
+        {
+          "label": "Section 07",
+          "title": "The path of humility",
+          "body": "Kingdom greatness that begins on its knees."
+        },
+        {
+          "label": "Section 08",
+          "title": "A longing for revival",
+          "body": "Seeking the presence of God that renews the church and the nation."
+        },
+        {
+          "label": "Section 09",
+          "title": "Devotional discipline",
+          "body": "Habits that keep your relationship with God alive and firm."
+        },
+        {
+          "label": "Section 10",
+          "title": "A transformed heart",
+          "body": "The goal of every message: a life changed by the Word."
+        }
+      ]
+    },
+    "idealFor": {
+      "label": "Ideal for",
+      "title": "A resource for your growth",
+      "items": [
+        "Personal reading, one message at a time",
+        "Your daily devotional",
+        "Small groups and discipleship groups",
+        "Preachers and leaders"
+      ]
+    },
+    "formats": {
+      "label": "Formats & prices",
+      "title": "Read it however you like",
+      "note": "Prices in USD.",
+      "ebook": {
+        "name": "eBook (Kindle)",
+        "caption": "Digital reading"
+      },
+      "paperback": {
+        "name": "Paperback",
+        "caption": "Paperback edition"
+      },
+      "hardcover": {
+        "name": "Hardcover",
+        "caption": "Hardcover edition"
+      },
+      "statusAvailable": "Available",
+      "statusSoon": "Coming soon",
+      "buy": "Buy on Amazon"
+    },
+    "cta": {
+      "title": "Let the Word transform your heart",
+      "body": "Available now on Amazon.",
+      "available": "Available on Amazon."
+    }
   }
 }
