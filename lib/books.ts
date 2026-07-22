@@ -15,7 +15,7 @@ export interface BookConfig {
   id: string;
   slug: string;
   /** namespace i18n con hero/synopsis/chapters/formats/idealFor/cta */
-  ns: 'book' | 'book2';
+  ns: 'book' | 'book2' | 'book3';
   /** portada 3D transparente (hero rotativo + mockup + tarjeta de biblioteca) */
   cover: string;
   /** imagen grande de la cabecera de la ficha; si se omite, usa `cover` */
@@ -72,6 +72,21 @@ export const BOOKS: BookConfig[] = [
     formatStatus: { ebook: true, paperback: false, hardcover: false },
     available: true,
     amazonUrl: 'https://a.co/d/0bfH9X2W',
+    chaptersLayout: 'parts',
+    galleryLayout: 'grid',
+  },
+  {
+    id: 'pulpito',
+    slug: 'desde-el-pulpito-al-corazon',
+    ns: 'book3',
+    cover: '/pulpito-portada.png',
+    banner: '/pulpito-banner.png',
+    gallery: ['/pulpito-foto-1.png', '/pulpito-foto-2.png', '/pulpito-foto-3.png'],
+    prices: { ebook: 7.99, paperback: 11.99, hardcover: 18.99 },
+    // Solo el eBook (Kindle) a la venta; tapa blanda/dura aún no publicadas.
+    formatStatus: { ebook: true, paperback: false, hardcover: false },
+    available: true,
+    amazonUrl: 'https://a.co/d/07a8o8KG',
     chaptersLayout: 'parts',
     galleryLayout: 'grid',
   },

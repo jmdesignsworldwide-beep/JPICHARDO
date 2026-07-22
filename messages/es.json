@@ -64,6 +64,13 @@
         "subtitle": "La iglesia no solo necesita doctrina sana, también necesita relaciones sanas.",
         "hook": "La unidad cristiana no es un ideal, es un mandato.",
         "cta": "Conoce el libro"
+      },
+      {
+        "titleTop": "Desde el Púlpito",
+        "titleBottom": "al Corazón",
+        "subtitle": "Mensajes que Transforman Vidas",
+        "hook": "Que la Palabra predicada no se quede en el oído, sino que llegue — y transforme — el corazón.",
+        "cta": "Conoce el libro"
       }
     ],
     "heroNav": {
@@ -195,8 +202,8 @@
     },
     "bookTeaser": {
       "label": "Sus libros",
-      "title": "Autor de dos libros",
-      "body": "El Pastor José Pichardo es autor de «Comenzando Mi Viaje» —fundamentos para la vida cristiana— y «Relaciones Interpersonales en la Iglesia» —unidad y relaciones sanas en el cuerpo de Cristo.",
+      "title": "Autor de tres libros",
+      "body": "El Pastor José Pichardo es autor de «Comenzando Mi Viaje» —fundamentos para la vida cristiana—, «Relaciones Interpersonales en la Iglesia» —unidad y relaciones sanas en el cuerpo de Cristo— y «Desde el Púlpito al Corazón» —35 mensajes que transforman vidas.",
       "cta": "Ver los libros"
     },
     "connect": {
@@ -567,5 +574,122 @@
     "button": "Avísame",
     "success": "¡Listo! Te avisaremos.",
     "error": "No se pudo registrar. Intenta de nuevo."
+  },
+  "book3": {
+    "meta": {
+      "title": "Desde el Púlpito al Corazón",
+      "description": "Desde el Púlpito al Corazón, por José Pichardo. 35 mensajes en 10 secciones temáticas — una guía de discipulado para que la Palabra predicada transforme el corazón."
+    },
+    "hero": {
+      "eyebrow": "El tercer libro",
+      "title": "Desde el Púlpito al Corazón",
+      "titleTop": "Desde el Púlpito",
+      "titleBottom": "al Corazón",
+      "subtitle": "Mensajes que Transforman Vidas",
+      "author": "por el Pastor José Pichardo",
+      "hook": "Que la Palabra predicada no se quede en el oído, sino que llegue — y transforme — el corazón.",
+      "verse": "Porque la palabra de Dios es viva y eficaz, y más cortante que toda espada de dos filos.",
+      "verseRef": "Hebreos 4:12",
+      "support": "155 páginas · 35 mensajes en 10 secciones"
+    },
+    "synopsis": {
+      "label": "Sinopsis",
+      "paragraphs": [
+        "«Desde el Púlpito al Corazón» reúne 35 mensajes nacidos de años de ministerio pastoral, ahora convertidos en una guía de discipulado para tu vida diaria. Cada mensaje —predicado primero desde el púlpito y ahora puesto en tus manos— te acompaña a través de temas esenciales de la vida cristiana: la paciencia en tiempos de espera, el discernimiento de la voz de Dios, la restauración del alma herida, la vida en el Espíritu, la generosidad, el liderazgo bajo presión, la humildad, el avivamiento y la disciplina devocional.",
+        "Organizado en diez secciones temáticas, cada capítulo incluye una introducción, puntos claros de enseñanza, una conclusión con aplicación práctica, preguntas para la reflexión personal y una oración final.",
+        "Ya sea que lo leas solo, un mensaje a la vez, o lo uses como guía para tu célula o grupo de discipulado, este libro busca una sola cosa: que la Palabra predicada no se quede en el oído, sino que llegue — y transforme — el corazón."
+      ]
+    },
+    "chapters": {
+      "label": "35 mensajes · 10 secciones",
+      "title": "El recorrido del libro",
+      "parts": [
+        {
+          "label": "Sección 01",
+          "title": "Paciencia en la espera",
+          "body": "Cómo confiar en los tiempos de Dios cuando la respuesta tarda en llegar."
+        },
+        {
+          "label": "Sección 02",
+          "title": "Discernir la voz de Dios",
+          "body": "Aprender a reconocer y seguir la dirección del Señor en medio del ruido."
+        },
+        {
+          "label": "Sección 03",
+          "title": "Restauración del alma",
+          "body": "Sanidad y esperanza para el corazón herido."
+        },
+        {
+          "label": "Sección 04",
+          "title": "La vida en el Espíritu",
+          "body": "Caminar en la plenitud y el poder del Espíritu Santo."
+        },
+        {
+          "label": "Sección 05",
+          "title": "Una vida generosa",
+          "body": "El corazón que da y bendice a otros como Dios lo diseñó."
+        },
+        {
+          "label": "Sección 06",
+          "title": "Liderazgo bajo presión",
+          "body": "Servir con integridad y firmeza cuando todo se pone difícil."
+        },
+        {
+          "label": "Sección 07",
+          "title": "El camino de la humildad",
+          "body": "La grandeza del Reino que empieza de rodillas."
+        },
+        {
+          "label": "Sección 08",
+          "title": "Anhelo de avivamiento",
+          "body": "Buscar la presencia de Dios que renueva a la iglesia y a la nación."
+        },
+        {
+          "label": "Sección 09",
+          "title": "Disciplina devocional",
+          "body": "Hábitos que mantienen viva y firme tu relación con Dios."
+        },
+        {
+          "label": "Sección 10",
+          "title": "Un corazón transformado",
+          "body": "El fin de todo mensaje: una vida cambiada por la Palabra."
+        }
+      ]
+    },
+    "idealFor": {
+      "label": "Ideal para",
+      "title": "Un recurso para tu crecimiento",
+      "items": [
+        "Lectura personal, un mensaje a la vez",
+        "Tu devocional diario",
+        "Células y grupos de discipulado",
+        "Predicadores y líderes"
+      ]
+    },
+    "formats": {
+      "label": "Formatos y precios",
+      "title": "Léelo como prefieras",
+      "note": "Precios en USD.",
+      "ebook": {
+        "name": "eBook (Kindle)",
+        "caption": "Lectura digital"
+      },
+      "paperback": {
+        "name": "Tapa blanda",
+        "caption": "Edición de tapa blanda"
+      },
+      "hardcover": {
+        "name": "Tapa dura",
+        "caption": "Edición de tapa dura"
+      },
+      "statusAvailable": "Disponible",
+      "statusSoon": "Próximamente",
+      "buy": "Comprar en Amazon"
+    },
+    "cta": {
+      "title": "Que la Palabra transforme tu corazón",
+      "body": "Disponible ahora en Amazon.",
+      "available": "Disponible en Amazon."
+    }
   }
 }

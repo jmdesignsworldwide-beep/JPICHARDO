@@ -34,7 +34,7 @@ export default async function LibrosPage({
     <>
       <LibraryHero />
       <Section tone="navy">
-        <div className="mx-auto grid max-w-4xl gap-8 sm:grid-cols-2">
+        <div className="mx-auto grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {BOOKS.map((book, i) => (
             <BookCard key={book.id} book={book} delay={i * 0.1} />
           ))}
